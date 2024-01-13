@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="/resources/css/style-3.css">
+   <link rel="stylesheet" href="/resources/css/style-13.css">
    <script src="/resources/js/script-3.js"></script>
+   <script src="/resources/js/script-11.js"></script>
   <title>Noticias</title> 
 </head>
 <body>
@@ -28,7 +30,12 @@
         <p>Para conseguir este emote, los jugadores deben tener un dispositivo Samsung compatible y seguir los pasos que se indican en la página web de la colaboración. El emote estará disponible hasta el 31 de enero de 2024, o hasta agotar existencias. Según super cell, se trata de una forma de agradecer a los usuarios de Samsung por su apoyo y fidelidad.</p>
         <p>Esta no es la primera vez que super cell y Samsung colaboran en el ámbito de los videojuegos. Anteriormente, ambas empresas habían ofrecido otros beneficios exclusivos para los jugadores de Fortnite, como la skin de Galaxy o el torneo Galaxy Cup 2.0. Con esta nueva iniciativa, super cell y Samsung demuestran su compromiso con la innovación y la satisfacción de sus clientes.</p>
         <p>Clash Royale es un juego de estrategia y cartas que enfrenta a dos jugadores en duelos en tiempo real. El objetivo es destruir las torres del rival usando diferentes cartas que representan unidades, hechizos y estructuras. El juego cuenta con más de 100 millones de descargas y es uno de los más populares y exitosos de super cell, junto con Clash of Clans y Brawl Stars.</p>
-        <p>Puedes reclamar el emote en este <a href="https://link.clashroyale.com/es?action=voucher&code=90079cde-db42-48be-a1b4-10623aafc302&fbclid=PAAabZ4Q5YABRmMIlTyK1zIGd73V_wQY7gEfQCRvU5hJrRYgVzTWS-xC26mZs">enlace</a></p>
+        <p>Puedes reclamar el emote en este <a href="#" id="miEnlace" onclick="mostrarAdvertencia()">enlace</a></p>
+        <div id="mensaje" class="body">
+        <p><strong>¡Advertencia!</strong></p>
+        <p>Este enlace, mediante el cual podías reclamar una promoción del emote de Clash Royale, ya está expirado.</p>
+        <button id="aceptarBtn" onclick="ocultarAdvertencia()">Aceptar</button>
+        </div>
         <button id="boton8" onclick="reproducirAudio8()">Escuchar lectura</button>
         <audio id="audio8" src="/resources/multimedia/emote-gratis.mp3" hidden style="width: 180px;">Tu navegador no es compatible para reproducir audio.</audio>
       </div>
