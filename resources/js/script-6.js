@@ -44,7 +44,7 @@
             } else if (option === 2) {
                 additionalInfo.innerHTML = "Puedes contactar al desarrollador mediante este <a href='./contacto'>enlace</a>. Estaremos atendiendo las 24 horas del día.";
             } else if (option === 3) {
-                additionalInfo.innerHTML = "Para informar que hay bugs o fallos en nuestra página, entra al <a href='./bugs'>enlace</a>. Recuerda que estamos al pendiente las 24 horas al día.";
+                additionalInfo.innerHTML = "Para informar que hay bugs o fallos en nuestra página, entra al <a href='./bugs-o-fallos'>enlace</a>. Recuerda que estamos al pendiente las 24 horas al día.";
             } else if (option === 4) {
                 additionalInfo.innerHTML = "Puedes iniciar sesión con este <a href='./inicio-de-sesión'>enlace</a> y también puedes registrar tu cuenta para tener el acceso a la página de funciones. Si te parece que el inicio de sesión fue exitoso y no te manda a la página de funciones, reinicia la página. Si aún no te manda a la página de funciones, puedes reportarlo en la pestaña de reportar fallos o bugs. Te estaremos atendiendo las 24 horas del día.";
             }
