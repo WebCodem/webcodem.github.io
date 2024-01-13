@@ -3,7 +3,7 @@
 
       if (usuarioIniciado) {
         
-        window.location.href = 'https://webcodem.github.io/resources/html/funciones';
+        window.location.href = 'https://webcodem.github.io/funciones';
       }
     };
 
@@ -22,7 +22,7 @@
 
         localStorage.setItem('usuarioIniciado', true);
 
-        window.location.href = 'https://webcodem.github.io/resources/html/funciones';
+        window.location.href = 'https://webcodem.github.io/funciones';
       } else {
         mensajeElemento.innerText = 'Nombre de usuario o contraseña incorrectos';
       }
