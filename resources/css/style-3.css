@@ -1,4 +1,4 @@
-body {
+      body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
@@ -49,6 +49,7 @@ body {
     .nav a:hover {
       color: white;
     }
+    
 
     .main {
       display: flex;
@@ -66,6 +67,7 @@ body {
       width: 150px;
       height: auto;
       border-radius: 5px;
+      
     }
 
     .article h3 {
@@ -83,40 +85,16 @@ body {
       text-align: center;
     }
 
-    .centro {
+     .centro {
       text-align: center;
-    }
+     }
 
-    a {
-      color: grey;
-      text-decoration: none;
-    }
+     a {
+     color: grey;
+     text-decoration: none;
+     }
 
-    a:hover {
-      color: #005cc5;
-      text-decoration: underline;
-    }
-
-    .body-modal {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 20px;
-    }
-    
-    #mensaje-modal {
-      display: none;
-      background-color: #292929;
-      color: white;
-      padding: 10px;
-      border: 1px solid #292929;
-      margin-top: 10px;
-    }
-    
-    #aceptarBtn-modal {
-      padding: 5px 10px;
-      background-color: #bfd5ff;
-      color: black;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
+     a:hover {
+     color: #005cc5;
+     text-decoration: underline;
+     }
