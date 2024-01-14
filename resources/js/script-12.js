@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayUserData(savedUsername, savedProfilePic);
     } else {
         
-        const defaultProfilePic = 'perfil-predeterminado.jpg';
+        const defaultProfilePic = '/resources/multimedia/perfil-predeterminado.jpg';
         const defaultUsername = 'Usuario';
 
         displayUserData(defaultUsername, defaultProfilePic);
