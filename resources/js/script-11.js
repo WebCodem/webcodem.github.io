@@ -1,11 +1,15 @@
+var fondoModal = document.getElementById('fondoModal');
+var miModal = document.getElementById('miModal');
+var contenidoModal = document.getElementById('contenidoModal');
+
 function mostrarModal(enlaceId) {
-    document.getElementById('fondoModal').style.display = 'block';
-    document.getElementById('miModal').style.display = 'block';
+    fondoModal.style.display = 'block';
+    miModal.style.display = 'block';
 
     if (enlaceId === 'Enlace-1') {
-        document.getElementById('contenidoModal').innerHTML = '<h3>¡Advertencia!</h3><p style="font-size: 18px;">Este enlace, mediante el cual podías reclamar una promoción del emote de Clash Royale, ya está expirado.</p><p style="font-size: 18px;">Por favor, ten en cuenta que estas promociones tienen fechas limitadas.</p><button onclick="cerrarModal()">Aceptar</button>';
+        contenidoModal.innerHTML = '<h3>¡Advertencia!</h3><p style="font-size: 18px;">Este enlace, mediante el cual podías reclamar una promoción del emote de Clash Royale, ya está expirado.</p><p style="font-size: 18px;">Por favor, ten en cuenta que estas promociones tienen fechas limitadas.</p><button onclick="cerrarModal()">Aceptar</button>';
     } else if (enlaceId === 'Enlace-2') {
-        document.getElementById('contenidoModal').innerHTML = '<h3>¡En mantenimiento!</h3><p style="font-size: 18px;">Estoy en proceso de agregar una nueva función a mi página web. Mientras trabajo en esta mejora, también estoy dedicando tiempo a la optimización y corrección de bugs para garantizar un rendimiento óptimo. Estoy emocionado por la incorporación de esta nueva característica, y mi objetivo es ofrecer a los usuarios una experiencia mejorada y libre de problemas.</p><p style="font-size: 18px;">Actualmente, estoy en la fase de implementación de una nueva función en mi sitio web. Al mismo tiempo, me encuentro depurando el código para eliminar posibles errores y mejorar la estabilidad general. Esta adición está diseñada para mejorar la funcionalidad de la página y proporcionar a los usuarios una experiencia más enriquecedora. Estoy comprometido a perfeccionar la función y garantizar que la experiencia del usuario sea más eficiente y sin interrupciones.</p><button onclick="cerrarModal()">Aceptar</button>';
+        contenidoModal.innerHTML = '<h3>¡En mantenimiento!</h3><p style="font-size: 18px;">Estoy en proceso de agregar una nueva función a mi página web. Mientras trabajo en esta mejora, también estoy dedicando tiempo a la optimización y corrección de bugs para garantizar un rendimiento óptimo. Estoy emocionado por la incorporación de esta nueva característica, y mi objetivo es ofrecer a los usuarios una experiencia mejorada y libre de problemas.</p><p style="font-size: 18px;">Actualmente, estoy en la fase de implementación de una nueva función en mi sitio web. Al mismo tiempo, me encuentro depurando el código para eliminar posibles errores y mejorar la estabilidad general. Esta adición está diseñada para mejorar la funcionalidad de la página y proporcionar a los usuarios una experiencia más enriquecedora. Estoy comprometido a perfeccionar la función y garantizar que la experiencia del usuario sea más eficiente y sin interrupciones.</p><button onclick="cerrarModal()">Aceptar</button>';
     }
 }
 
@@ -14,6 +18,6 @@ function ocultarModal() {
 }
 
 function cerrarModal() {
-    document.getElementById('fondoModal').style.display = 'none';
-    document.getElementById('miModal').style.display = 'none';
+    fondoModal.style.display = 'none';
+    miModal.style.display = 'none';
 }
