@@ -24,7 +24,7 @@
                 botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(2)">¿Contactar al desarrollador de la página?</button>';
                 botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(3)">¿Reportar bugs o fallos de la página?</button>';
                 botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(4)">¿Iniciar sesión o fallos al iniciar sesión?</button>';
-                botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(4)">¿Jugar juegos de la página?</button>';
+                botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(5)">¿Jugar juegos de la página no disponibles?</button>';
 
                 chatbox.appendChild(botMessageContainer);
 
