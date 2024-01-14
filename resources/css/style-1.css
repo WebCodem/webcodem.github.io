@@ -16,13 +16,14 @@
       }
 
       .menu__dropdown {
-        position: absolute;
-        top: 50px;
-        right: 0;
-        background-color: #1E1E1E;
-        color: white;
-        padding: 10px;
-        display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #292929; 
+    color: white;
+    padding: 10px;
+    display: none;
+    z-index: 999; 
       }
 
       .menu__dropdown--active {
