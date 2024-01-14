@@ -1,4 +1,4 @@
-function mostrarModal() {
+function mostrarModal1() {
     document.getElementById('fondoModal').style.display = 'block';
     document.getElementById('miModal').style.display = 'block';
 
@@ -10,7 +10,7 @@ function mostrarModal() {
     `;
   }
 
-  function mostrarModalNuevo() {
+  function mostrarModal2() {
     document.getElementById('fondoModal').style.display = 'block';
     document.getElementById('miModal').style.display = 'block';
     
