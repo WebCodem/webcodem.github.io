@@ -114,6 +114,7 @@
       height: 40px;
       padding: 10px;
       border-radius: 20px;
+      border: none;
       outline: none;
       font-size: 18px;
       background-color: #292929;
@@ -128,12 +129,10 @@
   width: 100px;
   height: 50px;
   border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: 0.3s;
 }
 
 .barra button:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
   transform: translateY(-2px);
 }
 
