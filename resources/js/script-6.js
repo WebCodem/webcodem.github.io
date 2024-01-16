@@ -23,7 +23,7 @@
                 botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(2)">¿Contactar al desarrollador de la página?</button>';
                 botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(3)">¿Reportar bugs o fallos de la página?</button>';
                 botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(4)">¿Iniciar sesión o fallos al iniciar sesión?</button>';
-                botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(5)">¿Jugar juegos de la página no disponibles?</button>';
+                botMessageContainer.innerHTML += '<button class="bot-option" onclick="showAdditionalInfo(5)">¿Jugar juegos de la biblioteca no disponibles?</button>';
 
                 chatbox.appendChild(botMessageContainer);
 
@@ -49,7 +49,7 @@
             } else if (option === 4) {
                 additionalInfo.innerHTML = "Puedes iniciar sesión con este <a href='./inicio-de-sesión'>enlace</a> y también puedes registrar tu cuenta para tener el acceso a la página de funciones. Si te parece que el inicio de sesión fue exitoso y no te manda a la página de funciones, reinicia la página. Si aún no te manda a la página de funciones, puedes reportarlo en la pestaña de reportar fallos o bugs. Te estaremos atendiendo las 24 horas del día.";
             } else if (option === 5) {
-                additionalInfo.innerHTML = "Puedes jugar juegos que aún no han salido en la página de funciones en este <a href='./funciones/juegos'>enlace</a> Estos juegos pueden tener bugs o fallos dentro del juego, por eso te recomendamos reportar cada bug o fallo en la pestaña de reportar bugs o fallos. Recuerda que estaremos atendiendo las 24 horas del día.";
+                additionalInfo.innerHTML = "Puedes jugar algún juego que aún no han salido en la biblioteca de juegos en este <a href='#'>enlace</a> Estos juegos pueden tener bugs o fallos dentro del juego, por eso te recomendamos reportar cada bug o fallo en la pestaña de reportar bugs o fallos. Recuerda que estaremos atendiendo las 24 horas del día.";
             }
 
             chatbox.appendChild(additionalInfo);
