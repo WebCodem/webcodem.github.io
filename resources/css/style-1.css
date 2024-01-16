@@ -15,16 +15,18 @@
         text-decoration: underline;
       }
 
-      .menu__dropdown {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background: #292929; 
-    color: white;
-    padding: 10px;
-    display: none;
-    z-index: 999; 
-      }
+       .menu__dropdown {
+       position: absolute;
+       top: 60px;
+       right: 8px; 
+       background: #292929; 
+       color: white;
+       padding: 10px;
+       display: none;
+       z-index: 999;
+       max-width: 200px;
+       overflow-y: auto; 
+       }
 
       .menu__dropdown--active {
         display: block;
