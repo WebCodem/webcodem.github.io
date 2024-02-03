@@ -20,36 +20,36 @@
 
                 if (nombreImagen.toLowerCase() === 'werensita') {
                     imagenes = [
-                        'imagen1.jpg',
-                        'imagen2.jpg', 
-                        'imagen3.jpg', 
-                        'imagen4.jpg', 
-                        'imagen5.jpg', 
-                        'imagen6.jpg', 
-                        'imagen7.jpg', 
-                        'imagen8.jpg',
-                        'imagen9.jpg',
-                        'imagen10.jpg', 
-                        'imagen11.jpg'
+                        '/resources/multimedia/imagen1.jpg',
+                        '/resources/multimedia/imagen2.jpg', 
+                        '/resources/multimedia/imagen3.jpg', 
+                        '/resources/multimedia/imagen4.jpg', 
+                        '/resources/multimedia/imagen5.jpg', 
+                        '/resources/multimedia/imagen6.jpg', 
+                        '/resources/multimedia/imagen7.jpg', 
+                        '/resources/multimedia/imagen8.jpg',
+                        '/resources/multimedia/imagen9.jpg',
+                        '/resources/multimedia/imagen10.jpg', 
+                        '/resources/multimedia/imagen11.jpg'
                     ];
                 } else if (nombreImagen.toLowerCase() === 'akane') {
                     imagenes = [
-                        'imagen12.jpg',
-                        'imagen13.jpg',
-                        'imagen14.jpg',
-                        'imagen15.jpg', 
-                        'imagen16.jpg', 
-                        'imagen17.jpg', 
-                        'imagen18.jpg', 
-                        'imagen19.jpg'                                               
+                        '/resources/multimedia/imagen12.jpg',
+                        '/resources/multimedia/imagen13.jpg',
+                        '/resources/multimedia/imagen14.jpg',
+                        '/resources/multimedia/imagen15.jpg', 
+                        '/resources/multimedia/imagen16.jpg', 
+                        '/resources/multimedia/imagen17.jpg', 
+                        '/resources/multimedia/imagen18.jpg', 
+                        '/resources/multimedia/imagen19.jpg'                                               
                     ];
                 } else if (nombreImagen.toLowerCase() === 'hanapunzell') {
                     imagenes = [
-                        'imagen20.jpg',
-                        'imagen21.jpg', 
-                        'imagen22.jpg', 
-                        'imagen23.jpg', 
-                        'imagen24.jpg'
+                        '/resources/multimedia/imagen20.jpg',
+                        '/resources/multimedia/imagen21.jpg', 
+                        '/resources/multimedia/imagen22.jpg', 
+                        '/resources/multimedia/imagen23.jpg', 
+                        '/resources/multimedia/imagen24.jpg'
                                               
                     ];                                                                                                       
                 } else {
