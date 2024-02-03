@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/style-17.css">
+    <title>Visualizador de Imágenes</title>
+</head>
+<body>
+    <div id="contenedorCarga">
+        <img src="cargando.gif" alt="Cargando...">
+    </div>
+    <div id="contenedorImagen"></div>
+    <div id="imagenNoEncontrada">Imagen no encontrada</div>
+    <div class="botonesNavegacion">
+        <button onclick="imagenAnterior()">&#8592; Anterior</button>
+        <button onclick="imagenSiguiente()">Siguiente &#8594;</button>
+    </div>
+    <input type="text" id="nombreImagen" placeholder="Ingrese el nombre de la imagen">
+    <button onclick="mostrarImagen()">Mostrar Imagen</button>
+    <script src="/resources/js/script-21.js"></script>
+</body>
+</html>
