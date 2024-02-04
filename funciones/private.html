@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/resources/css/style-18.css">
+  <link rel="stylesheet" href="/resources/css/style-19.css">
   <title>Biblioteca de vídeos</title>
 </head>
 <body>
@@ -15,63 +16,6 @@
   <h1>Biblioteca Secreta de Videos</h1>
   <div class="video-container" id="videoContainer">  
   </div>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #292929;
-      color: #fff;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .popup-content {
-      text-align: center;
-    }
-
-    #edadInput {
-      background-color: #444;
-      color: #fff;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-    }
-
-    #enviarBtn {
-      background-color: #444;
-      color: #fff;
-      padding: 8px 16px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #333;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      z-index: 999; /* Asegura que el overlay esté encima de todo */
-    }
-  </style>
-</head>
-<body>
-
   <div id="popup" class="popup">
     <div class="popup-content">
       <p>Por favor, ingrese su edad para acceder a esta página:</p>
@@ -79,58 +23,10 @@
       <button id="enviarBtn" onclick="verificarEdad()">Aceptar</button>
     </div>
   </div>
-
   <div id="overlay" class="overlay">
-    <p>No puedes acceder a esta página porque no tienes la edad necesaria.</p>
+    <p>Lamentamos informarte que no tienes permitido acceder a esta página en función de las restricciones de edad establecidas. Por favor, verifica que cumples con los requisitos necesarios para acceder al contenido.</p>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Verificar si el mensaje ya ha sido mostrado
-      if (!localStorage.getItem("popupShown")) {
-        mostrarPopup();
-      } else {
-        var edadInput = localStorage.getItem("edadInput");
-        if (edadInput !== null && parseInt(edadInput) >= 18) {
-          cerrarPopup();
-        } else {
-          mostrarOverlay(); // Mostrar overlay si la edad es menor o no válida
-        }
-      }
-    });
-
-    function mostrarPopup() {
-      var popup = document.getElementById("popup");
-      var overlay = document.getElementById("overlay");
-      popup.style.display = "block";
-      overlay.style.display = "none"; // Ocultar el overlay si se mostró anteriormente
-    }
-
-    function cerrarPopup() {
-      var popup = document.getElementById("popup");
-      var overlay = document.getElementById("overlay");
-      popup.style.display = "none";
-      overlay.style.display = "none"; // Ocultar el overlay al cerrar el popup
-      // Marcar que el mensaje ha sido mostrado
-      localStorage.setItem("popupShown", "true");
-    }
-
-    function mostrarOverlay() {
-      var overlay = document.getElementById("overlay");
-      overlay.style.display = "flex";
-    }
-
-    function verificarEdad() {
-      var edadInput = document.getElementById("edadInput").value;
-      localStorage.setItem("edadInput", edadInput); // Guardar la edad en localStorage
-      if (edadInput && parseInt(edadInput) >= 18) {
-        cerrarPopup();
-      } else {
-        mostrarOverlay();
-        cerrarPopup(); // Cerrar el popup adicionalmente
-      }
-    }
-  </script>
   <script src="/resources/js/script-22.js"></script>
+  <script src="/resources/js/script-23.js"></script>
 </body>
 </html>
