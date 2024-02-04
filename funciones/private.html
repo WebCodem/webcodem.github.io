@@ -15,6 +15,122 @@
   <h1>Biblioteca Secreta de Videos</h1>
   <div class="video-container" id="videoContainer">  
   </div>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #292929;
+      color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .popup-content {
+      text-align: center;
+    }
+
+    #edadInput {
+      background-color: #444;
+      color: #fff;
+      padding: 5px;
+      margin: 10px 0;
+      border: none;
+    }
+
+    #enviarBtn {
+      background-color: #444;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>Por favor, ingrese su edad para acceder a esta página:</p>
+      <input type="number" id="edadInput" placeholder="Ingrese su edad">
+      <button id="enviarBtn" onclick="verificarEdad()">Aceptar</button>
+    </div>
+  </div>
+  <div id="overlay" class="overlay">
+    <p>No puedes acceder a esta página porque no tienes la edad necesaria.</p>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (!localStorage.getItem("popupShown")) {
+        mostrarPopup();
+      } else {
+        var edadInput = localStorage.getItem("edadInput");
+        if (edadInput !== null && parseInt(edadInput) >= 18) {
+          cerrarPopup();
+        } else {
+          var redirectionCount = localStorage.getItem("redirectionCount") || 0;
+          if (redirectionCount < 1) {
+            localStorage.setItem("redirectionCount", parseInt(redirectionCount) + 1);
+            window.location.href = "pagina_restringida.html"; // Cambia esto por la página a la que deseas redirigir
+          } else {
+            mostrarOverlay();
+          }
+        }
+      }
+    });
+
+    function mostrarPopup() {
+      var popup = document.getElementById("popup");
+      var overlay = document.getElementById("overlay");
+      popup.style.display = "block";
+      overlay.style.display = "none";
+    }
+
+    function cerrarPopup() {
+      var popup = document.getElementById("popup");
+      var overlay = document.getElementById("overlay");
+      popup.style.display = "none";
+      overlay.style.display = "none";
+      localStorage.setItem("popupShown", "true");
+    }
+
+    function mostrarOverlay() {
+      var overlay = document.getElementById("overlay");
+      overlay.style.display = "flex";
+    }
+
+    function verificarEdad() {
+      var edadInput = document.getElementById("edadInput").value;
+      localStorage.setItem("edadInput", edadInput);
+      if (edadInput && parseInt(edadInput) >= 18) {
+        cerrarPopup();
+      } else {
+        window.location.href = "pagina_restringida.html"; // Cambia esto por la página a la que deseas redirigir
+      }
+    }
+  </script>
   <script src="/resources/js/script-22.js"></script>
 </body>
 </html>
