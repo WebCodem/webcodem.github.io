@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/resources/css/style-17.css">
+    <link rel="stylesheet" href="/resources/css/style-19.css">
     <title>Visualizador de Imágenes</title>
 </head>
 <body>
@@ -18,6 +19,17 @@
     </div>
     <input type="text" id="nombreImagen" placeholder="Ingrese el nombre de la imagen">
     <button onclick="mostrarImagen()">Mostrar Imagen</button>
+    <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>Por favor, ingrese su edad para acceder a esta página:</p>
+      <input type="number" id="edadInput" placeholder="Ingrese su edad">
+      <button id="enviarBtn" onclick="verificarEdad()">Aceptar</button>
+    </div>
+  </div>
+  <div id="overlay" class="overlay">
+    <p>Lamentamos informarte que no tienes permitido acceder a esta página en función de las restricciones de edad establecidas. Por favor, verifica que cumples con los requisitos necesarios para acceder al contenido.</p>
+  </div>
     <script src="/resources/js/script-21.js"></script>
+    <script src="/resources/js/script-23.js"></script>
 </body>
 </html>
