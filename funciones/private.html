@@ -40,7 +40,7 @@
     #edadInput {
       background-color: #444;
       color: #fff;
-      padding: 10px;
+      padding: 5px;
       margin: 10px 0;
       border: none;
     }
@@ -66,11 +66,12 @@
       justify-content: center;
       align-items: center;
       font-size: 20px;
-      z-index: 999;
+      z-index: 999; /* Asegura que el overlay esté encima de todo */
     }
   </style>
 </head>
 <body>
+
   <div id="popup" class="popup">
     <div class="popup-content">
       <p>Por favor, ingrese su edad para acceder a esta página:</p>
@@ -78,11 +79,14 @@
       <button id="enviarBtn" onclick="verificarEdad()">Aceptar</button>
     </div>
   </div>
+
   <div id="overlay" class="overlay">
     <p>No puedes acceder a esta página porque no tienes la edad necesaria.</p>
   </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      // Verificar si el mensaje ya ha sido mostrado
       if (!localStorage.getItem("popupShown")) {
         mostrarPopup();
       } else {
@@ -90,13 +94,7 @@
         if (edadInput !== null && parseInt(edadInput) >= 18) {
           cerrarPopup();
         } else {
-          var redirectionCount = localStorage.getItem("redirectionCount") || 0;
-          if (redirectionCount < 1) {
-            localStorage.setItem("redirectionCount", parseInt(redirectionCount) + 1);
-            window.location.href = "https://webcodem.github.io/funciones/private"; // Cambia esto por la página a la que deseas redirigir
-          } else {
-            mostrarOverlay();
-          }
+          mostrarOverlay(); // Mostrar overlay si la edad es menor o no válida
         }
       }
     });
@@ -105,14 +103,15 @@
       var popup = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
       popup.style.display = "block";
-      overlay.style.display = "none";
+      overlay.style.display = "none"; // Ocultar el overlay si se mostró anteriormente
     }
 
     function cerrarPopup() {
       var popup = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
       popup.style.display = "none";
-      overlay.style.display = "none";
+      overlay.style.display = "none"; // Ocultar el overlay al cerrar el popup
+      // Marcar que el mensaje ha sido mostrado
       localStorage.setItem("popupShown", "true");
     }
 
@@ -123,11 +122,12 @@
 
     function verificarEdad() {
       var edadInput = document.getElementById("edadInput").value;
-      localStorage.setItem("edadInput", edadInput);
+      localStorage.setItem("edadInput", edadInput); // Guardar la edad en localStorage
       if (edadInput && parseInt(edadInput) >= 18) {
         cerrarPopup();
       } else {
-        window.location.href = "https://webcodem.github.io/funciones/private"; // Cambia esto por la página a la que deseas redirigir
+        mostrarOverlay();
+        cerrarPopup(); // Cerrar el popup adicionalmente
       }
     }
   </script>
