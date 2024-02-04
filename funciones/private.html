@@ -40,7 +40,7 @@
     #edadInput {
       background-color: #444;
       color: #fff;
-      padding: 5px;
+      padding: 10px;
       margin: 10px 0;
       border: none;
     }
@@ -93,7 +93,7 @@
           var redirectionCount = localStorage.getItem("redirectionCount") || 0;
           if (redirectionCount < 1) {
             localStorage.setItem("redirectionCount", parseInt(redirectionCount) + 1);
-            window.location.href = "pagina_restringida.html"; // Cambia esto por la página a la que deseas redirigir
+            window.location.href = "https://webcodem.github.io/funciones/private"; // Cambia esto por la página a la que deseas redirigir
           } else {
             mostrarOverlay();
           }
