@@ -50,4 +50,4 @@ document.getElementById("backToEditorButton").addEventListener("click", function
     document.getElementById("resultFrame").style.display = "none";
     document.querySelector(".editor-container").style.display = "flex";
     document.getElementById("backToEditorButton").style.display = "none";
-});                             
+});
