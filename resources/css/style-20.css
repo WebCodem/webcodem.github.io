@@ -12,24 +12,23 @@
         }
 
         .CodeMirror {
-    color: #fff;
-    border: 1px solid #666;
-    border-radius: 5px;
-    font-family: monospace;
-    width: 100%; 
-    height: calc(100% - 40px); 
-}
-
-.editor-container {
+    colo.editor-container {
     width: 90vw; 
-    height: auto;
+    height: auto; 
+    margin-top: 5vh; 
+    background-color: #292929;
+    color: #fff;
+    font-family: monospace;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
     align-items: center;
-    margin-top: 5vh; 
-    background-color: #292929; 
-   }
+}
+
+.CodeMirror {
+    width: 100%; 
+    height: auto; 
+}
+
 
         
         .CodeMirror-gutters {
