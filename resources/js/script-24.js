@@ -1,0 +1,43 @@
+       var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+            lineNumbers: true,
+            mode: "htmlmixed",
+            theme: "default"
+        });
+
+        document.getElementById("saveButton").addEventListener("click", function() {
+            var code = editor.getValue();
+            localStorage.setItem("editorContent", code);
+            alert("Código guardado en localStorage.");
+        });
+
+        document.getElementById("loadButton").addEventListener("click", function() {
+            var code = localStorage.getItem("editorContent");
+            if (code) {
+                editor.setValue(code);
+                alert("Código cargado");
+            } else {
+                alert("No hay código guardado");
+            }
+        });
+
+        document.getElementById("runButton").addEventListener("click", function() {
+            var code = editor.getValue();
+            var iframe = document.getElementById("resultFrame");
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDocument.open();
+            iframeDocument.write("<!DOCTYPE html><html><head><title>Resultado</title></head><body>");
+            iframeDocument.write("<div style='color: white;'>");
+            iframeDocument.write(code);
+            iframeDocument.write("</div></body></html>");
+            iframeDocument.close();
+
+            iframe.style.display = "block"; 
+            document.querySelector(".editor-container").style.display = "none";
+            document.getElementById("backToEditorButton").style.display = "block"; 
+        });
+
+        document.getElementById("backToEditorButton").addEventListener("click", function() {
+            document.getElementById("resultFrame").style.display = "none"; 
+            document.querySelector(".editor-container").style.display = "flex";
+            document.getElementById("backToEditorButton").style.display = "none"; 
+        });
