@@ -9,9 +9,6 @@ document.getElementById("saveButton").addEventListener("click", function() {
     var confirmSave = confirm("¿Estás seguro de que quieres guardar este código?");
     if (confirmSave) {
         localStorage.setItem("editorContent", code);
-        alert("El código se ha guardado correctamente.");
-    } else {
-        alert("No se ha guardado el código.");
     }
 });
 
@@ -21,9 +18,6 @@ document.getElementById("loadButton").addEventListener("click", function() {
         var confirmLoad = confirm("¿Estás seguro de que quieres cargar tu código guardado?");
         if (confirmLoad) {
             editor.setValue(code);
-            alert("El código se ha cargado correctamente.");
-        } else {
-            alert("No se ha cargado el código.");
         }
     } else {
         alert("No hay ningún código guardado.");
