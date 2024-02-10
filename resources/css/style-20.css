@@ -1,4 +1,4 @@
-        body, html {
+         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -10,26 +10,26 @@
             color: #fff;
             font-family: Arial, sans-serif;
         }
+        
+        .editor-container {
+            width: 90vw; 
+            height: 90vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            align-items: center;
+            margin-top: 5vh; 
+        }
 
         .CodeMirror {
-    colo.editor-container {
-    width: 90vw; 
-    height: auto; 
-    margin-top: 5vh; 
-    background-color: #292929;
-    color: #fff;
-    font-family: monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.CodeMirror {
-    width: 100%; 
-    height: auto; 
-}
-
-
+            background-color: #292929;
+            color: #fff;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-family: monospace;
+            width: 100%; 
+            height: calc(100% - 40px); 
+        }
         
         .CodeMirror-gutters {
             background-color: #444 !important;
