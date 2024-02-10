@@ -7,16 +7,16 @@
         document.getElementById("saveButton").addEventListener("click", function() {
             var code = editor.getValue();
             localStorage.setItem("editorContent", code);
-            alert("Código guardado en localStorage.");
+            alert("¿Estás seguro de que quieres aguardar este código?");
         });
 
         document.getElementById("loadButton").addEventListener("click", function() {
             var code = localStorage.getItem("editorContent");
             if (code) {
                 editor.setValue(code);
-                alert("Código cargado");
+                alert("¿Estás seguro de que quieres cargar tu código guardado?");
             } else {
-                alert("No hay código guardado");
+                alert("No hay ningún código guardado.");
             }
         });
 
