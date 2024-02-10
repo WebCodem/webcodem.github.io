@@ -10,26 +10,27 @@
             color: #fff;
             font-family: Arial, sans-serif;
         }
-        
-        .editor-container {
-            width: 90vw; 
-            height: 90vh; 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; 
-            align-items: center;
-            margin-top: 5vh; 
-        }
 
         .CodeMirror {
-            background-color: #292929;
-            color: #fff;
-            border: 1px solid #666;
-            border-radius: 5px;
-            font-family: monospace;
-            width: 100%; 
-            height: calc(100% - 40px); 
-        }
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-family: monospace;
+    width: 100%; 
+    height: calc(100% - 40px); 
+}
+
+.editor-container {
+    width: 90vw; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-top: 5vh; 
+    background-color: #292929; 
+   }
+
         
         .CodeMirror-gutters {
             background-color: #444 !important;
