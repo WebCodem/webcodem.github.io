@@ -1,5 +1,5 @@
 var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
-    lineNumbers: false,
+    lineNumbers: true,
     mode: "htmlmixed",
     theme: "default"
 });
