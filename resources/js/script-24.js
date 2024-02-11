@@ -49,7 +49,7 @@
     });
 
     document.getElementById("openCloseTagButton").addEventListener("click", function() {
-        editor.replaceSelection("</>");
+        editor.replaceSelection("</");
     });
 
     document.getElementById("backToEditorButton").addEventListener("click", function() {
