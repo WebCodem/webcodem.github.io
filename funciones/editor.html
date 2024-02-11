@@ -14,10 +14,15 @@
 <body>
     <div class="editor-container">
         <textarea id="editor" name="code" rows="10" cols="50"></textarea>
-        <div class="editor-buttons">
+                <div class="editor-buttons">
             <button id="saveButton">Guardar</button>
             <button id="loadButton">Cargar</button>
             <button id="runButton">Ejecutar</button>
+        </div>
+        <div class="editor-buttons">
+            <button id="openAngleBracketButton">&lt;</button>
+            <button id="closeAngleBracketButton">&gt;</button>
+            <button id="openCloseTagButton">&lt;/&gt;</button>
         </div>
     </div>
     <iframe id="resultFrame" sandbox="allow-same-origin allow-scripts" style="display: none;"></iframe>
