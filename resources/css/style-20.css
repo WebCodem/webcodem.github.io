@@ -27,8 +27,8 @@
             border: 1px solid #666;
             border-radius: 5px;
             font-family: monospace;
-            width: 100%; 
-            height: calc(100%); 
+            width: 100% !important; 
+            height: calc(100%) !important; 
         }
         
         .CodeMirror-gutters {
