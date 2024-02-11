@@ -12,7 +12,7 @@
         }
         
         .editor-container {
-            width: 99vw; 
+            width: 100vw; 
             height: 90vh; 
             display: flex;
             flex-direction: column;
