@@ -23,8 +23,7 @@
 
         .CodeMirror {
             background-color: #292929 !important;
-            color: #fff;
-            border: 1px solid #666;
+            color: #fff !important;
             border-radius: 5px;
             font-family: monospace;
             width: 100% !important; 
