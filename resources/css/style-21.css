@@ -12,14 +12,14 @@
         
         #chat-container {
             width: 400px;
-            margin-top: -19vh; 
+            margin-top: -12vh; 
             padding: 10px;
             border-radius: 10px;
             background-color: #333;
         }
         
         #chat-log {
-            height: calc(80vh - 100px); 
+            height: 649px;
             overflow-y: scroll;
             margin-bottom: 10px;
             padding: 10px;
@@ -28,10 +28,10 @@
         }
         
         input {
-            width: 90%;
+            width: 92%;
             background-color: #292929;
             color: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             border: none;
             outline: none;
@@ -64,4 +64,4 @@
             0% { opacity: 0; }
             1% { opacity: 1; }
             100% { opacity: 1; }
-       } 
+        }
