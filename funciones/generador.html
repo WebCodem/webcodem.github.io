@@ -7,6 +7,7 @@
     <title>Generador de Contraseñas</title>
 </head>
 <body>
+    <div id="spanishText" style="display: none;">
     <h1>Generador de Contraseñas</h1>
     <p>Haz clic en el botón para generar una contraseña segura:</p>
     <div>
@@ -15,6 +16,17 @@
         <a id="copiarContrasena" onclick="copiarContrasena()"><iconify-icon icon="ph:clipboard-bold"></iconify-icon><script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script> Copiar</a>
         <p id="mensajeExito"></p>
     </div>
+    </div>
+    <div id="englishText" style="display: none;">
+    <h1>Password Generator</h1>
+    <p>Click the button to generate a strong password:</p>
+    <div>
+        <button onclick="generarContrasena()">Generate Password</button>
+        <p id="contrasenaGenerada"></p>
+        <a id="copiarContrasena" onclick="copiarContrasena()"><iconify-icon icon="ph:clipboard-bold"></iconify-icon><script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script> Copiar</a>
+        <p id="mensajeExito"></p>
+    </div>
     <script src="/resources/js/script-7.js"></script>
+    <script src="/resources/js/script-28.js"></script>
 </body>
 </html>
