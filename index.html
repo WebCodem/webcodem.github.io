@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/resources/css/style-1.css">
     <script src="/resources/js/script-12.js"></script>
     <script src="/resources/js/script-15.js"></script>
+    <script src="/resources/js/script-28.js"></script>
     <title>WebCodem</title>
 </head>
 <body>
@@ -17,6 +18,7 @@
     <div class="menu__dropdown">
     <div class="menu__item"><div id="userContainer"><p id="userText" onclick="chooseProfilePicture()">Usuario</p></div></div><br>
    <div class="menu__item"><a href="https://www.tiktok.com/@good.gaddiel?_t=8cwDAq1gBAk&_r=1" class="a">TikTok <iconify-icon icon="ion:logo-tiktok"></iconify-icon><script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script></a></div>
+  <div class="menu__item"><select id="lang" onchange="changeLanguage()">Idioma <option value="es">Español</option><option value="en">Inglés</option></select> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 112h288M192 64v48m80 336l96-224l96 224m-162.5-64h133M281.3 112S257 206 199 277S80 384 80 384" /><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 336s-35-27-72-75s-56-85-56-85" /></svg></div>
   <div class="menu__item"><a href="./chat-de-soporte" class="a">Soporte <iconify-icon icon="fluent:person-support-24-regular"></iconify-icon><script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script></a></div>
   <div class="menu__item"><a href="./inicio-de-sesión" class="a">Funciones <iconify-icon icon="clarity:beta-solid"></iconify-icon><script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script></a></div>
     </div>
@@ -36,9 +38,28 @@
     <span class="letter">S!</span>
     <br>
     <br>
-        <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;"><p>A mi página web, donde les mostraré lo que he aprendido sobre programación. Me apasiona crear páginas web con diferentes efectos, transiciones y elementos. Para ello, utilizo tres lenguajes de programación: html, css y javascript.</p></div>
-        <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;"><p>Html es el lenguaje que me permite definir la estructura de la página, como los encabezados, los listados, las tablas, los formularios, etc. Css es el lenguaje que me permite personalizar la apariencia de la página, como los colores, las bordes, los márgenes, los gradientes, etc. Javascript es el lenguaje que me permite agregar dinamismo a la página, como los menús, las ventanas emergentes, las validaciones, etc.</p></div>
-        <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;"><p>Aquí les dejo un ejemplo de una página que he hecho usando estos tres lenguajes. Espero que les agrade y que me dejen sus opiniones y consejos para seguir aprendiendo. Gracias por su visita.</p></div>
+        <div id="englishText" style="display: none;">
+    <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;">
+      <p>To my website, where I'll show you what I've learned about programming. I am passionate about creating web pages with different effects, transitions, and elements. To do this, I use three programming languages: html, css, and javascript.</p>
+    </div>
+    <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;">
+      <p>Html is the language that allows me to define the structure of the page, such as headers, lists, tables, forms, etc. Css is the language that allows me to customize the look and feel of the page, such as colors, borders, margins, gradients, etc. Javascript is the language that allows me to add dynamism to the page, such as menus, pop-ups, validations, etc.</p>
+    </div>
+    <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;">
+      <p>Here's an example of a page I've made using these three languages. I hope you like it and leave me your opinions and advice to keep learning. Thank you for your visit.</p>
+    </div>
+  </div>
+  <div id="spanishText" style="display: none;">
+    <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;">
+      <p>A mi página web, donde les mostraré lo que he aprendido sobre programación. Me apasiona crear páginas web con diferentes efectos, transiciones y elementos. Para ello, utilizo tres lenguajes de programación: html, css y javascript.</p>
+    </div>
+    <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;">
+      <p>Html es el lenguaje que me permite definir la estructura de la página, como los encabezados, los listados, las tablas, los formularios, etc. Css es el lenguaje que me permite personalizar la apariencia de la página, como los colores, las bordes, los márgenes, los gradientes, etc. Javascript es el lenguaje que me permite agregar dinamismo a la página, como los menús, las ventanas emergentes, las validaciones, etc.</p>
+    </div>
+    <div style="border-left: 5px solid #bfd5ff; padding-left: 10px;">
+      <p>Aquí les dejo un ejemplo de una página que he hecho usando estos tres lenguajes. Espero que les agrade y que me dejen sus opiniones y consejos para seguir aprendiendo. Gracias por su visita.</p>
+    </div>
+  </div>
         <footer class="footer">
         <br>
   <a href="./términos">Términos</a>
