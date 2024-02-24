@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/style-7.css">
     <title>Generador de Contraseñas</title>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body>
     <div id="spanishText" style="display: none;">
@@ -14,7 +12,7 @@
         <div>
             <button onclick="generarContrasena()">Generar Contraseña</button>
             <p id="contrasenaGeneradaSpanish"></p>
-            <a onclick="copiarContrasena('contrasenaGeneradaSpanish')"><iconify-icon icon="ph:clipboard-bold"></iconify-icon> Copiar</a>
+            <a id="copiarContrasenaSpanish" onclick="copiarContrasena('contrasenaGeneradaSpanish')">Copiar</a>
             <p id="mensajeExito"></p>
         </div>
     </div>
@@ -24,11 +22,9 @@
         <div>
             <button onclick="generarContrasena()">Generate Password</button>
             <p id="contrasenaGeneradaEnglish"></p>
-            <a onclick="copiarContrasena('contrasenaGeneradaEnglish')"><iconify-icon icon="ph:clipboard-bold"></iconify-icon> Copy</a>
+            <a id="copiarContrasenaEnglish" onclick="copiarContrasena('contrasenaGeneradaEnglish')">Copy</a>
             <p id="mensajeExito"></p>
         </div>
     </div>
-    <script src="/resources/js/script-7.js"></script>
-    <script src="/resources/js/script-28.js"></script>
 </body>
 </html>
