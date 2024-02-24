@@ -292,3 +292,9 @@ footer a:hover {
             height: 15px;  
             margin-right: 10px; 
               }
+
+#lang {
+    background-color: #444;
+    color: white;
+    border: none; 
+}
