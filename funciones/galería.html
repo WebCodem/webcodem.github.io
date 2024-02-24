@@ -8,10 +8,19 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body>
-    <h2>Galería Virtual</h2>
-    <div id="artGallery"></div>
-    <button id="uploadButton" onclick="openFileUploader()">Subir imagen</button>
-    <input type="file" id="fileInput" accept="image/*" onchange="addArtwork(event)">
+    <div id="spanishText" style="display: none;">
+        <h2>Galería Virtual</h2>
+        <div id="artGallery"></div>
+        <button id="uploadButton" onclick="openFileUploader()">Subir imagen</button>
+        <input type="file" id="fileInput" accept="image/*" onchange="addArtwork(event)">
+    </div>
+    <div id="englishText" style="display: none;">
+        <h2>Virtual Gallery</h2>
+        <div id="artGallery"></div>
+        <button id="uploadButton" onclick="openFileUploader()">Upload image</button>
+        <input type="file" id="fileInput" accept="image/*" onchange="addArtwork(event)">
+    </div>
     <script src="/resources/js/script-10.js"></script>
+    <script src="/resources/js/script-28.js"></script>
 </body>
 </html>
