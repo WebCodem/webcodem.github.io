@@ -1,46 +1,47 @@
 async function generarContrasena() {
-    const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
-    const longitud = 12;
+            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+            const longitud = 12;
 
-    try {
-        const array = new Uint32Array(longitud);
-        window.crypto.getRandomValues(array);
+            try {
+                const array = new Uint32Array(longitud);
+                window.crypto.getRandomValues(array);
 
-        let contrasena = "";
-        array.forEach(index => {
-            contrasena += caracteres.charAt(index % caracteres.length);
-        });
+                let contrasena = "";
+                array.forEach(index => {
+                    contrasena += caracteres.charAt(index % caracteres.length);
+                });
 
-        document.getElementById("contrasenaGeneradaSpanish").textContent = contrasena;
-        document.getElementById("contrasenaGeneradaEnglish").textContent = contrasena;
+                document.getElementById("contrasenaGenerada").textContent = contrasena;
+                
+                document.getElementById("copiarContrasena").style.display = "inline-block";
 
-        document.getElementById("copiarContrasenaSpanish").style.display = "inline-block";
-        document.getElementById("copiarContrasenaEnglish").style.display = "inline-block";
+                document.getElementById("mensajeExito").textContent = "";
 
-        document.getElementById("mensajeExito").textContent = "";
-    } catch (error) {
-        console.error("Error al generar la contraseña:", error);
-    }
-}
+            } catch (error) {
+                console.error("Error al generar la contraseña:", error);
+            }
+        }
 
-function copiarContrasena(elementId) {
-    const contrasenaGenerada = document.getElementById(elementId).textContent;
+        function copiarContrasena() {
+            const contrasenaGenerada = document.getElementById("contrasenaGenerada").textContent;
+            
+            const soloContrasena = contrasenaGenerada;
+            
+            const elementoTemporal = document.createElement("textarea");
+            elementoTemporal.value = soloContrasena;
+            
+            document.body.appendChild(elementoTemporal);
+            
+            elementoTemporal.select();
+            document.execCommand("copy");
 
-    const elementoTemporal = document.createElement("textarea");
-    elementoTemporal.value = contrasenaGenerada;
+            document.body.removeChild(elementoTemporal);
 
-    document.body.appendChild(elementoTemporal);
+            const mensajeExito = document.getElementById("mensajeExito");
+            mensajeExito.textContent = "Contraseña copiada";
+            mensajeExito.style.display = "block";
 
-    elementoTemporal.select();
-    document.execCommand("copy");
-
-    document.body.removeChild(elementoTemporal);
-
-    const mensajeExito = document.getElementById("mensajeExito");
-    mensajeExito.textContent = "Contraseña copiada";
-    mensajeExito.style.display = "block";
-
-    setTimeout(() => {
-        mensajeExito.style.display = "none";
-    }, 2000);
-}
+            setTimeout(() => {
+                mensajeExito.style.display = "none";
+            }, 2000);
+        }
