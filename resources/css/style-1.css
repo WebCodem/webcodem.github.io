@@ -320,3 +320,15 @@ footer a:hover {
             height: 15px;  
             margin-right: 10px; 
               }
+
+.gear {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+        transition: transform 0.3s ease; 
+        cursor: pointer;
+    }
+
+    .rotate {
+        transform: rotate(360deg); 
+    }
