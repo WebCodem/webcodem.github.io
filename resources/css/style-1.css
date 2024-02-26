@@ -17,46 +17,53 @@
 
       .menu__dropdown {
     position: absolute;
-    top: 60px;
-    right: 8px; 
+    top: 60px; 
+    right: 10px;
     background: #292929; 
-    color: white;
     padding: 10px;
-    display: block; 
+    display: none;
+    opacity: 0; */
+    transform: translateY(-20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves de opacidad y transformación */
     z-index: 999;
-    max-width: 200px;
-    overflow-y: auto;
-    opacity: 0; 
-    transform: translateY(-10px);
+}
+
+.menu__dropdown[hidden] {
+    display: none;
 }
 
 .menu__dropdown--active {
-    animation: fadeAnimation 0.3s ease forwards; 
+    display: block;
+    opacity: 1;
+    transform: translateY(0); 
+    animation: slideDown 0.3s forwards;
 }
 
 .menu__dropdown--hidden {
-    animation: fadeOutAnimation 0.3s ease forwards;
+    opacity: 0;
+    transform: translateY(-20px); 
+    animation: slideUp 0.3s forwards;
 }
 
-@keyframes fadeAnimation {
+@keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-10px); 
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0); 
+        transform: translateY(0);
     }
 }
 
-@keyframes fadeOutAnimation {
+@keyframes slideUp {
     from {
         opacity: 1;
-        transform: translateY(0); 
+        transform: translateY(0);
     }
     to {
         opacity: 0;
-        transform: translateY(-10px); 
+        transform: translateY(-20px);
     }
 }
 
