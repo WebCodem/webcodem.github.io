@@ -203,13 +203,13 @@ footer {
     border-radius: 10px;
 } 
 
-footer a {
+footer enlace {
   color: grey;
   text-decoration: none;
   font-size: 12px;
 }
 
-footer a:hover {
+footer enlace:hover {
   color: #005cc5;
   text-decoration: underline;
 }
