@@ -37,6 +37,11 @@
        text-decoration: none;    
       }
 
+      .link {
+       color: white;
+       text-decoration: none;    
+      }
+
       #chat {
       width: 375px;
       height: 649px;
