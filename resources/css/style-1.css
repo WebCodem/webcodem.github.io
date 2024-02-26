@@ -1,4 +1,4 @@
-        .menu {
+      .menu {
         background-color: #1E1E1E;
         color: white;
         display: flex;
@@ -297,4 +297,14 @@ footer a:hover {
     background-color: #444;
     color: white;
     border: none; 
+}
+
+body.dark {
+    color: white;
+    background-color: #333;
+}
+
+body.light {
+    color: black;
+    background-color: white;
 }
