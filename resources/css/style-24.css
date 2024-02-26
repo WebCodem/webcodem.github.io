@@ -7,3 +7,19 @@ body.light {
     color: black;
     background-color: white;
 }
+
+body.light a {
+    color: black; 
+}
+
+body.dark a {
+    color: white; 
+}
+
+.body.light .letter {
+    color: black; 
+}
+
+.body.dark .letter {
+    color: white;
+}
