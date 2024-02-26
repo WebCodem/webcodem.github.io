@@ -16,10 +16,10 @@ body.dark a {
     color: white; 
 }
 
-.body.light .letter {
+.body.light letter {
     color: black; 
 }
 
-.body.dark .letter {
+.body.dark letter {
     color: white;
 }
