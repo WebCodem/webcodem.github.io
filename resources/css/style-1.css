@@ -9,6 +9,7 @@
 
       .menu__item {
         cursor: pointer;
+        margin-bottom: 10px;
       }
 
       .menu__item:hover {
