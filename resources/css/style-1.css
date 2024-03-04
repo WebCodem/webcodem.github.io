@@ -339,7 +339,8 @@ footer a:hover {
     .rotate {
         transform: rotate(360deg); 
       }
-lang {
+
+.lang {
     background-color: #444;
     color: white;
     border: none; 
