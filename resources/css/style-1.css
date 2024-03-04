@@ -9,8 +9,11 @@
 
       .menu__item {
         cursor: pointer;
-        margin-bottom: 10px;
       }
+
+      .menu__dropdown .menu__item {
+       margin-bottom: 10px; 
+       }
 
       .menu__item:hover {
         text-decoration: none;
