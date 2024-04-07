@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/style-17.css">
+    <link rel="stylesheet" href="/resources/css/style-19.css">
+    <title>Visualizador de Imágenes</title>
+</head>
+<body>
+    <div id="contenedorCarga">
+        <img src="/resources/multimedia/cargando.gif" alt="Cargando...">
+    </div>
+    <div id="contenedorImagen"></div>
+    <div id="imagenNoEncontrada">Imagen no encontrada</div>
+    <div class="botonesNavegacion">
+        <button onclick="imagenAnterior()">&#8592; Anterior</button>
+        <button onclick="imagenSiguiente()">Siguiente &#8594;</button>
+    </div>
+    <input type="text" id="nombreImagen" placeholder="Ingrese el nombre de la imagen">
+    <button onclick="mostrarImagen()">Mostrar Imagen</button>
+    <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>Por favor, ingrese su edad para acceder a esta página:</p>
+      <input type="number" id="edadInput" placeholder="Ingrese su edad">
+      <button id="enviarBtn" onclick="verificarEdad()">Aceptar</button>
+    </div>
+  </div>
+  <div id="overlay" class="overlay">
+    <p style="text-align: center;">Lamentamos informarte que no tienes permitido acceder a esta página en función de las restricciones de edad establecidas. Por favor, verifica que cumples con los requisitos necesarios para acceder al contenido.</p>
+  </div>
+  <style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;  
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    pointer-events: auto;  
+  }
+  .overlay-content {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    pointer-events: auto;
+  }
+</style>
+<div class="overlay">
+  <div class="overlay-content">
+    <p>Este proyecto en mantenimiento.</p>
+    <p>Lamentamos informar que este proyecto ya no está activo por el mantenimiento porfavor regresa más tarde.</p>
+    <p>Gracias por tu interés.</p>
+  </div>
+</div>
+    <script src="/resources/js/script-21.js"></script>
+    <script src="/resources/js/script-23.js"></script>
+</body>
+</html>
