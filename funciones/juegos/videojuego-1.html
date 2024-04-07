@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/style-14.css">
+  <title>Juego de la Serpiente</title>
+</head>
+<body>
+  <div id="gameOverText">Perdiste el juego</div>
+  <div id="score">Puntaje: 0</div>
+  <canvas id="snakeCanvas" width="400" height="400"></canvas>
+  <div id="buttonContainer">
+    <button onclick="changeDirection('up')">↑</button>
+    <div>
+      <button onclick="changeDirection('left')">←</button>
+      <button onclick="changeDirection('right')">→</button>
+    </div>
+    <button onclick="changeDirection('down')">↓</button>
+  </div>
+  <button onclick="resetGame()">Volver a Jugar</button>
+    <script src="/resources/js/script-13.js"></script>
+  <script src="/resources/js/script-31.js"></script>
+</body>
+</html>
