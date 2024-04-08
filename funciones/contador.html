@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://webcodem.github.io/resources/multimedia/logo-2.jpg">
     <link rel="stylesheet" href="/resources/css/style-11.css">
+    <link rel="stylesheet" href="/resources/css/style-30.css">
     <title>Contador de Deudas</title>
 </head>
 <body>
+<div class="popup-container" style="display: none;">
+  <div class="popup">
+    <h2>No tienes una cuenta iniciada</h2>
+    <p>Para acceder a este contenido, por favor inicia sesión o registre una cuenta nueva.</p>
+  </div>
+</div>
 <h1>Contador de Deudas</h1>
 <p>Deuda total: Q<span id="debt">0.00</span></p>
 <label for="newDebt">Agregar nueva deuda:</label>
@@ -24,6 +31,7 @@
 <br>
 <p>Historial de pagos</p>
 <div id="paymentMessages"></div>
+<script src="/resources/js/script-35.js"></script>
 <script src="/resources/js/script-9.js"></script>
 <script src="/resources/js/script-31.js"></script>
 </body>
