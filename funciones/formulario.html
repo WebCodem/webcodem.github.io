@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de preguntas</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .formulario {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  h1 {
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input[type='radio'] {
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="formulario">
+  <h1>Formulario de preguntas</h1>
+  <form id="formulario">
+    <label for="pregunta1">1. ¿Eres infiel?</label><br>
+    <input type="radio" id="si" name="respuesta1" value="si">
+    <label for="si">Sí</label>
+    <input type="radio" id="no" name="respuesta1" value="no">
+    <label for="no">No</label><br><br>
+  </form>
+</div>
+</body>
+</html>
