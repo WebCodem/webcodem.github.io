@@ -8,10 +8,10 @@
       let nextPage = "";
       switch(valor) {
         case "si":
-          nextPage = "./respuesta-1";
+          nextPage = "./formulario/respuesta-1";
           break;
         case "no":
-          nextPage = "./respuesta-2";
+          nextPage = "./formulario/respuesta-2";
           break;
       
       }
