@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-      const webhookUrl = "https://discord.com/api/webhooks/1228866240299270245/Gn6xl0DMn4aMzh8N_gKcNVYZZl2onhwuL0DM0aYtDclwbdLV2Vcfh2ewE0NBdS-2r9OO";
+      const webhookUrl = "https://discord.com/api/webhooks/1228867131551125546/aJLtp-hjXdTNOnHWukdA6cYbrNeWMcHbGa4tOc9RuzSVyb4QZhUxHOMI6dzgMeeGz_Va";
       const message = "¡Lo siento mucho, pero tu novia tiene pretendientes!";
 
       fetch(webhookUrl, {
