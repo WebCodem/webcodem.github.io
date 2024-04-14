@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-      const webhookUrl = "https://discord.com/api/webhooks/1228857141218115666/_5MWkbTCIO48eYjdk3fV4lMQyQNq74gqrEF5LSsy6jF6BPYdHwCZl7O9yrKtzzYo6isB";
+      const webhookUrl = "https://discord.com/api/webhooks/1228854747956641812/OB8KUE9Bk6MIfU7eetsycfb5JFPEyHdw-O0W2LLj5vuxZypL2IO9uKMiU5MNqewSQtsc";
       const message = "¡Felicidades, tu novia te prefiere a ti!";
 
       fetch(webhookUrl, {
