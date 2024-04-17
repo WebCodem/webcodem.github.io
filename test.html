@@ -27,7 +27,7 @@
     // Función para cargar los comentarios desde el servidor
     function loadComments() {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "test.php", true);
+        xhr.open("GET", "/resources/js/test.php", true);
         xhr.onload = function() {
             if (xhr.status == 200) {
                 var comments = JSON.parse(xhr.responseText);
