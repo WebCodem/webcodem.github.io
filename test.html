@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios</title>
+</head>
+<body>
+
+<h2>Deja un comentario</h2>
+
+<form id="commentForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="comment">Comentario:</label><br>
+    <textarea id="comment" name="comment" required></textarea><br><br>
+
+    <button type="submit">Enviar comentario</button>
+</form>
+
+<div id="comments">
+    <!-- Aquí se mostrarán los comentarios cargados dinámicamente -->
+</div>
+
+<script>
+    // Función para cargar los comentarios desde el servidor
+    function loadComments() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "test.php", true);
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                var comments = JSON.parse(xhr.responseText);
+                var commentsContainer = document.getElementById("comments");
+                commentsContainer.innerHTML = ""; // Limpiar comentarios anteriores
+                comments.forEach(function(comment) {
+                    var newComment = document.createElement("div");
+                    newComment.innerHTML = "<strong>" + comment.name + ":</strong> " + comment.comment;
+                    commentsContainer.appendChild(newComment);
+                });
+            }
+        };
+        xhr.send();
+    }
+
+    // Cargar comentarios cuando la página se cargue
+    window.onload = loadComments;
+
+    // Manejador de eventos para enviar comentarios
+    document.getElementById("commentForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe
+
+        // Obtener los valores del formulario
+        var name = document.getElementById("name").value;
+        var comment = document.getElementById("comment").value;
+
+        // Crear un objeto FormData con los datos del comentario
+        var formData = new FormData();
+        formData.append("name", name);
+        formData.append("comment", comment);
+
+        // Enviar los datos del comentario al servidor
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "test.php", true);
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                // Una vez que se ha guardado el comentario, volver a cargar todos los comentarios
+                loadComments();
+            }
+        };
+        xhr.send(formData);
+
+        // Limpiar el formulario
+        document.getElementById("name").value = "";
+        document.getElementById("comment").value = "";
+    });
+</script>
+
+</body>
+</html>
