@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/style-30.css">
-    <link rel="stylesheet" href="/resources/css/style-7.css">
-    <title>Generador de Contraseñas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/resources/css/style-30.css">
+<link rel="stylesheet" href="/resources/css/style-7.css">
+<title>Generador de Contraseñas Seguras</title>
 </head>
 <body>
-    <div class="popup-container" style="display: none;">
-  <div class="popup">
-    <h2>No tienes una cuenta iniciada</h2>
-    <p>Para acceder a este contenido, por favor inicia sesión o registre una cuenta nueva.</p>
+<h2>Generador de Contraseñas Seguras</h2>
+<div id="personalizacion">
+  <div class="checkbox-container">
+    <label class="checkbox-label" for="mayusculas">Mayúsculas (A-Z)</label>
+    <div class="checkbox-square" id="mayusculas"></div>
   </div>
-    </div>
-    <h1>Generador de Contraseñas</h1>
-    <p>Haz clic en el botón para generar una contraseña segura:</p>
-    <div>
-        <button onclick="generarContrasena()">Generar Contraseña</button>
-        <p id="contrasenaGenerada"></p>
-        <a id="copiarContrasena" onclick="copiarContrasena()"><iconify-icon icon="ph:clipboard-bold"></iconify-icon><script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script> Copiar</a>
-        <p id="mensajeExito"></p>
-    </div>
-    <script src="/resources/js/script-35.js"></script>
-    <script src="/resources/js/script-7.js"></script>
-    <script src="/resources/js/script-31.js"></script>
+  <div class="checkbox-container">
+    <label class="checkbox-label" for="minusculas">Minúsculas (a-z)</label>
+    <div class="checkbox-square" id="minusculas"></div>
+  </div>
+  <div class="checkbox-container">
+    <label class="checkbox-label" for="numeros">Números (0-9)</label>
+    <div class="checkbox-square" id="numeros"></div>
+  </div>
+  <div class="checkbox-container">
+    <label class="checkbox-label" for="simbolos">Símbolos (!@#$)</label>
+    <div class="checkbox-square" id="simbolos"></div>
+  </div>
+</div>
+<input type="number" id="longitud" name="longitud" min="4" max="32" placeholder="Longitud" required><br><br>
+<button class="generar-contraseña" onclick="generarContraseña()">Generar</button><br><br>
+<input type="text" id="contraseñaGenerada" readonly>
+<script src="/resources/js/script-35.js"></script>
+<script src="/resources/js/script-7.js"></script>
+<script src="/resources/js/script-31.js"></script>
 </body>
 </html>
