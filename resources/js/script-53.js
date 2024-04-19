@@ -1,5 +1,5 @@
-    let selectedBlock = ""; 
- 
+let selectedBlock = ""; 
+
     document.querySelectorAll('.block-image').forEach(image => {
       image.addEventListener('click', () => {
         if (image.id === 'delete-block') {
@@ -20,7 +20,7 @@
 
       block.addEventListener('click', () => {
         if (selectedBlock === null) {
-          block.style.backgroundImage = '';
+          block.style.backgroundImage = ''; 
         } else {
           block.style.backgroundImage = `url(${selectedBlock})`;
         }
@@ -44,12 +44,12 @@
         if (block.style.backgroundImage) {
           const image = new Image();
           image.src = block.style.backgroundImage.slice(4, -1).replace(/"/g, "");
-          ctx.drawImage(image, x, y, 50, 50);
+          ctx.drawImage(image, x * 50, y * 50, 50, 50); 
         }
-        x += 50;
-        if (x >= container.offsetWidth) {
+        x++;
+        if (x >= numBlocks) {
           x = 0;
-          y += 50;
+          y++;
         }
       });
 
