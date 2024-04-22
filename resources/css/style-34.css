@@ -58,3 +58,14 @@
             line-height: 1.5;
             color: #fff; 
         }
+
+        a {
+        color: #00bfff;
+        text-decoration: none;
+  
+        }
+
+        a:hover {
+        color: #87ceeb;
+        text-decoration: underline;
+        }
