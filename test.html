@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comentarios</title>
+  <!-- Estilos CSS -->
+  <style>
+    /* Estilos para los comentarios */
+    .comment {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Comentarios</h1>
+
+  <!-- Formulario para enviar comentarios -->
+  <form id="commentForm">
+    <textarea id="commentContent" placeholder="Escribe tu comentario"></textarea>
+    <button type="submit">Enviar comentario</button>
+  </form>
+
+  <!-- Contenedor para mostrar los comentarios -->
+  <div id="commentsContainer"></div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
+  <script type="module">
+    // Importar las funciones necesarias de los SDK que necesitas
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { firestore } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+    // Tu configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyAVix7ZqWOtJ5oklojWH_EYMjv3ala3x_w",
+      authDomain: "webcodem-e4ee9.firebaseapp.com",
+      projectId: "webcodem-e4ee9",
+      storageBucket: "webcodem-e4ee9.appspot.com",
+      messagingSenderId: "712594004942",
+      appId: "1:712594004942:web:5c93744c31698c1a72299f"
+    };
+
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = firestore(app);
+
+    // Función para enviar un comentario
+    const sendComment = (content) => {
+      db.collection("comments").add({
+        content: content,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      })
+      .then(() => {
+        console.log("Comentario enviado correctamente");
+        showComments(); // Actualizar la lista de comentarios después de enviar uno nuevo
+      })
+      .catch((error) => {
+        console.error("Error al enviar comentario: ", error);
+      });
+    };
+
+    // Función para mostrar los comentarios
+    const showComments = () => {
+      const commentsContainer = document.getElementById("commentsContainer");
+      commentsContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar los comentarios
+
+      db.collection("comments").orderBy("timestamp", "desc").get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const commentData = doc.data();
+          const commentElement = document.createElement("div");
+          commentElement.classList.add("comment");
+          commentElement.textContent = commentData.content;
+          commentsContainer.appendChild(commentElement);
+        });
+      })
+      .catch((error) => {
+        console.error("Error al obtener comentarios: ", error);
+      });
+    };
+
+    // Manejador de eventos para el envío del formulario de comentario
+    document.getElementById("commentForm").addEventListener("submit", (event) => {
+      event.preventDefault(); // Evitar el envío del formulario
+
+      const commentContent = document.getElementById("commentContent").value;
+      if (commentContent.trim() !== "") {
+        sendComment(commentContent);
+        document.getElementById("commentContent").value = ""; // Limpiar el contenido del textarea
+      } else {
+        alert("Por favor, escribe un comentario antes de enviarlo.");
+      }
+    });
+
+    // Mostrar los comentarios al cargar la página
+    showComments();
+  </script>
+</body>
+</html>
