@@ -1,104 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comentarios</title>
-  <!-- Estilos CSS -->
-  <style>
-    /* Estilos para los comentarios */
-    .comment {
-      margin-bottom: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Comentarios</h1>
-
-  <!-- Formulario para enviar comentarios -->
-  <form id="commentForm">
-    <textarea id="commentContent" placeholder="Escribe tu comentario"></textarea>
-    <button type="submit">Enviar comentario</button>
-  </form>
-
-  <!-- Contenedor para mostrar los comentarios -->
-  <div id="commentsContainer"></div>
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
-  <script type="module">
-    // Importar las funciones necesarias de los SDK que necesitas
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-    import { firestore } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
-
-    // Tu configuración de Firebase
+  <!-- Firebase JavaScript SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js"></script>
+  <script>
+    // Configura tu proyecto de Firebase
     const firebaseConfig = {
-      apiKey: "AIzaSyAVix7ZqWOtJ5oklojWH_EYMjv3ala3x_w",
-      authDomain: "webcodem-e4ee9.firebaseapp.com",
-      projectId: "webcodem-e4ee9",
-      storageBucket: "webcodem-e4ee9.appspot.com",
-      messagingSenderId: "712594004942",
-      appId: "1:712594004942:web:5c93744c31698c1a72299f"
+      apiKey: "AIzaSyD8fP4yRGrjzy-TGt5U7US5TSdTNnyJi_E",
+      authDomain: "webcodem-a0639.firebaseapp.com",
+      projectId: "webcodem-a0639",
+      storageBucket: "webcodem-a0639.appspot.com",
+      messagingSenderId: "954197555955",
+      appId: "1:954197555955:web:18f3f53576b1ea204b1586"
     };
 
-    // Inicializar Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = firestore(app);
+    // Inicializa Firebase
+    firebase.initializeApp(firebaseConfig);
 
-    // Función para enviar un comentario
-    const sendComment = (content) => {
-      db.collection("comments").add({
-        content: content,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      })
-      .then(() => {
-        console.log("Comentario enviado correctamente");
-        showComments(); // Actualizar la lista de comentarios después de enviar uno nuevo
-      })
-      .catch((error) => {
-        console.error("Error al enviar comentario: ", error);
+    // Referencia a la base de datos de Firebase
+    const comentariosRef = firebase.database().ref('comentarios');
+
+    // Función para agregar un comentario a Firebase
+    function agregarComentario() {
+      const nombre = document.getElementById('nombre').value;
+      const comentario = document.getElementById('comentario').value;
+
+      comentariosRef.push({
+        nombre: nombre,
+        comentario: comentario
       });
-    };
+
+      // Limpiar los campos después de agregar el comentario
+      document.getElementById('nombre').value = '';
+      document.getElementById('comentario').value = '';
+    }
 
     // Función para mostrar los comentarios
-    const showComments = () => {
-      const commentsContainer = document.getElementById("commentsContainer");
-      commentsContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar los comentarios
+    function mostrarComentarios() {
+      comentariosRef.on('value', (snapshot) => {
+        const comentarios = snapshot.val();
+        const comentariosList = document.getElementById('comentarios-list');
+        comentariosList.innerHTML = '';
 
-      db.collection("comments").orderBy("timestamp", "desc").get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          const commentData = doc.data();
-          const commentElement = document.createElement("div");
-          commentElement.classList.add("comment");
-          commentElement.textContent = commentData.content;
-          commentsContainer.appendChild(commentElement);
-        });
-      })
-      .catch((error) => {
-        console.error("Error al obtener comentarios: ", error);
+        for (let comentarioKey in comentarios) {
+          const comentario = comentarios[comentarioKey];
+          comentariosList.innerHTML += `<li><strong>${comentario.nombre}</strong>: ${comentario.comentario}</li>`;
+        }
       });
-    };
-
-    // Manejador de eventos para el envío del formulario de comentario
-    document.getElementById("commentForm").addEventListener("submit", (event) => {
-      event.preventDefault(); // Evitar el envío del formulario
-
-      const commentContent = document.getElementById("commentContent").value;
-      if (commentContent.trim() !== "") {
-        sendComment(commentContent);
-        document.getElementById("commentContent").value = ""; // Limpiar el contenido del textarea
-      } else {
-        alert("Por favor, escribe un comentario antes de enviarlo.");
-      }
-    });
+    }
 
     // Mostrar los comentarios al cargar la página
-    showComments();
+    mostrarComentarios();
   </script>
+</head>
+<body>
+  <h1>Zona de Comentarios</h1>
+  <form onsubmit="event.preventDefault(); agregarComentario()">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required><br>
+    <label for="comentario">Comentario:</label><br>
+    <textarea id="comentario" required></textarea><br>
+    <button type="submit">Agregar Comentario</button>
+  </form>
+  <ul id="comentarios-list"></ul>
 </body>
 </html>
