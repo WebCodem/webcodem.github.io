@@ -6,4 +6,4 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("close").addEventListener("click", function() {
       document.getElementById("overlay").style.display = "none";
     });
-  });y 
+  });
