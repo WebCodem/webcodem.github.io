@@ -3,9 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/resources/css/style-36.css">
   <title>Gráfica de Visitas</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff; 
+      font-family: Arial, sans-serif; 
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #myChart {
+      max-width: 800px;
+      width: 100%; 
+      margin-bottom: 20px;
+    }
+    .info {
+      text-align: center; 
+      margin-bottom: 20px; 
+    }
+    .info h1 {
+      font-size: 20px; 
+      margin-bottom: 10px;
+    }
+    .info p {
+      font-size: 16px; 
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
   <div class="info">
@@ -15,6 +45,6 @@
     <p>¡Explora y descubre cuántas personas están visitando nuestra página!</p>
   </div>
   <canvas id="myChart"></canvas> 
-<script src="/resources/js/script-54.js"></script>
+  <script src="/resources/js/script-54.js"></script>
 </body>
 </html>
