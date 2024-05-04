@@ -56,9 +56,6 @@
     transition: background-color 0.3s ease;
     margin-top: 10px; 
   }
-  .copy-button:hover {
-    background-color: #45a049;
-  }
   textarea {
     width: calc(100% - 24px);
     height: auto;
