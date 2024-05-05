@@ -75,4 +75,8 @@ function avanzarVisita() {
 }
 
 actualizarGrafico();
-setInterval(avanzarVisita, intervaloActualizacion); 
+setInterval(avanzarVisita, intervaloActualizacion); // Actualización cada 5 segundos
+
+window.onbeforeunload = function() {
+  localStorage.setItem('totalVisitas', getTotalVisitas());
+};
