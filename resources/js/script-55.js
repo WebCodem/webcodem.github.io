@@ -1,6 +1,6 @@
 var myChart; 
 var maxVisitas = 10000; 
-var intervaloActualizacion = 60 * 1000; 
+var intervaloActualizacion = 5 * 1000; 
 
 function getTotalVisitas() {
   return parseInt(localStorage.getItem('totalVisitas')) || 0;
@@ -74,7 +74,5 @@ function avanzarVisita() {
   }
 }
 
-setTimeout(() => {
-  actualizarGrafico();
-  setInterval(avanzarVisita, intervaloActualizacion);
-}, 5000);
+actualizarGrafico();
+setInterval(avanzarVisita, intervaloActualizacion); 
