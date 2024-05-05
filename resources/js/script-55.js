@@ -1,6 +1,6 @@
 var myChart; 
 var maxVisitas = 10000; 
-var intervaloActualizacion = 5 * 1000; 
+var intervaloActualizacion = 3 * 1000; 
 
 function getTotalVisitas() {
   return parseInt(localStorage.getItem('totalVisitas')) || 0;
@@ -69,13 +69,14 @@ function avanzarVisita() {
   if (totalVisitas >= maxVisitas) {
     reiniciarGrafica();
   } else {
-    localStorage.setItem('totalVisitas', totalVisitas + 1);
+    var nuevasVisitas = simularFluctuacion(totalVisitas + 1);
+    localStorage.setItem('totalVisitas', nuevasVisitas);
     actualizarGrafico();
   }
 }
 
 actualizarGrafico();
-setInterval(avanzarVisita, intervaloActualizacion); // Actualización cada 5 segundos
+setInterval(avanzarVisita, intervaloActualizacion); 
 
 window.onbeforeunload = function() {
   localStorage.setItem('totalVisitas', getTotalVisitas());
