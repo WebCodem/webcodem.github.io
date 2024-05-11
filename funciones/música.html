@@ -213,6 +213,42 @@
             Tu navegador no soporta la reproducción de audio.
         </audio>
     </div>
+    <br>
+    <div class="playlist-item" id="song6">
+        <img src="https://cdn.discordapp.com/attachments/1130375877490909184/1238910276460609646/Escolta_Suicida.jpg?ex=6641009b&is=663faf1b&hm=8d0f56b003e79f58eaf52d3fbd4f8480d9fb6f3cdaa1631124226ff5d7bf487a&" alt="Portada de la canción 6">
+        <div class="name">
+            <span>Escolta Suicida</span>
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleInfo('info6')"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </div>
+    <div id="info6" class="song-info">
+        <p>Artista: Beto Quintanilla</p>
+        <p>Género: Regional Mexicano</p>
+        <audio id="audio6" controls controlsList="nodownload">
+            <source src="https://cdn.discordapp.com/attachments/1130375877490909184/1238905276401324042/Escolta_Suicida.mp3?ex=6640fbf3&is=663faa73&hm=37fd3b2d99d4734d8f988f411277c7042cc6fca88d3113b873726f671cffeefa&" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+   </div>
+<br>
+<div class="playlist-item" id="song7">
+        <img src="https://cdn.discordapp.com/attachments/1130375877490909184/1238908643907207239/Screenshot_20240511-112045_Spotify2.jpg?ex=6640ff16&is=663fad96&hm=60c1fe33748814091854bf94079207393cf08a2465717c6ad41cba8a338ebc7c&" alt="Portada de la canción 7">
+        <div class="name">
+            <span>Piquete de Ojos</span>
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleInfo('info7')"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </div>
+    <div id="info7" class="song-info">
+        <p>Artista: Beto Quintanilla</p>
+        <p>Género: Regional Mexicano</p>
+        <audio id="audio7" controls controlsList="nodownload">
+            <source src="https://cdn.discordapp.com/attachments/1130375877490909184/1238905276401324042/Escolta_Suicida.mp3?ex=6640fbf3&is=663faa73&hm=37fd3b2d99d4734d8f988f411277c7042cc6fca88d3113b873726f671cffeefa&" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
     <script>
         const searchInput = document.getElementById('searchInput');
         const playlistItems = document.querySelectorAll('.playlist-item');
@@ -253,6 +289,8 @@
         const audio3 = document.getElementById('audio3');
         const audio4 = document.getElementById('audio4');
         const audio5 = document.getElementById('audio5');
+        const audio6 = document.getElementById('audio6');
+        const audio7 = document.getElementById('audio7');
         audio1.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
@@ -270,6 +308,14 @@
             this.play();
         });
         audio5.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        audio6.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        audio7.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
         });
