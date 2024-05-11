@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/style-30.css">
+    <title>Música - WebCodem</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Agregamos FontAwesome para los iconos -->
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .playlist-item {
+            margin-bottom: 20px;
+            position: relative;
+            text-align: center;
+        }
+        .playlist-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .playlist-item .name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            margin: 0;
+        }
+        .playlist-item .name span {
+            display: block;
+            font-size: 18px;
+        }
+        .btn-container {
+            position: absolute;
+            bottom: 2px;
+            right: 10px;
+        }
+        .btn {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .song-info {
+            display: none;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            margin-top: 20px;
+            text-align: center;
+            animation: slideDown 0.5s ease;
+        }
+        .song-info p {
+            margin-bottom: 10px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        #searchInput {
+            width: 95%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1E1E1E;
+            color: #fff;
+        }
+        #playlist {
+            list-style-type: none;
+            padding: 0;
+        }
+        #playlist li {
+            margin-bottom: 10px;
+        }
+        #playlist li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+        #playlist li a:hover {
+            background-color: #555;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="popup-container" style="display: none;">
+  <div class="popup">
+    <h2>No tienes una cuenta iniciada</h2>
+    <p>Para acceder a este contenido, por favor inicia sesión o registre una cuenta nueva.</p>
+  </div>
+  </div>
+    <h1>Música</h1>
+    <input type="text" id="searchInput" placeholder="Buscar música">
+    <h2>Categoría - Corridos</h2>
+    <div class="playlist-item" id="song1">
+        <img src="https://cdn.discordapp.com/attachments/1130375877490909184/1238719525243846667/Juan_Martha.jpg?ex=66404ef5&is=663efd75&hm=b419b79a159e60c004370b86c552906e52e679816531e696785f08d38e26cc8a&" alt="Portada de la canción 1">
+        <div class="name">
+            <span>Juan Martha</span>
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleInfo('info1')"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </div>
+    <div id="info1" class="song-info">
+        <p>Artista: Banda Limón</p>
+        <p>Género: Regional Mexicano</p>
+        <audio id="audio1" controls controlsList="nodownload">
+            <source src="https://cdn.discordapp.com/attachments/1130375877490909184/1238719889888251994/Juan_Martha.mp3?ex=66404f4c&is=663efdcc&hm=a76012efb4d2b2d5ce838031c3c263203f48a9ec841dd3f798a3e5765cce0faf&" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+    <div class="playlist-item" id="song2">
+        <img src="https://cdn.discordapp.com/attachments/1130375877490909184/1238719524967284806/sc-9.jpg?ex=66404ef5&is=663efd75&hm=ea94d2a421fb662ec5c6917e2f2a9cac4916d9179e8e03d785e446e3e4834cbc&" alt="Portada de la canción 2">
+        <div class="name">
+            <span>La Chimichanga</span>
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleInfo('info2')"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </div>
+    <div id="info2" class="song-info">
+        <p>Artista: Yahir Saldivar</p>
+        <p>Género: Regional Mexicano</p>
+        <audio id="audio2" controls controlsList="nodownload">
+            <source src="https://cdn.discordapp.com/attachments/1130375877490909184/1238719889519415336/sc-9.mp3?ex=66404f4b&is=663efdcb&hm=a66433bfa5acbcad1883dc7feecae829e6cc52265c86a905a6c7bd6e1c7f86de&" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+    <div class="playlist-item" id="song3">
+        <img src="https://cdn.discordapp.com/attachments/1130375877490909184/1238723180676255854/Mis_Tres_Viejas.jpg?ex=6640525c&is=663f00dc&hm=1957be126863e51a1ecfa60e8c589dd3ecbffea50194806214a13121687c368e&" alt="Portada de la canción 3">
+        <div class="name">
+            <span>Mis Tres Viejas</span>
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleInfo('info3')"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </div>
+    <div id="info3" class="song-info">
+        <p>Artista: Los Tucanes</p>
+        <p>Género: Regional Mexicano</p>
+        <audio id="audio3" controls controlsList="nodownload">
+            <source src="https://cdn.discordapp.com/attachments/1130375877490909184/1238723259042627656/Mis_Tres_Viejas.mp3?ex=6640526f&is=663f00ef&hm=d4ed6a883b4f168a02c80fee913b85947608744c7c102a887b20e0e169bd9fd4&" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+    <div class="playlist-item" id="song4">
+        <img src="https://cdn.discordapp.com/attachments/1130375877490909184/1238736079344111686/Las_Monjitas.jpg?ex=66405e5f&is=663f0cdf&hm=eb6738244054cd6bd9eadb10ae1a7030b9e067ebe8da27360c6ae980d4f588cc&" alt="Portada de la canción 4">
+        <div class="name">
+            <span>Las Monjitas</span>
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleInfo('info4')"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </div>
+    <div id="info4" class="song-info">
+        <p>Artista: Los Tucanes</p>
+        <p>Género: Regional Mexicano</p>
+        <audio id="audio4" controls controlsList="nodownload">
+            <source src="https://cdn.discordapp.com/attachments/1130375877490909184/1238728691824066580/Las_Monjitas.mp3?ex=6640577e&is=663f05fe&hm=2eb5b2850fd7415a1ac5132ef5956ff66f85813aed3fc63899dc183e3b292a19&" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+    <div class="playlist-item" id="song5">
+        <img src="https://cdn.discordapp.com/attachments/1130375877490909184/1238737155879075922/JGL.jpg?ex=66405f60&is=663f0de0&hm=d02c831f35d618a47055d4842a2ab68b390f8d37d65b6ffebb01e205cd1fb90a&" alt="Portada de la canción 5">
+        <div class="name">
+            <span>La Adictiva</span>
+        </div>
+        <div class="btn-container">
+            <button class="btn" onclick="toggleInfo('info5')"><i class="fas fa-chevron-up"></i></button>
+        </div>
+    </div>
+    <div id="info5" class="song-info">
+        <p>Artista: La Adictiva Banda San José de Mesillas Luis R Conriquez</p>
+        <p>Género: Regional Mexicano</p>
+        <audio id="audio5" controls controlsList="nodownload">
+            <source src="https://cdn.discordapp.com/attachments/1130375877490909184/1238737458481467392/La_Adictiva_Banda_San_Jose_de_Mesillas_Luis_R_Conriquez.mp3?ex=66405fa8&is=663f0e28&hm=fb3154b2d9ace345d42f852859094285b19024ef233b350a391954bc83fd5195&" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const playlistItems = document.querySelectorAll('.playlist-item');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            playlistItems.forEach(function(item) {
+                const itemName = item.textContent.toLowerCase();
+                if (itemName.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        function toggleInfo(infoId) {
+            const info = document.getElementById(infoId);
+            if (info.style.display === 'none' || info.style.display === '') {
+                info.style.display = 'block';
+            } else {
+                info.style.display = 'none';
+            }
+        }
+
+        const songs = document.querySelectorAll('.playlist-item');
+        songs.forEach(function(song) {
+            song.addEventListener('click', function() {
+                const audioId = this.getAttribute('id').replace('song', 'audio');
+                const audio = document.getElementById(audioId);
+                audio.currentTime += 10; 
+            });
+        });
+
+        const audio1 = document.getElementById('audio1');
+        const audio2 = document.getElementById('audio2');
+        const audio3 = document.getElementById('audio3');
+        const audio4 = document.getElementById('audio4');
+        const audio5 = document.getElementById('audio4');
+        audio1.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        audio2.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+       audio3.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        audio4.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        audio5.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+</script>
+<script src="/resources/js/script-35.js"></script>
+</body>
+</html>
