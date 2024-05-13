@@ -1,5 +1,5 @@
    body {
-        background-image: url('/resources/multimedia/fondo.gif');
+        background-image: url('https://webcodem-media.github.io/resources/multimedia/imagen/fondo.gif');
         background-size: cover; 
         background-repeat: no-repeat; 
         background-attachment: fixed; 
