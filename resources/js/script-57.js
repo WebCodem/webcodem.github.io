@@ -40,7 +40,7 @@ function displayUserData(username, profilePic) {
 }
 
 function sendMessage() {
-    var userInput = document.getElementById("user-input").value.trim().toLowerCase();
+    var userInput = document.getElementById("user-input").value.trim();
     if (!userInput) {
         alert("Por favor, escribe un mensaje antes de enviar.");
         return;
@@ -96,37 +96,65 @@ function typeMessage(element, message) {
 }
 
 function getBotResponse(userInput) {
-    var botResponse = "";
+    var lowerCaseInput = userInput.toLowerCase();
 
-    if (userInput.includes("hola")) {
-        botResponse = "¡Hola! ¿Cómo estás?";
-    } else if (userInput.includes("clima")) {
-        botResponse = "¿Quieres saber el clima de tu ubicación?";
-    } else if (userInput.includes("adiós")) {
-        botResponse = "¡Hasta luego! Si necesitas algo más, aquí estaré.";
+    if (lowerCaseInput.includes("hola")) {
+        return "¡Hola! ¿Cómo estás?";
+    } else if (lowerCaseInput.includes("clima")) {
+        return "¿Quieres saber el clima de tu ubicación?";
+    } else if (lowerCaseInput.includes("adiós")) {
+        return "¡Hasta luego! Si necesitas algo más, aquí estaré.";
     } else if (userInput.includes("+")) {
-        botResponse = sumar(userInput);
+        return sumar(userInput);
     } else if (userInput.includes("-")) {
-        botResponse = restar(userInput);
+        return restar(userInput);
     } else if (userInput.includes("×")) {
-        botResponse = multiplicar(userInput);
+        return multiplicar(userInput);
     } else if (userInput.includes("÷") || userInput.includes("/")) {
-        botResponse = dividir(userInput);
-    } else if (userInput.includes("raíz cuadrada")) {
-        botResponse = raizCuadrada(userInput);
-    } else if (userInput.includes("hora")) {
-        botResponse = obtenerHora();
-    } else if (userInput.includes("día")) {
-        botResponse = obtenerDia();
+        return dividir(userInput);
+    } else if (lowerCaseInput.includes("raíz cuadrada")) {
+        return raizCuadrada(userInput);
+    } else if (lowerCaseInput.includes("hora")) {
+        return obtenerHora();
+    } else if (lowerCaseInput.includes("día")) {
+        return obtenerDia();
+    } else if (lowerCaseInput.includes("cuál es tu nombre")) {
+        return "Soy CodeBot tu asistente virtual.";
+    } else if (lowerCaseInput.includes("qué puedes hacer")) {
+        return "Puedo ayudarte con cálculos, decirte la hora y el día, y responder preguntas simples.";
+    } else if (lowerCaseInput.includes("cuéntame un chiste")) {
+        return "¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter.";
+    } else if (lowerCaseInput.includes("dónde estás")) {
+        return "Estoy en la nube, siempre disponible para ayudarte.";
+    } else if (lowerCaseInput.includes("cómo te llamas")) {
+        return "Me llamo CodeBot.";
+    } else if (lowerCaseInput.includes("cuál es tu color favorito")) {
+        return "No tengo un color favorito, pero me gustan todos los colores.";
+    } else if (lowerCaseInput.includes("cuál es tu comida favorita")) {
+        return "No como, pero me imagino que la pizza es deliciosa.";
+    } else if (lowerCaseInput.includes("qué música te gusta")) {
+        return "No escucho música, pero me encanta ayudar a la gente.";
+    } else if (lowerCaseInput.includes("qué día es hoy")) {
+        return obtenerDia();
+    } else if (lowerCaseInput.includes("qué hora es")) {
+        return obtenerHora();
+    } else if (lowerCaseInput.includes("quién es tu creador")) {
+        return "Fui creado por un equipo de desarrolladores talentosos.";
+    } else if (lowerCaseInput.includes("puedes ayudarme con matemáticas")) {
+        return "Claro, puedo ayudarte con sumas, restas, multiplicaciones, divisiones y raíces cuadradas.";
+    } else if (lowerCaseInput.includes("cómo estás")) {
+        return "Estoy aquí para ayudarte en lo que necesites.";
+    } else if (lowerCaseInput.includes("cuál es tu propósito")) {
+        return "Mi propósito es asistirte y hacer tu vida más fácil.";
+    } else if (lowerCaseInput.includes("puedes contarme algo interesante")) {
+        return "¿Sabías que el sol es 330,000 veces más masivo que la Tierra?";
     } else {
-        botResponse = "Lo siento, no entendí. ¿Puedes reformular tu pregunta?";
+        return "Lo siento, no entendí. ¿Puedes reformular tu pregunta?";
     }
-
-    return botResponse;
 }
 
 function extraerNumeros(input, operador) {
-    
+
     let regex = new RegExp(`[^0-9.${operador}]`, 'g');
     let cleanedInput = input.replace(regex, '').trim();
     
