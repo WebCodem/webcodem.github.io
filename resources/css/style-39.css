@@ -99,8 +99,14 @@ input[type="text"] {
     font-size: 16px;
     position: fixed; 
     bottom: 0; 
-    left: 0;
+    left: 0; 
     z-index: 1; 
+    outline: none; 
+}
+
+input[type="text"]:focus {
+    outline: none; 
+    box-shadow: none;
 }
 
 button {
