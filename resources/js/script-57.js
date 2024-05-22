@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     const savedUsername = localStorage.getItem('username');
     const savedProfilePic = localStorage.getItem('profilePic');
+    const isBanned = localStorage.getItem('isBanned');
+
+    if (isBanned === 'true') {
+        alert("Estás baneado por usar palabras inapropiadas.");
+        document.getElementById("user-input").disabled = true;
+        return;
+    }
 
     if (savedUsername && savedProfilePic) {
         displayUserData(savedUsername, savedProfilePic);
@@ -24,7 +31,7 @@ function displayUserData(username, profilePic) {
     }
 
     userContainer.innerHTML = '';
-    
+
     const img = document.createElement('img');
     img.src = profilePic;
     img.alt = 'Foto de perfil';
@@ -39,10 +46,28 @@ function displayUserData(username, profilePic) {
     img.onclick = span.onclick = chooseProfilePicture;
 }
 
+const bannedWords = ["puta", "mierda", "cerote", "shit", "bitch", "perra", "zorra", "malparido", "malparida", "pendejo", "pendeja", "estúpido", "estupido", "estúpida", "estupida", "inbecil", "idiota", "maldita", "maldito"]; 
+
+function containsBannedWords(input) {
+    for (let word of bannedWords) {
+        if (input.includes(word)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function sendMessage() {
     var userInput = document.getElementById("user-input").value.trim();
     if (!userInput) {
         alert("Por favor, escribe un mensaje antes de enviar.");
+        return;
+    }
+
+    if (containsBannedWords(userInput.toLowerCase())) {
+        alert("Se detectaron palabras inapropiadas. Estás baneado.");
+        localStorage.setItem('isBanned', 'true');
+        document.getElementById("user-input").disabled = true;
         return;
     }
 
@@ -154,10 +179,8 @@ function getBotResponse(userInput) {
 }
 
 function extraerNumeros(input, operador) {
-
     let regex = new RegExp(`[^0-9.${operador}]`, 'g');
     let cleanedInput = input.replace(regex, '').trim();
-    
     let numeros = cleanedInput.split(operador).map(num => parseFloat(num.trim()));
     return numeros;
 }
@@ -194,39 +217,29 @@ function dividir(input) {
     if (numeros.length < 2 || numeros.some(isNaN)) {
         return "Por favor ingresa al menos dos números válidos para dividir.";
     }
-    const resultado = numeros.reduce((total, num, index) => {
-        if (index === 0) {
-            return num;
-        } else {
-            if (num === 0) {
-                return "No se puede dividir entre cero.";
-            } else {
-                return total / num;
-            }
-        }
-    });
+    const resultado = numeros.reduce((total, num) => total / num);
     return `El resultado de la división es: ${resultado}`;
 }
 
 function raizCuadrada(input) {
-    const numero = parseFloat(input.match(/(\d+(\.\d+)?)/)[0]);
+    const numero = parseFloat(input.replace(/[^0-9.]/g, '').trim());
     if (isNaN(numero)) {
-        return "Por favor ingresa un número válido para calcular su raíz cuadrada.";
+        return "Por favor ingresa un número válido para calcular la raíz cuadrada.";
     }
     const resultado = Math.sqrt(numero);
     return `La raíz cuadrada de ${numero} es: ${resultado}`;
 }
 
 function obtenerHora() {
-    const ahora = new Date();
-    const hora = ahora.getHours();
-    const minutos = ahora.getMinutes();
-    return `La hora actual es: ${hora}:${minutos}`;
+    const now = new Date();
+    const horas = now.getHours();
+    const minutos = now.getMinutes();
+    return `La hora actual es: ${horas}:${minutos < 10 ? '0' + minutos : minutos}`;
 }
 
 function obtenerDia() {
-    const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-    const ahora = new Date();
-    const diaSemana = ahora.getDay();
-    return `Hoy es: ${dias[diaSemana]}`;
+    const dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+    const now = new Date();
+    const diaSemana = dias[now.getDay()];
+    return `Hoy es ${diaSemana}.`;
 }
