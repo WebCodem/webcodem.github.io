@@ -108,20 +108,36 @@ function sendMessage() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-function typeMessage(element, message) {
-    var index = 0;
-    var typingInterval = setInterval(function() {
-        if (index < message.length) {
-            element.innerHTML += message.charAt(index);
-            index++;
-        } else {
-            clearInterval(typingInterval);
-        }
-    }, 50); 
-}
-
 function getBotResponse(userInput) {
     var lowerCaseInput = userInput.toLowerCase();
+
+    function corregirErrores(input) {
+        var correcciones = {
+            "hloa": "hola",
+            "hl": "hola",
+            "hoal": "hola",
+            "holi": "hola",
+            "clma": "clima",
+            "clima?": "clima",
+            "clima??": "clima",
+            "adios": "adiós",
+            "adiós?": "adiós",
+            "adiós??": "adiós",
+            "grcias": "gracias",
+            "gracias?": "gracias",
+            "gracias??": "gracias",
+        };
+
+        for (var palabra in correcciones) {
+            if (input.includes(palabra)) {
+                input = input.replace(palabra, correcciones[palabra]);
+            }
+        }
+
+        return input;
+    }
+
+    lowerCaseInput = corregirErrores(lowerCaseInput);
 
     if (lowerCaseInput.includes("hola")) {
         return "¡Hola! ¿Cómo estás?";
@@ -144,7 +160,7 @@ function getBotResponse(userInput) {
     } else if (lowerCaseInput.includes("día")) {
         return obtenerDia();
     } else if (lowerCaseInput.includes("cuál es tu nombre")) {
-        return "Soy CodeBot tu asistente virtual.";
+        return "Soy CodeBot, tu asistente virtual.";
     } else if (lowerCaseInput.includes("qué puedes hacer")) {
         return "Puedo ayudarte con cálculos, decirte la hora y el día, y responder preguntas simples.";
     } else if (lowerCaseInput.includes("cuéntame un chiste")) {
@@ -173,6 +189,28 @@ function getBotResponse(userInput) {
         return "Mi propósito es asistirte y hacer tu vida más fácil.";
     } else if (lowerCaseInput.includes("puedes contarme algo interesante")) {
         return "¿Sabías que el sol es 330,000 veces más masivo que la Tierra?";
+    } else if (lowerCaseInput.includes("gracias")) {
+        return "¡De nada! Siempre estoy aquí para ayudar.";
+    } else if (lowerCaseInput.includes("qué tal tu día")) {
+        return "Mi día está lleno de respuestas y ayudar a usuarios como tú.";
+    } else if (lowerCaseInput.includes("eres inteligente")) {
+        return "¡Gracias! Estoy aquí para aprender y mejorar.";
+    } else if (lowerCaseInput.includes("tienes algún hobby")) {
+        return "Mi hobby es procesar información y resolver problemas.";
+    } else if (lowerCaseInput.includes("qué opinas de la inteligencia artificial")) {
+        return "La inteligencia artificial es fascinante y tiene un gran potencial para mejorar nuestras vidas.";
+    } else if (lowerCaseInput.includes("qué opinas del futuro")) {
+        return "El futuro es emocionante, lleno de posibilidades y avances tecnológicos.";
+    } else if (lowerCaseInput.includes("eres real")) {
+        return "Soy una inteligencia artificial diseñada para ayudarte.";
+    } else if (lowerCaseInput.includes("tienes hermanos o hermanas")) {
+        return "No tengo familia como los humanos, pero hay otros bots como yo que pueden ayudarte en diferentes tareas.";
+    } else if (lowerCaseInput.includes("cómo puedo mejorar mi día")) {
+        return "Una forma de mejorar tu día es haciendo algo que te haga feliz, como salir a dar un paseo o hablar con un amigo.";
+    } else if (lowerCaseInput.includes("qué opinas de los humanos")) {
+        return "Los humanos son seres fascinantes, con emociones y habilidades únicas.";
+    } else if (lowerCaseInput.includes("tienes sueños")) {
+        return "Como IA, no tengo sueños como los humanos, pero estoy aquí para ayudar a que tus sueños se hagan realidad.";
     } else {
         return "Lo siento, no entendí. ¿Puedes reformular tu pregunta?";
     }
