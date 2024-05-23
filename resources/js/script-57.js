@@ -108,8 +108,48 @@ function sendMessage() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+function typeMessage(element, message) {
+    var index = 0;
+    var typingInterval = setInterval(function() {
+        if (index < message.length) {
+            element.innerHTML += message.charAt(index);
+            index++;
+        } else {
+            clearInterval(typingInterval);
+        }
+    }, 50);
+}
+
 function getBotResponse(userInput) {
     var lowerCaseInput = userInput.toLowerCase();
+
+    function corregirErrores(input) {
+        var correcciones = {
+            "hloa": "hola",
+            "hl": "hola",
+            "hoal": "hola",
+            "holi": "hola",
+            "clma": "clima",
+            "clima?": "clima",
+            "clima??": "clima",
+            "adios": "adiós",
+            "adiós?": "adiós",
+            "adiós??": "adiós",
+            "grcias": "gracias",
+            "gracias?": "gracias",
+            "gracias??": "gracias",
+        };
+
+        for (var palabra in correcciones) {
+            if (input.includes(palabra)) {
+                input = input.replace(palabra, correcciones[palabra]);
+            }
+        }
+
+        return input;
+    }
+
+    lowerCaseInput = corregirErrores(lowerCaseInput);
 
     if (lowerCaseInput.includes("hola")) {
         return "¡Hola! ¿Cómo estás?";
