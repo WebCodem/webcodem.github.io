@@ -111,34 +111,6 @@ function sendMessage() {
 function getBotResponse(userInput) {
     var lowerCaseInput = userInput.toLowerCase();
 
-    function corregirErrores(input) {
-        var correcciones = {
-            "hloa": "hola",
-            "hl": "hola",
-            "hoal": "hola",
-            "holi": "hola",
-            "clma": "clima",
-            "clima?": "clima",
-            "clima??": "clima",
-            "adios": "adiós",
-            "adiós?": "adiós",
-            "adiós??": "adiós",
-            "grcias": "gracias",
-            "gracias?": "gracias",
-            "gracias??": "gracias",
-        };
-
-        for (var palabra in correcciones) {
-            if (input.includes(palabra)) {
-                input = input.replace(palabra, correcciones[palabra]);
-            }
-        }
-
-        return input;
-    }
-
-    lowerCaseInput = corregirErrores(lowerCaseInput);
-
     if (lowerCaseInput.includes("hola")) {
         return "¡Hola! ¿Cómo estás?";
     } else if (lowerCaseInput.includes("clima")) {
