@@ -138,6 +138,13 @@ function getBotResponse(userInput) {
             "grcias": "gracias",
             "gracias?": "gracias",
             "gracias??": "gracias",
+            "cual es tu nombre": "cuál es tu nombre",
+            "cuentame un chiste": "cuéntame un chiste",
+            "como estas": "cómo estás",
+            "como te llamas": "cómo te llamas",
+            "que día es hoy": "qué día es hoy",
+            "cual es tu nombre": "cuál es tu nombre",
+            "que horas es": "qué hora es",
         };
 
         for (var palabra in correcciones) {
