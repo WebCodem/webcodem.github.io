@@ -90,41 +90,73 @@ body {
     order: 1; 
 }
 
-input[type="text"] {
-    width: calc(100% - 105px); 
-    padding: 10px;
-    border: none;
-    background-color: #292929;
-    color: white;
-    font-size: 16px;
+.textarea {
+    width: calc(100% - 150px); 
+    max-height: 200px; 
+    overflow-y: auto; 
     position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    z-index: 1; 
+    bottom: 10px; 
+    left: 65px; 
+    padding: 10px; 
+    border: none; 
+    background-color: #292929; 
+    color: white; 
+    font-size: 16px; 
+    border-radius: 10px;
+    resize: vertical; 
     outline: none; 
+    font-family: inherit; 
 }
 
-input[type="text"]:focus {
+.textarea:focus {
     outline: none; 
-    box-shadow: none;
+    box-shadow: none; 
 }
 
-button {
-    width: 100px; 
-    padding: 10px;
+.left-button {
+    width: 40px; 
+    height: 40px; 
+    padding: 0; 
     background-color: #0073e6; 
-    color: #fff;
+    color: #fff; 
     border: none;
+    border-radius: 50%; 
     cursor: pointer;
-    font-size: 16px;
-    position: fixed; 
-    bottom: 0; 
-    right: 0; 
-    z-index: 1;
+    font-size: 16px; 
+    position: fixed;
+    bottom: 20px; 
+    left: 15px; 
+    z-index: 1; 
 }
 
-button:hover {
-    background-color: #005bab; 
+.right-button {
+    width: 40px; 
+    height: 40px; 
+    padding: 0; 
+    background-color: #0073e6; 
+    color: #fff; 
+    border: none; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    font-size: 16px; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 15px; 
+    z-index: 1; 
+}
+
+.left-button:hover, .right-button:hover {
+    background-color: #005bab;
+}
+
+.left-button svg, .right-button svg {
+    width: 60%; 
+    height: 60%; 
+}
+
+.left-button a, .right-button a {
+    color: white; 
+    text-decoration: none;
 }
 
 img {
