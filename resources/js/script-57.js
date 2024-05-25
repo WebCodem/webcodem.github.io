@@ -563,6 +563,24 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "No tengo la capacidad de soñar, pero estoy aquí para ayudarte a hacer realidad tus deseos y aspiraciones."
         ];
         return getRandomResponse(respuestasSuenos);
+    } else if (lowerCaseInput.includes("juego favorito de tu creador")) {
+        const respuestasJuego = [
+            "A mi creador le gusta Minecraft.",
+            "El juego favorito de mi creador es Minecraft.",
+            "Mi creador prefiere Minecraft.",
+            "Minecraft es el juego que más le gusta a mi creador.",
+            "A mi creador le encanta jugar Minecraft.",
+            "Minecraft es el preferido de mi creador.",
+            "El juego favorito de mi creador es Minecraft sin duda.",
+            "Mi creador encuentra Minecraft como su juego favorito.",
+            "Minecraft es el juego que mi creador disfruta más.",
+            "Mi creador es un fanático de Minecraft.",
+            "Minecraft es el juego que mi creador elige una y otra vez.",
+            "Mi creador tiene una afinidad especial por Minecraft.",
+            "A mi creador le apasiona Minecraft.",
+            "Minecraft ocupa un lugar especial en el corazón de mi creador."
+        ];
+        return getRandomResponse(respuestasJuego);
     } else {
         return "Lo siento, no entendí. ¿Puedes reformular tu pregunta?";
     }
