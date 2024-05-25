@@ -61,13 +61,13 @@ function sendMessage() {
     var userInput = document.getElementById("user-input").value.trim();
     if (!userInput) {
         alert("Por favor, escribe un mensaje antes de enviar.");
+        document.getElementById("user-input").focus();
         return;
     }
 
     if (containsBannedWords(userInput.toLowerCase())) {
         alert("Se detectaron palabras inapropiadas. Estás baneado.");
         localStorage.setItem('isBanned', 'true');
-        document.getElementById("user-input").disabled = true;
         return;
     }
 
@@ -101,7 +101,34 @@ function sendMessage() {
     var botMessageNode = document.createElement("div");
     botMessageNode.classList.add("message", "bot-message");
     botMessageContainer.appendChild(botMessageNode);
-    typeMessage(botMessageNode, getBotResponse(userInput));
+
+    if (userInput.toLowerCase().includes("recomendar un video de asmr")) {
+        var topText = document.createElement("p");
+        topText.textContent = "";
+        botMessageNode.appendChild(topText);
+
+        typeMessage(topText, "¡Aquí tienes tu video recomendado!");
+
+        setTimeout(function() {
+            var iframe = document.createElement("iframe");
+            iframe.src = "https://www.youtube.com/embed/UTV6knOcChM?si=BTz35X0c86VH9CIZ";
+            iframe.width = "270"; 
+            iframe.height = "150"; 
+            iframe.style.border = "none";
+            botMessageNode.appendChild(iframe);
+
+            var bottomText = document.createElement("p");
+            bottomText.textContent = "";
+            botMessageNode.appendChild(bottomText);
+
+            setTimeout(function() {
+                typeMessage(bottomText, "¡Listo para regalarte! 😊");
+            }, 500);
+        }, 1500);
+    } else {
+        
+        typeMessage(botMessageNode, getBotResponse(userInput)); 
+    }
 
     document.getElementById("user-input").value = "";
 
@@ -119,6 +146,7 @@ function typeMessage(element, message) {
         }
     }, 50);
 }
+
 
 function getBotResponse(userInput) {
     var lowerCaseInput = userInput.toLowerCase();
@@ -149,7 +177,7 @@ function getBotResponse(userInput) {
 
         for (var palabra in correcciones) {
             if (input.includes(palabra)) {
-                input = input.replace(palabra, correcciones[palabra]);
+                input = input.replace(palabra, correcciones [palabra]);
             }
         }
 
