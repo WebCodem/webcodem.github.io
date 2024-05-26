@@ -274,6 +274,30 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Siempre a tu disposición! ¿Qué necesitas que haga ahora? 😊"
         ];
         return getRandomResponse(respuestasClaro);
+    } else if (lowerCaseInput === "xd") {
+        const respuestasXd = [
+            "¡Jaja! 😄",
+            "¡Xd! 😆",
+            "¡Esa fue buena! 😂",
+            "¡Jajaja! 😁",
+            "😄 ¡Me hiciste reír!",
+            "¡Buena! 😅",
+            "¡Esa estuvo genial! 😊",
+            "¡Xd! 😆",
+            "¡Haha! 😃",
+            "¡Divertido! 😄",
+            "¡Jajaja! 😆",
+            "¡Me sacaste una sonrisa! 😊",
+            "¡Qué risa! 😂",
+            "¡Xd! 😁",
+            "¡Eso es gracioso! 😄",
+            "¡Haha! 😅",
+            "¡Buen chiste! 😄",
+            "¡Eso fue divertido! 😆",
+            "¡Jaja! 😃",
+            "¡Muy bueno! 😄"
+        ];
+        return getRandomResponse(respuestasXd);
     } else if (lowerCaseInput.includes("tengo hambre")) {
         const respuestasHambre = [
             "¡Entiendo! ¿Te gustaría que te recomiende algunos lugares para comer?",
