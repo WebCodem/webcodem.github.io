@@ -261,6 +261,20 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! ¿Listo para resolver tus dudas?"
         ];
         return getRandomResponse(respuestasHola);
+    } else if (lowerCaseInput.includes("jaj") || lowerCaseInput.includes("jaja") || lowerCaseInput.includes("jeje")) {
+        const respuestasRisa = [
+           "¡Me alegra verte sonreír! 😀",
+           "¡Jaja! Me encanta cuando ríes. 😄",
+           "¡Tu risa es contagiosa! 😆",
+           "¡Jajaja! Me haces reír también. 😂",
+           "¡Qué bueno que te diviertes! 😊",
+           "¡Ja ja ja! ¡Esa estuvo buena! 😁",
+           "¡Haha! ¿Quieres escuchar otro chiste? 😅",
+           "¡Jijiji! Si necesitas más alegría, aquí estoy. 😊",
+           "¡Jejeje! Gracias por compartir la risa. 😄",
+           "¡Hahahaha! Esa fue una buena carcajada. 🤣"
+        ];
+        return getRandomResponse(respuestasRisa);
     } else if (lowerCaseInput.includes("clima")) {
         const respuestasClima = [
             "¿Quieres saber el clima de tu ubicación?",
