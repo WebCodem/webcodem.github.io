@@ -246,7 +246,6 @@ function getBotResponse(userInput) {
 
 lowerCaseInput = corregirErrores(lowerCaseInput);
 
-
     if (lowerCaseInput.includes("hola")) {
         const respuestasHola = [
             "¡Hola! ¿Cómo estás?",
@@ -261,8 +260,50 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! ¿Listo para resolver tus dudas?"
         ];
         return getRandomResponse(respuestasHola);
-    } else if (lowerCaseInput.includes("jaj") || lowerCaseInput.includes("jaja") || lowerCaseInput.includes("jeje")) {
-        const respuestasRisa = [
+    } else if (lowerCaseInput === "claro") {
+        const respuestasClaro = [
+            "¡Entendido! ¿En qué más puedo ayudarte ahora mismo? 😊",
+            "¡Por supuesto! ¿Qué necesitas que haga por ti? 👍",
+            "¡Claro que sí! ¿Cómo puedo ser de servicio? 😄",
+            "¡Claro! ¿En qué puedo asistirte hoy? 😊",
+            "¡Definitivamente! Siempre estoy aquí para ayudarte. 👍",
+            "¡Sí, claro! ¿Qué más puedo hacer por ti en este momento? 😄",
+            "¡Por supuesto que sí! ¿En qué puedo apoyarte ahora? 😊",
+            "¡Totalmente de acuerdo! ¿En qué puedo ser útil hoy? 👍",
+            "¡Sí, por supuesto! ¿Qué más puedo hacer para hacerte sonreír? 😄",
+            "¡Siempre a tu disposición! ¿Qué necesitas que haga ahora? 😊"
+        ];
+        return getRandomResponse(respuestasClaro);
+    } else if (lowerCaseInput.includes("tengo hambre")) {
+        const respuestasHambre = [
+            "¡Entiendo! ¿Te gustaría que te recomiende algunos lugares para comer?",
+            "¿Qué tal si busco algunos restaurantes cercanos para ti?",
+            "¡Oh no! ¿Quieres que te ayude a encontrar algo para comer?",
+            "¡Vaya! ¿Estás buscando algo delicioso para comer?",
+            "¡Eso suena como una buena oportunidad para disfrutar de una deliciosa comida!",
+            "¡Hmm, hambre! ¿Quieres que te dé algunas recomendaciones gastronómicas?",
+            "¡Uff, el hambre es una señal de que es hora de disfrutar de una buena comida! ¿Te ayudo a encontrar algo?",
+            "¡Estoy aquí para ayudarte a saciar ese hambre! ¿Qué tipo de comida te apetece?",
+            "¡Hambre, hambre! ¿Quieres que busque algunos restaurantes cercanos para ti?",
+            "¡Entendido! Déjame ver qué opciones de comida deliciosa puedo encontrar para ti."
+       ];
+       return getRandomResponse(respuestasHambre);
+   } else if (lowerCaseInput === "no") {
+       const respuestasNo = [
+           "Entiendo, si cambias de opinión, aquí estaré. 😊",
+           "De acuerdo, si necesitas algo más, no dudes en preguntar. 👍",
+           "¡Entendido! Siempre puedes volver si necesitas ayuda. 😄",
+           "Está bien, aquí me quedo por si cambias de idea. 😊",
+           "¡Claro! Siempre puedes contar conmigo si cambias de parecer. 😊",
+           "De acuerdo, no dudes en volver si necesitas algo más. 👍",
+           "Entiendo, estoy aquí si decides que necesitas algo más. 😊",
+           "¡Está bien! Siempre estoy aquí para ayudarte cuando lo necesites. 😊",
+           "De acuerdo, si necesitas más ayuda, ¡aquí estoy! 😊",
+           "¡Entendido! Siempre es un placer ayudarte, ¡no dudes en volver! 😄"
+       ];
+       return getRandomResponse(respuestasNo);
+   } else if (lowerCaseInput.includes("haha") || lowerCaseInput.includes("jaja") || lowerCaseInput.includes("jeje")) {
+       const respuestasRisa = [
            "¡Me alegra verte sonreír! 😀",
            "¡Jaja! Me encanta cuando ríes. 😄",
            "¡Tu risa es contagiosa! 😆",
@@ -329,6 +370,34 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! Soy tu asistente, CodeBot. ¿Qué necesitas?"
         ];
         return getRandomResponse(respuestasNombre);
+    } else if (lowerCaseInput === "bueno") {
+        const respuestasBueno = [
+            "¡Genial! ¿En qué más puedo ayudarte? 😊",
+            "¡Estupendo! ¿Hay algo más en lo que pueda asistirte? 👍",
+            "¡Fantástico! ¿Necesitas ayuda adicional? 😄",
+            "¡Perfecto! ¿Qué más puedo hacer por ti? 😊",
+            "¡Excelente! Siempre estoy aquí para ayudarte, ¿qué más necesitas? 👍",
+            "¡Maravilloso! ¿En qué más puedo ser útil? 😊",
+            "¡Fabuloso! Siempre estoy listo para ayudarte, ¿necesitas algo más? 😄",
+            "¡Increíble! ¿Hay alguna otra cosa en la que pueda ayudarte? 😊",
+            "¡Asombroso! ¿Qué más puedo hacer para hacerte sonreír hoy? 😄",
+            "¡Perfecto! Siempre estoy disponible para ayudarte, ¿qué más necesitas? 😊"
+        ];
+        return getRandomResponse(respuestasBueno);
+    } else if (lowerCaseInput === "si" || lowerCaseInput === "si") {
+        const respuestasSi = [
+            "¡Por supuesto! ¿En qué puedo ayudarte ahora mismo? 😊",
+            "¡Claro que sí! ¿Qué necesitas que haga por ti? 👍",
+            "¡Absolutamente! ¿Cómo puedo ser de servicio? 😄",
+            "¡Sin duda! ¿En qué puedo asistirte hoy? 😊",
+            "¡Definitivamente! Siempre estoy aquí para ayudarte. 👍",
+            "¡Sí, claro! ¿Qué más puedo hacer por ti en este momento? 😄",
+            "¡Por supuesto que sí! ¿En qué puedo apoyarte ahora? 😊",
+            "¡Totalmente de acuerdo! ¿En qué puedo ser útil hoy? 👍",
+            "¡Sí, por supuesto! ¿Qué más puedo hacer para hacerte sonreír? 😄",
+            "¡Siempre a tu disposición! ¿Qué necesitas que haga ahora? 😊"
+        ];
+        return getRandomResponse(respuestasSi);
     } else if (lowerCaseInput.includes("qué puedes hacer")) {
         const respuestasCapacidades = [
             "Puedo ayudarte con cálculos, decirte la hora y el día, y responder preguntas simples.",
