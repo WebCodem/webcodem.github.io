@@ -260,6 +260,20 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! ¿Listo para resolver tus dudas?"
         ];
         return getRandomResponse(respuestasHola);
+    } else if (lowerCaseInput.includes("una pregunta") || lowerCaseInput.includes("pregunta")) {
+        const respuestasPregunta = [
+            "¡Claro! Estoy aquí para ayudarte. ¿Cuál es tu pregunta?",
+            "¡Por supuesto! Estoy listo para responder cualquier pregunta que tengas.",
+            "¡Listo para resolver tus dudas! Adelante, ¿cuál es tu pregunta?",
+            "¡Pregunta lo que quieras y te ayudaré en lo que pueda!",
+            "¡Dispara tu pregunta! Estoy listo para ayudarte.",
+            "¡Estoy aquí para responder cualquier pregunta que tengas! ¿Cuál es?",
+            "¡Tengo las respuestas que necesitas! ¿Cuál es tu pregunta?",
+            "¡Listo para ayudarte con cualquier duda que tengas! ¿Cuál es tu pregunta?",
+            "¡Claro! No dudes en hacer cualquier pregunta que tengas.",
+            "¡Estoy listo para responder cualquier pregunta! ¿Qué quieres saber?"
+        ];
+        return getRandomResponse(respuestasPregunta);
     } else if (lowerCaseInput === "claro") {
         const respuestasClaro = [
             "¡Entendido! ¿En qué más puedo ayudarte ahora mismo? 😊",
