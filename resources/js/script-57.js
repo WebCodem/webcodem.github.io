@@ -722,8 +722,20 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
         ];
         return getRandomResponse(respuestasJuego);
     } else {
-        return "Lo siento, no entendí. ¿Puedes reformular tu pregunta?";
-    }
+        const respuestasNoEntiendo = [
+            "Lo siento, no pude entender tu pregunta. ¿Podrías expresarlo de otra manera?",
+            "Ups, parece que no entendí lo que quisiste decir. ¿Puedes formularlo de otra manera?",
+            "Lo siento, no logré entender. ¿Podrías reformular tu pregunta de manera diferente?",
+            "¡Ups! Parece que me perdí. ¿Podrías intentar decirlo de otra manera?",
+            "Lo siento, parece que no entendí correctamente tu pregunta. ¿Podrías explicarlo de nuevo?",
+            "Perdón, no logré entender lo que quisiste decir. ¿Podrías reformular tu pregunta?",
+            "Ups, mi procesamiento tuvo un pequeño error y no entendí tu pregunta. ¿Podrías intentarlo de nuevo?",
+            "Lo siento, parece que estoy teniendo dificultades para entender. ¿Puedes reformular tu pregunta?",
+            "Perdona, parece que no entendí. ¿Podrías expresarlo de manera diferente?",
+            "Lo siento, parece que hubo un error de comunicación. ¿Podrías decirlo de otra manera?"
+        ];
+        return getRandomResponse(respuestasNoEntiendo);
+     }
 }
     
 function extraerNumeros(input, operador) {
