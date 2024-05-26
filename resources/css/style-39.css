@@ -7,19 +7,19 @@ body {
 }
 
 #chat-container {
-    width: 400px;
+    width: 398px;
     border-radius: 10px;
     background-color: #1E1E1E;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 50px auto; 
+    margin: 8px auto; 
     position: relative; 
 }
 
 #chat-messages {
     padding: 20px;
-    height: 500px; 
-    max-height: calc(100% - 70px); 
+    height: 548px; 
+    max-height: calc(100% - 115px); 
     overflow-y: auto;
 }
 
