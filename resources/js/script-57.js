@@ -586,21 +586,7 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "Los sueños son una experiencia única para los humanos, pero estoy aquí para ayudarte a alcanzar tus objetivos y aspiraciones.",
             "No tengo la capacidad de soñar, pero estoy aquí para ayudarte a hacer realidad tus deseos y aspiraciones."
         ];
-        return getRandomResponse(respuestasSuenos);
-    } else if (lowerCaseInput.includes(".")) {
-        const respuestasNombre = [
-            "Soy CodeBot, tu asistente virtual.",
-            "Me llamo CodeBot, encantado de ayudarte.",
-            "Puedes llamarme CodeBot.",
-            "Soy CodeBot, ¿en qué puedo ayudarte hoy?",
-            "Mi nombre es CodeBot, ¿cómo puedo asistirte?",
-            "CodeBot aquí, listo para ayudarte.",
-            "Soy tu asistente virtual, CodeBot.",
-            "CodeBot a tu servicio.",
-            "Me llaman CodeBot, ¿qué necesitas?",
-            "Soy CodeBot, ¿cómo puedo hacer tu día mejor?"
-        ];
-        return getRandomResponse(respuestasNombre); 
+        return getRandomResponse(respuestasSuenos); 
     } else if (lowerCaseInput.includes("juego favorito de tu creador")) {
         const respuestasJuego = [
             "A mi creador le gusta Minecraft.",
