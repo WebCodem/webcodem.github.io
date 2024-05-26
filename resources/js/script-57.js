@@ -103,32 +103,56 @@ function sendMessage() {
     botMessageContainer.appendChild(botMessageNode);
 
     if (userInput.toLowerCase().includes("recomendar un video de asmr")) {
-        var topText = document.createElement("p");
-        topText.textContent = "";
-        botMessageNode.appendChild(topText);
+    if (userInput.toLowerCase().includes("recomendar un video de asmr")) {
+    var topText = document.createElement("p");
+    topText.textContent = "";
+    botMessageNode.appendChild(topText);
 
-        typeMessage(topText, "¡Aquí tienes tu video recomendado!");
+    typeMessage(topText, "¡Aquí tienes tu video recomendado!");
+
+    setTimeout(function() {
+        var asmrVideos = [
+            "https://www.youtube.com/embed/UTV6knOcChM?si=BTz35X0c86VH9CIZ",
+            "https://www.youtube.com/embed/lT_6B8YLz4E?si=zJYdux0BUTK9mKLo",
+            "https://www.youtube.com/embed/LAB5p23y40U?si=HydzsyO2IhguUvd4",
+            "https://www.youtube.com/embed/Md4MtjuMj1k?si=TdzS34x84Cir6Nbq",
+            "https://www.youtube.com/embed/YDeMme7yVJI?si=T_0_gqriZKLsSDH6"
+        ];
+
+        var asmrTexts = [
+            "Disfruta de este relajante video de ASMR, ¡ideal para desconectar!",
+            "Este video te llevará a un estado de paz y tranquilidad.",
+            "Déjate llevar por los sonidos suaves y relajantes de este video.",
+            "Perfecto para relajarte después de un largo día.",
+            "Este video es como un abrazo reconfortante para tu mente."
+        ];
+
+        var randomIndex = Math.floor(Math.random() * asmrVideos.length);
+        var iframe = document.createElement("iframe");
+        iframe.src = asmrVideos[randomIndex];
+        iframe.width = "270"; 
+        iframe.height = "150"; 
+        iframe.style.border = "none";
+        botMessageNode.appendChild(iframe);
 
         setTimeout(function() {
-            var iframe = document.createElement("iframe");
-            iframe.src = "https://www.youtube.com/embed/UTV6knOcChM?si=BTz35X0c86VH9CIZ";
-            iframe.width = "270"; 
-            iframe.height = "150"; 
-            iframe.style.border = "none";
-            botMessageNode.appendChild(iframe);
-
             var bottomText = document.createElement("p");
             bottomText.textContent = "";
             botMessageNode.appendChild(bottomText);
+            typeMessage(bottomText, asmrTexts[randomIndex]);
+
+            var finalText = document.createElement("p");
+            finalText.textContent = "";
+            botMessageNode.appendChild(finalText);
 
             setTimeout(function() {
-                typeMessage(bottomText, "¡Listo para regalarte! 😊");
-            }, 500);
+                typeMessage(finalText, "¡Listo para regalarte! 😊");
+            }, 3300); 
         }, 1500);
-    } else {
-        
-        typeMessage(botMessageNode, getBotResponse(userInput)); 
-    }
+    }, 1500);
+} else {
+    typeMessage(botMessageNode, getBotResponse(userInput)); 
+}
 
     document.getElementById("user-input").value = "";
 
