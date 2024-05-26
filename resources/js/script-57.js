@@ -102,7 +102,40 @@ function sendMessage() {
     botMessageNode.classList.add("message", "bot-message");
     botMessageContainer.appendChild(botMessageNode);
 
-    if (userInput.toLowerCase().includes("recomendar un video de asmr")) {
+    if (
+    userInput.toLowerCase().includes("recomendar un video de asmr") ||
+    userInput.toLowerCase().includes("recomendacion de videos de asmr") ||
+    userInput.toLowerCase().includes("recomendación de videos de asmr") ||
+    userInput.toLowerCase().includes("recomendacion de un video de asmr") ||
+    userInput.toLowerCase().includes("recomendación de un video de asmr") ||
+    userInput.toLowerCase().includes("video de recomendado de asmr") ||
+    userInput.toLowerCase().includes("quiero un video de asmr") ||
+    userInput.toLowerCase().includes("sugiere un video de asmr") ||
+    userInput.toLowerCase().includes("dame un video de asmr") ||
+    userInput.toLowerCase().includes("video asmr por favor") ||
+    userInput.toLowerCase().includes("quiero ver un video de asmr") ||
+    userInput.toLowerCase().includes("ponme un video de asmr") ||
+    userInput.toLowerCase().includes("quiero relajarme con un video de asmr") ||
+    userInput.toLowerCase().includes("me puedes hacer una recomendacion de un video de asmr") ||
+    userInput.toLowerCase().includes("me puedes hacer una recomendación de un video de asmr") ||
+    userInput.toLowerCase().includes("me puedes recomendar un video de asmr") ||
+    userInput.toLowerCase().includes("recomendame un video de asmr") ||
+    userInput.toLowerCase().includes("recomiéndame un video de asmr") ||
+    userInput.toLowerCase().includes("video relajante de asmr") ||
+    userInput.toLowerCase().includes("quiero un asmr") ||
+    userInput.toLowerCase().includes("video de relajacion de asmr") ||
+    userInput.toLowerCase().includes("video de relajación de asmr") ||
+    userInput.toLowerCase().includes("recomendación asmr") ||
+    userInput.toLowerCase().includes("recomendacion asmr") ||
+    userInput.toLowerCase().includes("video para relajarse asmr") ||
+    userInput.toLowerCase().includes("video de susurros asmr") ||
+    userInput.toLowerCase().includes("video de sonidos asmr") ||
+    userInput.toLowerCase().includes("quiero escuchar asmr") ||
+    userInput.toLowerCase().includes("quiero ver asmr") ||
+    userInput.toLowerCase().includes("recomiendame asmr") ||
+    userInput.toLowerCase().includes("recomiéndame asmr") ||
+    userInput.toLowerCase().includes("recomendar asmr")
+) {
     var topText = document.createElement("p");
     topText.textContent = "";
     botMessageNode.appendChild(topText);
@@ -128,9 +161,11 @@ function sendMessage() {
 
         var randomIndex = Math.floor(Math.random() * asmrVideos.length);
         var iframe = document.createElement("iframe");
+
         iframe.src = asmrVideos[randomIndex];
-        iframe.width = "270"; 
-        iframe.height = "150"; 
+        
+        iframe.width = "270";
+        iframe.height = "150";
         iframe.style.border = "none";
         botMessageNode.appendChild(iframe);
 
@@ -146,13 +181,12 @@ function sendMessage() {
 
             setTimeout(function() {
                 typeMessage(finalText, "¡Listo para regalarte! 😊");
-            }, 3300); 
+            }, 3300);
         }, 1500);
     }, 1500);
 } else {
-    typeMessage(botMessageNode, getBotResponse(userInput)); 
+    typeMessage(botMessageNode, getBotResponse(userInput));
 }
-
     document.getElementById("user-input").value = "";
 
     chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -169,7 +203,6 @@ function typeMessage(element, message) {
         }
     }, 50);
 }
-
 
 function getBotResponse(userInput) {
     var lowerCaseInput = userInput.toLowerCase();
