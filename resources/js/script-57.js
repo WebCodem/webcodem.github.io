@@ -103,7 +103,6 @@ function sendMessage() {
     botMessageContainer.appendChild(botMessageNode);
 
     if (userInput.toLowerCase().includes("recomendar un video de asmr")) {
-    if (userInput.toLowerCase().includes("recomendar un video de asmr")) {
     var topText = document.createElement("p");
     topText.textContent = "";
     botMessageNode.appendChild(topText);
@@ -207,12 +206,13 @@ function getBotResponse(userInput) {
 
         return input;
     }
-
+    
     function getRandomResponse(responses) { 
     return responses[Math.floor(Math.random() * responses.length)]; 
 }
 
 lowerCaseInput = corregirErrores(lowerCaseInput);
+
 
     if (lowerCaseInput.includes("hola")) {
         const respuestasHola = [
@@ -404,7 +404,7 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
         return getRandomResponse(respuestasEstado);
     } else if (lowerCaseInput.includes("cuál es tu propósito")) {
         const propositos = [
-                        "Mi propósito es hacerte la vida más sencilla y responderte cualquier pregunta que tengas.",
+            "Mi propósito es hacerte la vida más sencilla y responderte cualquier pregunta que tengas.",
             "Estoy diseñado para ser tu asistente virtual personal, aquí para ayudarte siempre que lo necesites.",
             "Mi propósito es ser útil y proporcionarte la información que necesitas de manera rápida y precisa.",
             "Estoy aquí para hacer tu vida más cómoda y ayudarte con cualquier cosa que necesites.",
@@ -587,6 +587,20 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "No tengo la capacidad de soñar, pero estoy aquí para ayudarte a hacer realidad tus deseos y aspiraciones."
         ];
         return getRandomResponse(respuestasSuenos);
+    } else if (lowerCaseInput.includes(".")) {
+        const respuestasNombre = [
+            "Soy CodeBot, tu asistente virtual.",
+            "Me llamo CodeBot, encantado de ayudarte.",
+            "Puedes llamarme CodeBot.",
+            "Soy CodeBot, ¿en qué puedo ayudarte hoy?",
+            "Mi nombre es CodeBot, ¿cómo puedo asistirte?",
+            "CodeBot aquí, listo para ayudarte.",
+            "Soy tu asistente virtual, CodeBot.",
+            "CodeBot a tu servicio.",
+            "Me llaman CodeBot, ¿qué necesitas?",
+            "Soy CodeBot, ¿cómo puedo hacer tu día mejor?"
+        ];
+        return getRandomResponse(respuestasNombre); 
     } else if (lowerCaseInput.includes("juego favorito de tu creador")) {
         const respuestasJuego = [
             "A mi creador le gusta Minecraft.",
@@ -609,7 +623,7 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
         return "Lo siento, no entendí. ¿Puedes reformular tu pregunta?";
     }
 }
-
+    
 function extraerNumeros(input, operador) {
     let regex = new RegExp(`[^0-9.${operador}]`, 'g');
     let cleanedInput = input.replace(regex, '').trim();
