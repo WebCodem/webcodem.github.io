@@ -9,7 +9,8 @@ body {
 #chat-container {
     width: 398px;
     border-radius: 10px;
-    background-color: #333;
+    background-color: #111;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 8px auto; 
@@ -99,7 +100,8 @@ body {
     left: 65px; 
     padding: 10px; 
     border: none; 
-    background-color: #444; 
+    background-color: #2a2a2a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
     color: #f3f3f3; 
     font-size: 16px; 
     border-radius: 10px;
