@@ -367,3 +367,8 @@ footer a:hover {
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             cursor: pointer;
         }
+
+enlace {
+    background-color: #222;
+    border-radius: 10px;
+} 
