@@ -260,10 +260,10 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! ¿Listo para resolver tus dudas?"
         ];
         return getRandomResponse(respuestasHola);
-    } else if (lowerCaseInput.includes("buscar video en YouTube") ||
-           lowerCaseInput.includes("buscar videos en YouTube") ||
-           lowerCaseInput.includes("hacer recomendaciones de videos de YouTube") ||
-           lowerCaseInput.includes("recomendaciones de videos en YouTube")) {
+    } else if (lowerCaseInput.includes("buscar video en youtube") ||
+           lowerCaseInput.includes("buscar videos en youtube") ||
+           lowerCaseInput.includes("hacer recomendaciones de videos de youtube") ||
+           lowerCaseInput.includes("recomendaciones de videos en youtube")) {
       const respuestasRecomendacionesASMR = [
           "Actualmente solo puedo buscar videos en YouTube de ASMR y hacer recomendaciones de ese tipo de videos.",
           "Mi especialidad son los videos de ASMR en YouTube. ¿Te gustaría que te recomiende alguno?",
@@ -277,9 +277,9 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
           "Actualmente, puedo buscar y recomendar videos de ASMR en YouTube. ¿Necesitas alguna recomendación específica?"
         ];
         return getRandomResponse(respuestasRecomendacionesASMR);
-    } else if (lowerCaseInput.includes("puedes buscar cosas en Google") ||
+    } else if (lowerCaseInput.includes("puedes buscar cosas en google") ||
            lowerCaseInput.includes("buscar en Google") ||
-           lowerCaseInput.includes("puedes hacer búsquedas en Google") ||
+           lowerCaseInput.includes("puedes hacer búsquedas en google") ||
            lowerCaseInput.includes("puedes buscar en internet") ||
            lowerCaseInput.includes("puedes encontrar información en línea")) {
        const respuestasBuscarGoogle = [
