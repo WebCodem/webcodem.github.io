@@ -32,6 +32,41 @@
   <input id="input" type="text" class="input" placeholder="Pregúntame cualquier cosa">
   <button id="send" class="button"><svg xmlns="http://www.w3.org/2000/svg" width="45" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m12.815 12.197l-7.532 1.255a.5.5 0 0 0-.386.318L2.3 20.728c-.248.64.421 1.25 1.035.942l18-9a.75.75 0 0 0 0-1.341l-18-9c-.614-.307-1.283.303-1.035.942l2.598 6.958a.5.5 0 0 0 .386.318l7.532 1.255a.2.2 0 0 1 0 .395Z"/></svg></button>
 </div>
+    <style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;  
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    pointer-events: auto;  
+  }
+  .overlay-content {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    pointer-events: auto;
+  }
+</style>
+<div class="overlay">
+  <div class="overlay-content">
+    <p>Este proyecto en mantenimiento.</p>
+    <p>Lamentamos informar que este proyecto ya no está activo por el mantenimiento porfavor regresa más tarde.</p>
+    <p>Gracias por tu interés.</p>
+  </div>
+</div>
 <script src="/resources/js/script-35.js"></script>
  <script src="/resources/js/commands/lenguaje-codebot.js"></script>
  <script src="/resources/js/commands/matematica-codebot.js"></script>
