@@ -260,6 +260,116 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! ¿Listo para resolver tus dudas?"
         ];
         return getRandomResponse(respuestasHola);
+    } else if (lowerCaseInput.includes("buscar video en YouTube") ||
+           lowerCaseInput.includes("buscar videos en YouTube") ||
+           lowerCaseInput.includes("hacer recomendaciones de videos de YouTube") ||
+           lowerCaseInput.includes("recomendaciones de videos en YouTube")) {
+      const respuestasRecomendacionesASMR = [
+          "Actualmente solo puedo buscar videos en YouTube de ASMR y hacer recomendaciones de ese tipo de videos.",
+          "Mi especialidad son los videos de ASMR en YouTube. ¿Te gustaría que te recomiende alguno?",
+          "Puedo hacer recomendaciones de videos de ASMR en YouTube. ¿Te gustaría que te sugiera alguno?",
+          "Estoy aquí para recomendarte los mejores videos de ASMR en YouTube. ¿Te interesa?",
+          "Si estás interesado en videos de ASMR, puedo recomendarte algunos excelentes en YouTube. ¿Quieres que te ayude?",
+          "Lo siento, en este momento solo puedo buscar y recomendar videos de ASMR en YouTube.",
+          "Solo tengo la capacidad de buscar y sugerir videos de ASMR en YouTube en este momento.",
+          "Mi funcionalidad actual se limita a buscar y recomendar videos de ASMR en YouTube.",
+          "Por el momento, solo puedo ayudarte con videos de ASMR en YouTube. ¿Te gustaría una recomendación?",
+          "Actualmente, puedo buscar y recomendar videos de ASMR en YouTube. ¿Necesitas alguna recomendación específica?"
+        ];
+        return getRandomResponse(respuestasRecomendacionesASMR);
+    } else if (lowerCaseInput.includes("puedes buscar cosas en Google") ||
+           lowerCaseInput.includes("buscar en Google") ||
+           lowerCaseInput.includes("puedes hacer búsquedas en Google") ||
+           lowerCaseInput.includes("puedes buscar en internet") ||
+           lowerCaseInput.includes("puedes encontrar información en línea")) {
+       const respuestasBuscarGoogle = [
+           "Lo siento, actualmente no tengo la capacidad de realizar búsquedas en Google. ¿Hay algo más en lo que pueda ayudarte?",
+           "No tengo la habilidad de buscar en Google en este momento, pero puedo ayudarte con otra cosa. ¿En qué más puedo asistirte?",
+           "Buscar en Google no está dentro de mis habilidades en este momento. ¿Existe alguna otra consulta con la que pueda ayudarte?",
+           "Desafortunadamente, no tengo la capacidad de buscar en Google. ¿En qué más puedo ser útil para ti?",
+           "Lo siento, no puedo buscar en Google en este momento. ¿Hay algo más que necesites?",
+           "En este momento, no puedo realizar búsquedas en Google. ¿Puedo ayudarte con algo más?",
+           "Mi capacidad actual no incluye buscar en Google. ¿Hay algo más en lo que pueda ayudarte?",
+           "Buscar en Google no es una función que pueda realizar en este momento. ¿Necesitas ayuda con otra cosa?",
+           "Actualmente, no puedo buscar en Google. ¿Existe alguna otra consulta en la que pueda ayudarte?",
+           "Lo siento, la búsqueda en Google no está disponible en este momento. ¿Hay algo más que pueda hacer por ti?"
+        ];
+        return getRandomResponse(respuestasBuscarGoogle);
+    } else if (lowerCaseInput.includes("qué cosas matemáticas puedes hacer") || 
+           lowerCaseInput.includes("qué operaciones matemáticas puedes hacer") ||
+           lowerCaseInput.includes("qué operaciones de matemáticas sabes hacer") ||
+           lowerCaseInput.includes("puedes hacer matemáticas") ||
+           lowerCaseInput.includes("qué cálculos puedes hacer")) {
+        const respuestasMatematicas = [
+            "Puedo realizar sumas (+), restas (-), multiplicaciones (×), divisiones (÷), y calcular raíces cuadradas.",
+            "Mis habilidades matemáticas incluyen sumar (+), restar (-), multiplicar (×), dividir (÷) y encontrar raíces cuadradas.",
+            "Soy capaz de realizar operaciones matemáticas como sumar (+), restar (-), multiplicar (×), dividir (÷) y calcular raíces cuadradas.",
+            "Realizo cálculos matemáticos básicos como sumas (+), restas (-), multiplicaciones (×), divisiones (÷) y raíces cuadradas.",
+            "Puedo ayudarte con sumas, restas, multiplicaciones, divisiones y calcular raíces cuadradas."
+        ];
+        return getRandomResponse(respuestasMatematicas);
+    } else if (lowerCaseInput.includes("dime las reglas del chat") || lowerCaseInput.includes("cuáles son las reglas del chat") || lowerCaseInput.includes("reglas del chat")) {
+        const respuestasReglasChat = [
+            "Las reglas del chat son simples: No se permiten groserías.",
+            "La única regla del chat es no usar groserías.",
+            "La regla principal del chat es mantener un lenguaje respetuoso y evitar groserías.",
+            "La regla más importante del chat es no utilizar palabras ofensivas o inapropiadas.",
+            "La regla principal del chat es mantener un ambiente amigable y respetuoso, lo que significa evitar groserías.",
+            "La única regla del chat es mantener un lenguaje adecuado y respetuoso.",
+            "La regla principal del chat es no usar groserías o malas palabras en ninguna circunstancia."
+        ];
+        const respuestaReglas = getRandomResponse(respuestasReglasChat);
+        const respuestasSancion = [
+            "Recuerda que el incumplimiento de esta regla resultará en la sanción permanente del chat.",
+            "La sanción permanente es la consecuencia directa del uso de groserías en el chat.",
+            "La sanción permanente es la única medida para quienes no respeten la política de groserías del chat.",
+            "No se permiten excepciones: la sanción es permanente si se usan groserías en el chat.",
+            "Por favor, mantengamos el chat libre de groserías para evitar la sanción permanente."
+        ];
+        const respuestaSancion = getRandomResponse(respuestasSancion);
+        return respuestaReglas + " " + respuestaSancion;
+    } else if (lowerCaseInput.includes("puedo ser baneado") || lowerCaseInput.includes("baniado") || lowerCaseInput.includes("castigo") || lowerCaseInput.includes("sanción") || lowerCaseInput.includes("puedo ser castigado") || lowerCaseInput.includes("puedo ser sancionado")) {
+        const respuestasBaneo = [
+            "El baneo es permanente en este chat si se violan las reglas.",
+            "El castigo por violar las reglas del chat puede ser un baneo permanente.",
+            "Las reglas del chat son claras: el baneo es permanente por el uso de groserías.",
+            "Se toma muy en serio el uso de groserías en este chat, y el baneo es permanente si se detecta.",
+            "El baneo permanente es la consecuencia directa del uso de groserías en el chat.",
+            "Recuerda que el baneo permanente es la sanción por el uso de lenguaje inapropiado.",
+            "No se permiten excepciones: el baneo es permanente si se usan groserías en el chat.",
+            "El baneo permanente es la medida más estricta para mantener un ambiente seguro y respetuoso.",
+            "Por favor, mantengamos el chat libre de groserías para evitar el baneo permanente.",
+            "El baneo permanente es la única sanción para quienes no respeten la política de groserías del chat."
+        ];
+        return getRandomResponse(respuestasBaneo);
+    } else if (lowerCaseInput.includes("puedo decir groserías") || lowerCaseInput.includes("puedo decir malas palabras") || lowerCaseInput.includes("groserías") || lowerCaseInput.includes("malas palabras")) {
+        const respuestasGroserias = [
+            "Este chat no permite el uso de groserías o malas palabras.",
+            "Por favor, evita usar lenguaje inapropiado en el chat.",
+            "Las groserías no están permitidas aquí. Mantén el respeto, por favor.",
+            "Para mantener un ambiente amigable, te pido que no uses malas palabras.",
+            "El uso de groserías resultará en una acción correctiva. Mantén el respeto, por favor.",
+            "Prefiero que mantengamos un lenguaje respetuoso en el chat.",
+            "Utilicemos un lenguaje adecuado para mantener un ambiente amigable.",
+            "Intentemos ser respetuosos con nuestros comentarios en el chat.",
+            "Recuerda que este es un espacio para conversar de manera respetuosa.",
+            "Podrías ser sancionado si utilizas un lenguaje inapropiado en el chat."
+        ];
+        return getRandomResponse(respuestasGroserias);
+    } else if (lowerCaseInput.includes("amor")) {
+        const respuestasAmor = [
+            "¡El amor es algo maravilloso! ¿Qué te gustaría saber sobre el amor?",
+            "El amor puede ser complejo y hermoso. ¿Tienes alguna pregunta específica?",
+            "El amor es un sentimiento poderoso. ¿En qué aspecto del amor necesitas ayuda?",
+            "Hablar de amor siempre es interesante. ¿Qué quieres discutir sobre el amor?",
+            "El amor tiene muchas facetas. ¿Cuál te intriga más?",
+            "Amar y ser amado es fundamental para muchos. ¿Qué quieres saber sobre el amor?",
+            "El amor puede traer mucha alegría. ¿Tienes alguna duda sobre este tema?",
+            "El amor es un tema profundo. ¿Qué aspecto del amor te interesa?",
+            "El amor es una parte esencial de la vida. ¿Qué quieres aprender sobre él?",
+            "Siempre es buen momento para hablar del amor. ¿Cuál es tu pregunta?"
+        ];
+        return getRandomResponse(respuestasAmor);
     } else if (lowerCaseInput.includes("una pregunta") || lowerCaseInput.includes("pregunta")) {
         const respuestasPregunta = [
             "¡Claro! Estoy aquí para ayudarte. ¿Cuál es tu pregunta?",
