@@ -278,7 +278,7 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
         ];
         return getRandomResponse(respuestasRecomendacionesASMR);
     } else if (lowerCaseInput.includes("puedes buscar cosas en google") ||
-           lowerCaseInput.includes("buscar en Google") ||
+           lowerCaseInput.includes("buscar en google") ||
            lowerCaseInput.includes("puedes hacer búsquedas en google") ||
            lowerCaseInput.includes("puedes buscar en internet") ||
            lowerCaseInput.includes("puedes encontrar información en línea")) {
