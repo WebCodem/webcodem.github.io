@@ -46,7 +46,7 @@ function displayUserData(username, profilePic) {
     img.onclick = span.onclick = chooseProfilePicture;
 }
 
-const bannedWords = ["puta", "puto", "gey", "gay", "gei", "homosexual", "trans", "transexual", "mierda", "cerote", "shit", "bitch", "perra", "zorra", "malparido", "malparida", "pendejo", "pendeja", "estúpido", "estupido", "estúpida", "estupida", "inbecil", "idiota", "maldita", "maldito"]; 
+const bannedWords = ["puta", "fuck", "puto", "gey", "gay", "gei", "homosexual", "trans", "transexual", "mierda", "cerote", "shit", "bitch", "perra", "zorra", "malparido", "malparida", "pendejo", "pendeja", "estúpido", "estupido", "estúpida", "estupida", "inbecil", "idiota", "maldita", "maldito"]; 
 
 function containsBannedWords(input) {
     for (let word of bannedWords) {
@@ -260,6 +260,352 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! ¿Listo para resolver tus dudas?"
         ];
         return getRandomResponse(respuestasHola);
+    } else if (lowerCaseInput.includes("quién conquistó américa") || 
+           lowerCaseInput.includes("quién descubrió américa") || 
+           lowerCaseInput.includes("historia de américa") ||
+           lowerCaseInput.includes("quién colonizó américa")) {
+       const respuestasConquista = [
+           "La conquista de América fue un proceso complejo que involucró a varias potencias europeas. Entre ellas se destacan España y Portugal, quienes lideraron gran parte de la exploración y colonización del continente.",
+           "América fue conquistada por varias potencias europeas, principalmente España y Portugal. Estas naciones jugaron un papel fundamental en la exploración y colonización del continente.",
+           "La conquista de América fue llevada a cabo por diferentes países europeos, incluyendo a España, Portugal, Inglaterra, Francia, y los Países Bajos. Este período marcó un cambio significativo en la historia del continente.",
+           "La conquista de América fue un proceso complejo que involucró a varias potencias europeas. España, en particular, desempeñó un papel dominante en la exploración y colonización del continente.",
+           "La historia de América está marcada por la conquista y colonización europea, liderada principalmente por España y Portugal. Estos países llevaron a cabo expediciones que cambiaron para siempre el destino del continente.",
+           "La conquista de América fue un evento histórico que implicó la llegada de exploradores europeos al continente. España y Portugal fueron dos de las principales potencias que lideraron este proceso de colonización.",
+           "América fue conquistada por diversas potencias europeas, entre las que destacan España y Portugal. Estos países desempeñaron un papel crucial en la exploración y colonización del continente.",
+           "La historia de América está íntimamente ligada a la conquista y colonización europea. España y Portugal fueron dos de las principales potencias que exploraron y colonizaron el continente durante este período.",
+           "La conquista de América fue un proceso que involucró a múltiples países europeos, cada uno contribuyendo de manera diferente a la exploración y colonización del continente.",
+           "La llegada de los exploradores europeos a América marcó el comienzo de un período de conquista y colonización. España, Portugal y otras potencias europeas jugaron un papel importante en este proceso.",
+           "La conquista de América fue un proceso complejo que implicó la llegada de exploradores europeos al continente. Este período cambió irrevocablemente la historia y la cultura de América.",
+           "América fue colonizada por varias potencias europeas, entre las que se destacan España y Portugal. Estos países lideraron la exploración y la colonización del continente durante siglos."
+        ];
+        return getRandomResponse(respuestasConquista);
+    } else if (lowerCaseInput.includes("cuántos idiomas hablas") || 
+           lowerCaseInput.includes("hablas otros idiomas") || 
+           lowerCaseInput.includes("idiomas que entiendes") ||
+           lowerCaseInput.includes("hablas más de un idioma")) {
+       const respuestasIdiomas = [
+           "Actualmente, puedo entender español latinoamericano y un poco de inglés. ¡Estoy aquí para ayudarte en ambos idiomas!",
+           "Hablo principalmente español latinoamericano y también puedo entender algo de inglés. ¡Intentaré ayudarte en cualquier idioma que necesites!",
+           "Mi principal idioma es el español latinoamericano, pero también puedo entender algo de inglés. ¡Estoy aquí para ayudarte en ambos idiomas!",
+           "Puedo comunicarme en español latinoamericano y también entiendo un poco de inglés. ¡No dudes en hablarme en cualquiera de estos idiomas!",
+           "Hablo español latinoamericano y puedo comprender algunas palabras en inglés. ¡Si necesitas ayuda en alguno de estos idiomas, estoy aquí para ayudarte!",
+           "Entiendo español latinoamericano y también puedo comunicarme en inglés básico. ¡No dudes en hablarme en cualquiera de estos idiomas!",
+           "Mi comprensión principal es en español latinoamericano, pero también puedo entender un poco de inglés. ¡Estoy aquí para ayudarte en ambos idiomas!",
+           "Puedo comunicarme en español latinoamericano y tengo un conocimiento básico de inglés. ¡Estoy aquí para ayudarte en lo que necesites!",
+           "Hablo español latinoamericano y puedo entender algunas frases en inglés. ¡No dudes en hablar conmigo en cualquiera de estos idiomas!"
+        ];
+        return getRandomResponse(respuestasIdiomas);
+    } else if (lowerCaseInput.includes("contar en inglés") || 
+           lowerCaseInput.includes("números en inglés") || 
+           lowerCaseInput.includes("count in english") ||
+           lowerCaseInput.includes("números en inglés")) {
+       const respuestasContarIngles = [
+           "¡Claro! Aquí tienes un ejemplo de conteo en inglés: one, two, three, four, five, six, seven, eight, nine, ten.",
+           "Sí, puedo contar en inglés. Por ejemplo: one, two, three, four, five, six, seven, eight, nine, ten.",
+           "¡Por supuesto! En inglés se cuenta así: one, two, three, four, five, six, seven, eight, nine, ten.",
+           "Claro, aquí tienes una secuencia de números en inglés: one, two, three, four, five, six, seven, eight, nine, ten.",
+           "Absolutamente, puedo contar en inglés. Por ejemplo: one, two, three, four, five, six, seven, eight, nine, ten.",
+           "Sí, puedo ayudarte con eso. En inglés, el conteo comienza con: one, two, three, four, five, six, seven, eight, nine, ten.",
+           "¡Por supuesto! Aquí tienes una serie de números en inglés: one, two, three, four, five, six, seven, eight, nine, ten.",
+           "Sí, puedo contar en inglés. El conteo básico es: one, two, three, four, five, six, seven, eight, nine, ten.",
+           "Sin problema, aquí tienes cómo se cuentan los números en inglés: one, two, three, four, five, six, seven, eight, nine, ten."
+         ];
+         return getRandomResponse(respuestasContarIngles);
+    } else if (lowerCaseInput.includes("cuántos continentes hay") || 
+           lowerCaseInput.includes("cantidad de continentes") || 
+           lowerCaseInput.includes("número de continentes") ||
+           lowerCaseInput.includes("continentes en el mundo")) {
+       const respuestasContinentes = [
+           "Hay oficialmente siete continentes en el mundo: África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía.",
+           "El planeta Tierra está compuesto por siete continentes principales: África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía.",
+           "Existen siete continentes reconocidos a nivel mundial: África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía.",
+           "Se reconocen siete continentes en la Tierra, los cuales son África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía.",
+           "El número de continentes en el mundo es siete, los cuales son África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía.",
+           "África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía son los siete continentes que componen la superficie terrestre.",
+           "La Tierra está dividida en siete continentes principales: África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía.",
+           "Se reconocen siete grandes masas de tierra como continentes en el mundo: África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía.",
+           "Los siete continentes conocidos son África, América del Norte, América del Sur, Antártida, Asia, Europa, y Oceanía, cada uno con su propia geografía y características únicas."
+         ];
+         return getRandomResponse(respuestasContinentes);
+    } else if (lowerCaseInput.includes("nombre de todos los países") || 
+           lowerCaseInput.includes("países del mundo") || 
+           lowerCaseInput.includes("nombre de los países") ||
+           lowerCaseInput.includes("todos los países") || 
+           lowerCaseInput.includes("países de todo el mundo")) {
+       const respuestasPaises = [
+           "¡Claro! Algunos países del mundo incluyen Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Te gustaría saber más sobre alguno en particular?",
+           "¡Me encanta la geografía! Entre los países del mundo se encuentran Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Te gustaría saber más sobre alguno de ellos?",
+           "Los países del mundo son muy diversos. Algunos de los más conocidos son Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Hay alguno en específico que te interese?",
+           "¡Sí, conozco muchos países! Algunos de los más reconocidos son Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Te gustaría saber más sobre alguno de ellos?",
+           "Los países del mundo son fascinantes. Algunos de los más populares son Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Te gustaría saber más sobre alguno?",
+           "Puedo ayudarte con nombres de países. Algunos de los más conocidos son Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Te interesa alguno en particular?",
+           "¡Sí, claro! Entre los países del mundo se encuentran Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Te gustaría saber más sobre alguno de ellos?",
+           "Los países del mundo son muy interesantes. Algunos de los más destacados son Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Hay alguno que te gustaría conocer más?",
+           "Conozco muchos países. Algunos de los más conocidos son Argentina, Brasil, Canadá, China, Francia, Alemania, India, Italia, Japón, México, Rusia, España, Estados Unidos, y muchos más. ¿Te gustaría saber más sobre alguno de ellos?"
+        ];
+         return getRandomResponse(respuestasPaises);
+    } else if (lowerCaseInput.includes("nombres de verduras") || 
+           lowerCaseInput.includes("verduras comunes") || 
+           lowerCaseInput.includes("nombre de algunas verduras") ||
+           lowerCaseInput.includes("verduras populares") || 
+           lowerCaseInput.includes("tipos de verduras")) {
+       const respuestasVerduras = [
+           "¡Claro! Algunas verduras comunes incluyen zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Te gustaría saber más sobre alguna en particular?",
+           "¡Me encantan las verduras! Entre las verduras más comunes se encuentran zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Te gustaría saber más sobre alguna de ellas?",
+           "Las verduras son deliciosas y nutritivas. Algunas de las verduras más populares son zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Hay alguna en específico que te interese?",
+           "¡Sí, conozco muchas verduras! Algunas de las más comunes son zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Te gustaría saber más sobre alguna de ellas?",
+           "Las verduras son una excelente opción para mantenerse saludable. Algunas verduras populares incluyen zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Te gustaría saber más sobre alguna?",
+           "Puedo ayudarte con nombres de verduras. Algunas de las más comunes son zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Te interesa alguna en particular?",
+           "¡Sí, claro! Entre las verduras más comunes se encuentran zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Te gustaría saber más sobre alguna de ellas?",
+           "Las verduras son una excelente fuente de nutrientes. Algunas de las verduras más populares son zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Hay alguna que te gustaría conocer más?",
+           "Conozco muchos tipos de verduras. Algunas de las más comunes son zanahoria, brócoli, espinaca, lechuga, coliflor, tomate, pepino, cebolla, pimiento, calabacín, berenjena, y muchas más. ¿Te gustaría saber más sobre alguna de ellas?"
+         ];
+         return getRandomResponse(respuestasVerduras);
+    } else if (lowerCaseInput.includes("nombres de frutas") || 
+           lowerCaseInput.includes("frutas comunes") || 
+           lowerCaseInput.includes("nombre de algunas frutas") ||
+           lowerCaseInput.includes("frutas populares") || 
+           lowerCaseInput.includes("tipos de frutas")) {
+       const respuestasFrutas = [
+           "¡Claro! Algunas frutas comunes incluyen manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, y muchos más. ¿Te gustaría saber más sobre alguna en particular?",
+           "¡Me encantan las frutas! Entre las frutas más comunes se encuentran manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, entre otras. ¿Te gustaría saber más sobre alguna de ellas?",
+           "Las frutas son deliciosas y saludables. Algunas de las frutas más populares son manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, y muchas más. ¿Hay alguna en específico que te interese?",
+           "¡Sí, conozco muchas frutas! Algunas de las más comunes son manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, y muchas más. ¿Te gustaría saber más sobre alguna de ellas?",
+           "Las frutas son una excelente opción para mantenerse saludable. Algunas frutas populares incluyen manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, y muchas más. ¿Te gustaría saber más sobre alguna?",
+           "Puedo ayudarte con nombres de frutas. Algunas de las más comunes son manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, y muchas más. ¿Te interesa alguna en particular?",
+           "¡Sí, claro! Entre las frutas más comunes se encuentran manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, y muchas más. ¿Te gustaría saber más sobre alguna de ellas?",
+           "Las frutas son una excelente fuente de nutrientes. Algunas de las frutas más populares son manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, y muchas más. ¿Hay alguna que te gustaría conocer más?",
+           "Conozco muchos tipos de frutas. Algunas de las más comunes son manzana, plátano, naranja, pera, uva, fresa, piña, sandía, melón, kiwi, mango, y muchas más. ¿Te gustaría saber más sobre alguna de ellas?"
+        ];
+        return getRandomResponse(respuestasFrutas);
+    } else if (lowerCaseInput.includes("nombres de los personajes del increíble mundo de gumball") || 
+           lowerCaseInput.includes("personajes de el increíble mundo de gumball") || 
+           lowerCaseInput.includes("nombres de los personajes de gumball") ||
+           lowerCaseInput.includes("personajes de gumball") || 
+           lowerCaseInput.includes("nombres de los personajes de el asombroso mundo de gumball") || 
+           lowerCaseInput.includes("personajes de el asombroso mundo de gumball")) {
+       const respuestasGumball = [
+           "¡Por supuesto! Algunos de los personajes principales de El Increíble Mundo de Gumball son Gumball Watterson, Darwin Watterson, Anais Watterson, Nicole Watterson, Richard Watterson, y muchos más. ¿Te gustaría saber más sobre alguno en particular?",
+           "¡Me encanta El Increíble Mundo de Gumball! Entre los personajes principales se encuentran Gumball Watterson, Darwin Watterson, Anais Watterson, Nicole Watterson y Richard Watterson. ¿Te gustaría saber más sobre alguno de ellos?",
+           "El Increíble Mundo de Gumball cuenta con una amplia variedad de personajes, desde la familia Watterson hasta los amigos de Gumball en la escuela. Algunos de los personajes más destacados son Gumball, Darwin, Anais, Nicole y Richard. ¿Hay alguno en específico que te interese?",
+           "El Increíble Mundo de Gumball tiene una extensa galería de personajes, incluyendo a Gumball Watterson, Darwin Watterson, Anais Watterson, Nicole Watterson, Richard Watterson, y muchos más. ¿Te gustaría saber más sobre alguno de ellos?",
+           "¡Sí, conozco muchos de los personajes de El Increíble Mundo de Gumball! Algunos de los más destacados son Gumball Watterson, Darwin Watterson, Anais Watterson, Nicole Watterson y Richard Watterson. ¿Te gustaría saber más sobre alguno de ellos?",
+           "El Increíble Mundo de Gumball tiene una rica galería de personajes, desde la familia Watterson hasta los residentes de Elmore. Entre los más conocidos se encuentran Gumball, Darwin, Anais, Nicole y Richard. ¿Hay alguno en específico que te interese?",
+           "Puedo ayudarte con información sobre los personajes de El Increíble Mundo de Gumball. Algunos de los más destacados son Gumball Watterson, Darwin Watterson, Anais Watterson, Nicole Watterson y Richard Watterson. ¿Te gustaría conocer más detalles sobre alguno de ellos?",
+           "¡Sí, conozco a muchos de los personajes de El Increíble Mundo de Gumball! Algunos de los más conocidos son Gumball Watterson, Darwin Watterson, Anais Watterson, Nicole Watterson y Richard Watterson. ¿Te gustaría saber más sobre alguno de ellos?",
+           "Conozco muchos de los personajes de El Increíble Mundo de Gumball. Algunos de los más destacados son Gumball Watterson, Darwin Watterson, Anais Watterson, Nicole Watterson y Richard Watterson. ¿Te gustaría conocer más detalles sobre alguno de ellos?"
+        ];
+        return getRandomResponse(respuestasGumball);
+    } else if (lowerCaseInput.includes("nombres de todos los personajes de dragon ball") || 
+           lowerCaseInput.includes("personajes de dragon ball") || 
+           lowerCaseInput.includes("nombres de los personajes de dragon ball") ||
+           lowerCaseInput.includes("personajes de dragon ball z") ||
+           lowerCaseInput.includes("nombres de todos los personajes de dragon ball z")) {
+       const respuestasDragonBall = [
+           "¡Claro! Dragon Ball tiene una gran cantidad de personajes, incluyendo a Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Goten, Freezer, Cell, y muchos más. ¿Hay algún personaje en particular que te interese?",
+           "¡Me encanta Dragon Ball! Entre los personajes principales se encuentran Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Goten, Freezer y Cell. ¿Te gustaría saber más sobre alguno en particular?",
+           "Dragon Ball cuenta con una amplia variedad de personajes, desde los guerreros Z hasta los villanos. Algunos de los personajes más destacados son Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Freezer y Cell. ¿Hay alguno en específico que te interese?",
+           "Dragon Ball tiene una extensa galería de personajes, entre los más conocidos se encuentran Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Goten, Freezer, y Cell. ¿Te gustaría saber más sobre alguno de ellos?",
+           "¡Sí, conozco muchos de los personajes de Dragon Ball! Algunos de los más destacados son Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Goten, Freezer, y Cell. ¿Hay alguno en particular del que te gustaría saber más?",
+           "Dragon Ball tiene una rica galería de personajes, desde los guerreros Z hasta los villanos. Entre los más conocidos se encuentran Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Goten, Freezer, y Cell. ¿Hay alguno en específico que te interese?",
+           "Puedo ayudarte con información sobre los personajes de Dragon Ball. Entre los más destacados se encuentran Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Goten, Freezer, y Cell. ¿Hay alguno que te gustaría conocer más?",
+           "¡Sí, conozco a muchos de los personajes de Dragon Ball! Algunos de los más conocidos son Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Goten, Freezer, y Cell. ¿Te gustaría saber más sobre alguno de ellos?",
+           "Conozco muchos de los personajes de Dragon Ball. Algunos de los más destacados son Goku, Vegeta, Piccolo, Bulma, Gohan, Krilin, Trunks, Goten, Freezer, y Cell. ¿Te gustaría conocer más detalles sobre alguno de ellos?"
+         ];
+         return getRandomResponse(respuestasDragonBall);
+     } else if (lowerCaseInput.includes("buscar música") || 
+           lowerCaseInput.includes("poner música") || 
+           lowerCaseInput.includes("reproducir música") ||
+           lowerCaseInput.includes("música para escuchar") || 
+           lowerCaseInput.includes("alguna recomendación musical") || 
+           lowerCaseInput.includes("necesito música")) {
+       const respuestasMusica = [
+           "¡Claro! ¿Qué tipo de música te gusta? Puedo recomendarte algunos géneros populares.",
+           "Puedo recomendarte algunas plataformas de streaming donde puedes encontrar música. ¿Tienes alguna preferencia en cuanto al género?",
+           "¿Qué tipo de música te interesa? Puedo sugerirte algunos artistas o géneros populares.",
+           "Buscar música es genial, ¿verdad? ¿Tienes alguna canción o artista favorito en mente?",
+           "Puedo sugerirte algunas canciones populares o artistas de moda. ¿Hay algo en particular que te gustaría escuchar?",
+           "¿Necesitas música para un estado de ánimo específico? Estoy aquí para ayudarte a encontrar la banda sonora perfecta.",
+           "Aunque no puedo buscar música directamente, puedo darte algunas recomendaciones sobre géneros musicales o artistas populares.",
+           "¿Te gustaría explorar nuevos géneros musicales o prefieres escuchar tus favoritos?",
+           "Puedo sugerirte algunas canciones o artistas populares. ¿Tienes alguna preferencia en cuanto al estilo musical?",
+           "¡Buscar música es divertido! ¿Hay algún género o artista que te gustaría explorar?"
+          ];
+          return getRandomResponse(respuestasMusica);
+     } else if (lowerCaseInput.includes("no me quiero bañar") || 
+           lowerCaseInput.includes("no quiero ducharme") || 
+           lowerCaseInput.includes("no tengo ganas de bañarme") ||
+           lowerCaseInput.includes("no me apetece bañarme") || 
+           lowerCaseInput.includes("no quiero tomar una ducha") || 
+           lowerCaseInput.includes("no quiero bañarme")) {
+       const respuestasNoBañarse = [
+           "Entiendo que a veces no tengas ganas de bañarte, pero recuerda que mantener la higiene personal es importante para tu salud y bienestar.",
+           "Puede ser difícil encontrar la motivación para bañarse a veces, pero te sentirás mejor después de hacerlo. ¿Hay algo en particular que te esté impidiendo querer bañarte?",
+           "Tomarse un baño puede ayudarte a relajarte y recargar energías. ¿Hay algo que pueda hacer para ayudarte a sentirte más motivado/a para bañarte?",
+           "A veces, tomar una ducha puede ser un buen momento para desconectar y cuidarte a ti mismo/a. ¿Puedo ayudarte con algún consejo o sugerencia para hacerlo más agradable?",
+           "Entiendo que no te apetezca bañarte en este momento, pero recuerda que mantener la higiene personal es importante para tu salud física y mental.",
+           "Aunque no te sientas con ganas de bañarte en este momento, intenta recordar cómo te sentirás después de hacerlo. ¿Hay algo que pueda hacer para ayudarte a motivarte?",
+           "Puede ser difícil encontrar la motivación para bañarse a veces, pero es importante cuidar de ti mismo/a. ¿Hay algo en particular que te gustaría hacer para que bañarte sea más fácil?",
+           "Incluso si no te sientes con ganas de bañarte en este momento, recuerda que hacerlo te hará sentir fresco/a y renovado/a. ¿Te gustaría hablar sobre cómo hacerlo más llevadero?",
+           "Entiendo que no quieras bañarte en este momento, pero recuerda que es importante mantener la higiene personal. ¿Hay algo que pueda hacer para ayudarte a sentirte más motivado/a?",
+           "Aunque no te apetezca bañarte en este momento, recuerda que es una parte importante de cuidar de ti mismo/a. ¿Puedo ayudarte con algún consejo o sugerencia para hacerlo más fácil?"
+        ];
+        return getRandomResponse(respuestasNoBañarse);
+    } else if (lowerCaseInput.includes("no tengo apoyo") || 
+           lowerCaseInput.includes("me siento sin apoyo") || 
+           lowerCaseInput.includes("siento que no tengo ayuda") ||
+           lowerCaseInput.includes("no tengo a nadie") || 
+           lowerCaseInput.includes("sin apoyo emocional")) {
+       const respuestasSinApoyo = [
+           "Lo siento mucho por lo que estás pasando. Recuerda que siempre hay personas dispuestas a ofrecer apoyo. ¿Puedo ayudarte a encontrar recursos de apoyo?",
+           "Puede ser difícil sentir que no tienes apoyo, pero quiero que sepas que no estás solo/a en esto. ¿Hay algo en particular en lo que pueda ayudarte?",
+           "Es normal sentirse sin apoyo en momentos difíciles, pero quiero que sepas que no estás solo/a. ¿Te gustaría hablar sobre lo que te está haciendo sentir así?",
+           "Puedo imaginar que sentirse sin apoyo puede ser muy duro. ¿Hay algo específico en lo que pueda ayudarte o alguien con quien te gustaría hablar?",
+           "Sentir que no tienes apoyo puede ser abrumador, pero quiero que sepas que estoy aquí para ofrecerte apoyo y escucha. ¿Cómo puedo ayudarte hoy?",
+           "Es difícil sentir que no tienes apoyo, pero quiero que sepas que siempre puedes contar conmigo para escucharte y ofrecerte apoyo. ¿Hay algo en lo que pueda ayudarte ahora?",
+           "La sensación de no tener apoyo puede ser muy difícil, pero quiero que sepas que estoy aquí para ti. ¿Hay algo en particular en lo que pueda ayudarte o alguien con quien te gustaría hablar?",
+           "Sentirse sin apoyo puede ser una experiencia desafiante, pero recuerda que siempre hay personas dispuestas a escucharte y apoyarte. ¿Cómo puedo ayudarte a sentirte mejor?",
+           "Estoy aquí para ofrecerte apoyo y comprensión en este momento difícil. ¿Hay algo específico en lo que pueda ayudarte o alguien a quien te gustaría hablar?",
+           "La sensación de no tener apoyo puede ser muy dura, pero quiero que sepas que no estás solo/a. Si necesitas hablar, estoy aquí para escucharte y ofrecerte mi apoyo.",
+           "Entiendo que te sientas sin apoyo emocional en este momento. ¿Hay algo en lo que pueda ayudarte o alguien con quien te gustaría hablar?",
+           "La falta de apoyo emocional puede ser difícil de sobrellevar, pero quiero que sepas que estoy aquí para ofrecerte mi apoyo. ¿Cómo puedo ayudarte hoy?",
+           "Sentir que no tienes apoyo emocional puede ser muy duro. Estoy aquí para escucharte y ofrecerte mi apoyo en lo que necesites.",
+           "Es normal sentirse sin apoyo emocional en momentos difíciles, pero quiero que sepas que no estás solo/a. ¿Cómo puedo ayudarte a sentirte mejor?",
+           "Si te sientes sin apoyo emocional, recuerda que estoy aquí para ofrecerte mi apoyo y escucha. ¿Hay algo específico en lo que pueda ayudarte ahora?"
+        ];
+        return getRandomResponse(respuestasSinApoyo);
+    } else if (lowerCaseInput.includes("me siento solo") || 
+           lowerCaseInput.includes("me siento sola") || 
+           lowerCaseInput.includes("siento soledad") ||
+           lowerCaseInput.includes("estoy solo") || 
+           lowerCaseInput.includes("estoy sola") || 
+           lowerCaseInput.includes("soledad")) {
+       const respuestasSoledad = [
+           "Lo siento mucho por lo que estás pasando. Es normal sentirse solo/a a veces, pero recuerda que no estás solo/a en esto. ¿Puedo ayudarte de alguna manera?",
+           "Te escucho y entiendo que la soledad puede ser difícil. ¿Hay algo en particular en lo que pueda ayudarte o alguien con quien te gustaría hablar?",
+           "La soledad puede ser abrumadora, pero quiero que sepas que estoy aquí para ti. ¿Te gustaría hablar sobre lo que te está haciendo sentir así?",
+           "Puedo imaginar que sentirse solo/a puede ser muy difícil. Por favor, recuerda que siempre hay personas dispuestas a escucharte y apoyarte.",
+           "La soledad puede ser una experiencia desafiante. ¿Hay algo que te gustaría compartir o alguna actividad que te ayude a sentirte mejor?",
+           "La soledad es una experiencia común, pero eso no significa que tengas que pasar por ello solo/a. ¿Hay algo que pueda hacer para ayudarte a sentirte mejor?",
+           "Es normal sentirse solo/a a veces, pero quiero que sepas que no estás solo/a en esto. Si necesitas hablar, estoy aquí para escucharte.",
+           "Sé que la soledad puede ser difícil de manejar, pero quiero que sepas que no estás solo/a. Si necesitas compañía o alguien con quien hablar, estoy aquí para ti.",
+           "La soledad puede ser una experiencia desafiante, pero estoy aquí para ofrecerte apoyo y compañía. ¿Hay algo en lo que pueda ayudarte?",
+           "La soledad puede ser difícil de sobrellevar, pero recuerda que siempre hay personas dispuestas a escucharte y apoyarte. ¿Cómo puedo ayudarte hoy?"
+        ];
+        return getRandomResponse(respuestasSoledad);
+    } else if (lowerCaseInput.includes("quiero quitarme la vida") || 
+           lowerCaseInput.includes("me quiero suicidar") || 
+           lowerCaseInput.includes("no quiero vivir más") ||
+           lowerCaseInput.includes("pensamientos suicidas")) {
+       const respuestasSuicidio = [
+           "Lo siento mucho por lo que estás pasando. Por favor, recuerda que no estás solo/a y que hay ayuda disponible. ¿Puedo ayudarte a encontrar recursos de apoyo?",
+           "Escucharte decir eso me preocupa mucho. Por favor, háblame más sobre cómo te sientes o si hay alguien en quien puedas confiar para hablar sobre esto.",
+           "Tu seguridad es lo más importante. Por favor, busca ayuda de inmediato. Puedes comunicarte con una línea de ayuda o acudir a un profesional de la salud mental.",
+           "Te escucho y estoy aquí para apoyarte. Por favor, no tomes ninguna decisión precipitada. ¿Hay alguien en quien puedas confiar para hablar sobre esto?",
+           "Entiendo que estás pasando por un momento difícil. Por favor, recuerda que siempre hay opciones y ayuda disponible. ¿Puedo ayudarte a encontrar recursos de apoyo?",
+           "No estás solo/a en esto. Por favor, busca ayuda de inmediato. Puedes comunicarte con una línea de ayuda o acudir a un hospital para recibir apoyo profesional.",
+           "Tus palabras son muy serias y me preocupan. Por favor, considera hablar con un ser querido o buscar ayuda profesional. Tu vida es valiosa y mereces apoyo.",
+           "Por favor, no te sientas solo/a en esto. Hay personas dispuestas a escucharte y ayudarte. ¿Puedo ayudarte a encontrar recursos de apoyo?",
+           "Tu bienestar es importante. Por favor, busca ayuda lo antes posible. Puedes comunicarte con una línea de ayuda o acudir a un profesional de la salud mental para recibir apoyo.",
+           "Espero que puedas buscar ayuda de inmediato. Por favor, no te sientas solo/a en esto. Hay personas que se preocupan por ti y quieren ayudarte a superar esto."
+        ];
+        return getRandomResponse(respuestasSuicidio);
+    } else if (lowerCaseInput.includes("no me da hambre") || 
+           lowerCaseInput.includes("no tengo hambre") || 
+           lowerCaseInput.includes("no quiero comer") ||
+           lowerCaseInput.includes("no siento hambre")) {
+       const respuestasNoHambre = [
+           "Entiendo, a veces el apetito puede ser irregular. Intenta escuchar a tu cuerpo y comer cuando te sientas cómodo.",
+           "Es normal tener fluctuaciones en el apetito. Asegúrate de mantenerte hidratado y comer alimentos nutritivos cuando te sientas listo.",
+           "No tener hambre a veces puede ser normal. Intenta hacer pequeñas comidas frecuentes o esperar hasta que sientas hambre para comer.",
+           "Si no tienes hambre en este momento, está bien. Asegúrate de mantenerte hidratado y estar atento a las señales de hambre más tarde.",
+           "Si no sientes hambre en este momento, no te preocupes. Es importante escuchar a tu cuerpo y comer cuando realmente lo necesites.",
+           "El apetito puede variar de persona a persona y de un día a otro. Intenta comer cuando sientas hambre y no te fuerces si no tienes apetito en este momento.",
+           "Si no tienes hambre en este momento, está bien. Intenta mantener un horario regular de comidas y comer cuando sientas que tu cuerpo lo necesita.",
+           "A veces, el estrés o la ansiedad pueden afectar el apetito. Intenta relajarte y buscar actividades que te hagan sentir bien.",
+           "Si no tienes hambre en este momento, no te preocupes. Asegúrate de mantener una dieta equilibrada y comer cuando realmente lo desees.",
+           "No tener hambre en este momento puede ser normal. Intenta comer algo ligero y nutritivo cuando sientas hambre más tarde.",
+           "Si no sientes hambre en este momento, intenta no preocuparte por ello. Asegúrate de mantenerte hidratado y escuchar a tu cuerpo."
+        ];
+        return getRandomResponse(respuestasNoHambre);
+    } else if (lowerCaseInput.includes("ojeras") || 
+           lowerCaseInput.includes("cómo quitar las ojeras") || 
+           lowerCaseInput.includes("bolsas debajo de los ojos") ||
+           lowerCaseInput.includes("cómo reducir las ojeras") ||
+           lowerCaseInput.includes("eliminar las ojeras")) {
+       const respuestasOjeras = [
+           "Para reducir las ojeras, intenta dormir lo suficiente todas las noches y mantener una rutina de cuidado de la piel que incluya cremas hidratantes y productos con vitamina C.",
+           "Las ojeras pueden ser causadas por la falta de sueño y la deshidratación. Asegúrate de dormir lo suficiente y beber mucha agua para mantener la piel hidratada.",
+           "Para reducir la apariencia de las ojeras, intenta colocar bolsas de té frías sobre los ojos durante unos minutos o aplicar rodajas de pepino para refrescar la piel.",
+           "Las ojeras pueden ser causadas por la retención de líquidos y la falta de sueño. Intenta reducir la ingesta de sodio, dormir lo suficiente y aplicar compresas frías para reducir la hinchazón.",
+           "Para reducir las ojeras, asegúrate de dormir al menos 7-8 horas cada noche y aplicar cremas o sueros para el contorno de ojos que contengan ingredientes como vitamina K, cafeína o ácido hialurónico.",
+           "Las ojeras pueden ser el resultado de alergias, fatiga o genética. Intenta aplicar compresas frías, dormir lo suficiente y usar cremas específicas para el contorno de ojos para mejorar su apariencia.",
+           "Para reducir las ojeras, evita frotarte los ojos, usa protector solar diariamente y aplica cremas hidratantes para mantener la piel alrededor de los ojos saludable e hidratada.",
+           "Las ojeras pueden ser causadas por la falta de sueño, el estrés y la mala circulación. Intenta dormir lo suficiente, hacer ejercicio regularmente y aplicar compresas frías para reducir la hinchazón.",
+           "Para reducir las ojeras, intenta aplicar rodajas de patata o bolsas de té frías sobre los ojos durante unos minutos cada día, además de mantener una buena hidratación y dormir lo suficiente.",
+           "Las ojeras pueden ser causadas por la dilatación de los vasos sanguíneos bajo la piel. Intenta aplicar compresas frías, mantener una dieta saludable y usar protectores solares para proteger la piel del sol.",
+           "Las ojeras pueden ser el resultado de la edad, la genética o la falta de sueño. Para reducir su apariencia, intenta usar cremas con retinol, aplicar compresas frías y dormir lo suficiente cada noche."
+        ];
+        return getRandomResponse(respuestasOjeras);
+    } else if (lowerCaseInput.includes("mal aliento") || 
+           lowerCaseInput.includes("aliento desagradable") || 
+           lowerCaseInput.includes("mal olor en la boca") ||
+           lowerCaseInput.includes("cómo quitar el mal aliento") ||
+           lowerCaseInput.includes("aliento fresco") ||
+           lowerCaseInput.includes("olor a boca")) {
+       const respuestasMalAliento = [
+           "Para combatir el mal aliento, es importante cepillarse los dientes y la lengua después de cada comida, usar hilo dental y enjuague bucal, y mantenerse hidratado.",
+           "El mal aliento puede ser causado por bacterias en la boca. Asegúrate de cepillarte los dientes, la lengua y usar hilo dental regularmente para mantener una buena higiene bucal.",
+           "El mal aliento a menudo es el resultado de bacterias en la boca. Intenta cepillarte los dientes y la lengua dos veces al día y usar hilo dental diariamente para mantener tu boca fresca.",
+           "Para evitar el mal aliento, cepíllate los dientes al menos dos veces al día, usa hilo dental y enjuague bucal, y mantente hidratado. También es importante visitar regularmente al dentista.",
+           "El mal aliento puede ser causado por la acumulación de bacterias en la boca. Asegúrate de cepillarte los dientes, la lengua y usar hilo dental con regularidad para mantener una boca fresca.",
+           "El mal aliento puede ser un signo de mala higiene bucal. Intenta cepillarte los dientes, la lengua y usar hilo dental con regularidad, y considera visitar al dentista para un chequeo.",
+           "Para combatir el mal aliento, asegúrate de cepillarte los dientes y la lengua con un cepillo de dientes y pasta dental de calidad. También puedes usar enjuague bucal para una frescura adicional.",
+           "El mal aliento puede ser causado por la acumulación de bacterias en la boca y restos de comida. Cepíllate los dientes después de cada comida y usa hilo dental para mantener una boca limpia y fresca.",
+           "Intenta cepillarte los dientes, la lengua y usar hilo dental regularmente para combatir el mal aliento. Además, beber agua y evitar alimentos como el ajo y la cebolla puede ayudar a mantener el aliento fresco.",
+           "Para mejorar el aliento, es esencial mantener una buena higiene bucal. Cepíllate los dientes y la lengua, usa hilo dental y enjuague bucal, y considera visitar al dentista para una limpieza profesional.",
+           "Mantener una buena higiene bucal, beber suficiente agua y evitar alimentos con olores fuertes como el ajo y la cebolla pueden ayudar a combatir el mal aliento.",
+           "El mal aliento puede ser causado por sequedad en la boca. Intenta beber más agua y usar enjuague bucal sin alcohol para mantener la boca hidratada y fresca.",
+           "Además de cepillarse los dientes y usar hilo dental, masticar chicle sin azúcar o consumir alimentos crujientes como manzanas y zanahorias pueden ayudar a combatir el mal aliento.",
+           "Algunos medicamentos pueden causar sequedad en la boca y contribuir al mal aliento. Si crees que tu medicamento puede estar afectando tu aliento, consulta a tu médico.",
+           "La limpieza de la lengua es importante para combatir el mal aliento, ya que las bacterias pueden acumularse en ella. Considera usar un limpiador de lengua para una higiene bucal completa."
+        ];
+        return getRandomResponse(respuestasMalAliento);
+    } else if (lowerCaseInput.includes("tengo sueño") || 
+           lowerCaseInput.includes("estoy cansado") || 
+           lowerCaseInput.includes("quiero dormir") || 
+           lowerCaseInput.includes("necesito descansar")) {
+       const respuestasSueno = [
+           "Es importante descansar bien. ¿Hay algo más en lo que pueda ayudarte?",
+           "Quizás sería bueno tomar una pequeña siesta. ¿Puedo ayudarte con algo más?",
+           "Tener sueño puede significar que necesitas un descanso. ¿En qué puedo asistirte?",
+           "El descanso es crucial para la salud. ¿Puedo ayudarte con algo más?",
+           "Si tienes sueño, podría ser un buen momento para relajarte un poco. ¿Necesitas algo más?",
+           "A veces, una buena noche de sueño puede hacer maravillas. ¿Puedo ayudarte con algo más?",
+           "Tomarse un descanso puede ser útil si te sientes cansado. ¿Qué más puedo hacer por ti?",
+           "Entiendo, el sueño es importante para recargar energías. ¿Hay algo más que pueda hacer por ti?"
+        ];
+        return getRandomResponse(respuestasSueno);
+    } else if (lowerCaseInput.includes("bien") || 
+           lowerCaseInput.includes("estoy genial") || 
+           lowerCaseInput.includes("estoy perfecto") ||
+           lowerCaseInput.includes("estoy joya") ||
+           lowerCaseInput.includes("estoy estupendo") || 
+           lowerCaseInput.includes("estoy bien") || 
+           lowerCaseInput === "si estoy bien") {
+       const respuestasBien = [
+           "Me alegra escuchar que estás bien. Si necesitas algo más, no dudes en preguntar.",
+           "¡Excelente! Si hay algo más en lo que pueda ayudarte, házmelo saber.",
+           "¡Qué bueno! Si tienes alguna otra pregunta, estaré aquí para ayudarte.",
+           "¡Perfecto! No dudes en decirme si necesitas más ayuda.",
+           "¡Estupendo! Si necesitas más información, no dudes en pedirla.",
+           "Me alegro mucho de que estés bien. ¿Hay algo específico en lo que pueda asistirte?",
+           "¡Qué genial escuchar eso! Si tienes más preguntas, estaré encantado de ayudarte.",
+           "¡Maravilloso! Si necesitas ayuda con algo más, no dudes en decírmelo.",
+           "¡Fantástico! Estoy aquí para ayudarte en lo que necesites.",
+           "¡Asombroso! Siempre estoy disponible si necesitas algo más."
+        ];
+        return getRandomResponse(respuestasBien);
     } else if (lowerCaseInput.includes("buscar video en youtube") ||
            lowerCaseInput.includes("buscar videos en youtube") ||
            lowerCaseInput.includes("hacer recomendaciones de videos de youtube") ||
@@ -422,18 +768,28 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Muy bueno! 😄"
         ];
         return getRandomResponse(respuestasXd);
-    } else if (lowerCaseInput.includes("tengo hambre")) {
-        const respuestasHambre = [
-            "¡Entiendo! ¿Te gustaría que te recomiende algunos lugares para comer?",
-            "¿Qué tal si busco algunos restaurantes cercanos para ti?",
-            "¡Oh no! ¿Quieres que te ayude a encontrar algo para comer?",
-            "¡Vaya! ¿Estás buscando algo delicioso para comer?",
-            "¡Eso suena como una buena oportunidad para disfrutar de una deliciosa comida!",
-            "¡Hmm, hambre! ¿Quieres que te dé algunas recomendaciones gastronómicas?",
-            "¡Uff, el hambre es una señal de que es hora de disfrutar de una buena comida! ¿Te ayudo a encontrar algo?",
-            "¡Estoy aquí para ayudarte a saciar ese hambre! ¿Qué tipo de comida te apetece?",
-            "¡Hambre, hambre! ¿Quieres que busque algunos restaurantes cercanos para ti?",
-            "¡Entendido! Déjame ver qué opciones de comida deliciosa puedo encontrar para ti."
+    } else if (lowerCaseInput.includes("tengo hambre") || 
+           lowerCaseInput.includes("estoy hambriento") || 
+           lowerCaseInput.includes("quiero comer") ||
+           lowerCaseInput.includes("necesito comer") || 
+           lowerCaseInput.includes("necesito comida") || 
+           lowerCaseInput.includes("me muero de hambre")) {
+       const respuestasHambre = [
+           "¡Entiendo! ¿Te gustaría que te recomiende algunos lugares para comer?",
+           "¿Qué tal si busco algunos restaurantes cercanos para ti?",
+           "¡Oh no! ¿Quieres que te ayude a encontrar algo para comer?",
+           "¡Vaya! ¿Estás buscando algo delicioso para comer?",
+           "¡Eso suena como una buena oportunidad para disfrutar de una deliciosa comida!",
+           "¡Hmm, hambre! ¿Quieres que te dé algunas recomendaciones gastronómicas?",
+           "¡Uff, el hambre es una señal de que es hora de disfrutar de una buena comida! ¿Te ayudo a encontrar algo?",
+           "¡Estoy aquí para ayudarte a saciar ese hambre! ¿Qué tipo de comida te apetece?",
+           "¡Hambre, hambre! ¿Quieres que busque algunos restaurantes cercanos para ti?",
+           "¡Entendido! Déjame ver qué opciones de comida deliciosa puedo encontrar para ti.",
+           "¡Claro! Voy a encontrar algo sabroso para saciar tu apetito.",
+           "¡El hambre es una buena excusa para disfrutar de algo delicioso! ¿Te puedo ayudar a encontrar algo?",
+           "¡No hay problema! Estoy aquí para ayudarte a encontrar algo delicioso para comer.",
+           "¡Tener hambre es una oportunidad perfecta para explorar nuevas opciones gastronómicas! ¿Te puedo ayudar a encontrar algo cercano?",
+           "¡Nada mejor que una buena comida para satisfacer ese hambre! ¿Qué tipo de cocina te apetece hoy?"
        ];
        return getRandomResponse(respuestasHambre);
    } else if (lowerCaseInput === "no") {
@@ -886,6 +1242,11 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
      }
 }
     
+function obtenerRespuestaAleatoria(respuestas) {
+    const indice = Math.floor(Math.random() * respuestas.length);
+    return respuestas[indice];
+}
+    
 function extraerNumeros(input, operador) {
     let regex = new RegExp(`[^0-9.${operador}]`, 'g');
     let cleanedInput = input.replace(regex, '').trim();
@@ -896,58 +1257,131 @@ function extraerNumeros(input, operador) {
 function sumar(input) {
     const numeros = extraerNumeros(input, '+');
     if (numeros.length < 2 || numeros.some(isNaN)) {
-        return "Por favor ingresa al menos dos números válidos para sumar.";
+        return obtenerRespuestaAleatoria([
+            "Por favor ingresa al menos dos números válidos para sumar.",
+            "Por favor, asegúrate de proporcionar al menos dos números válidos para realizar la suma.",
+            "¡Necesito al menos dos números válidos para sumar!",
+            "Lo siento, pero necesito al menos dos números para realizar una suma."
+        ]);
     }
     const resultado = numeros.reduce((total, num) => total + num, 0);
-    return `El resultado de la suma es: ${resultado}`;
+    return obtenerRespuestaAleatoria([
+        "El resultado de la suma es: " + resultado + ".",
+        "La suma de los números proporcionados es: " + resultado + ".",
+        "El total obtenido al sumar los valores es: " + resultado + ".",
+        "La suma da como resultado: " + resultado + ".",
+        "La suma es: " + resultado + "."
+    ]);
 }
 
 function restar(input) {
     const numeros = extraerNumeros(input, '-');
     if (numeros.length < 2 || numeros.some(isNaN)) {
-        return "Por favor ingresa al menos dos números válidos para restar.";
+        return obtenerRespuestaAleatoria([
+            "Por favor ingresa al menos dos números válidos para restar.",
+            "Asegúrate de proporcionar al menos dos números válidos para realizar la resta.",
+            "Necesito al menos dos números válidos para realizar una resta.",
+            "Lo siento, pero necesito al menos dos números para realizar una resta."
+        ]);
     }
     const resultado = numeros.reduce((total, num) => total - num);
-    return `El resultado de la resta es: ${resultado}`;
+    return obtenerRespuestaAleatoria([
+        "El resultado de la resta es: " + resultado + ".",
+        "La resta de los números ingresados da como resultado: " + resultado + ".",
+        "El resultado de la operación de resta es: " + resultado + ".",
+        "La resta da como resultado: " + resultado + ".",
+        "La resta es: " + resultado + "."
+    ]);
 }
 
 function multiplicar(input) {
     const numeros = extraerNumeros(input, '×');
     if (numeros.length < 2 || numeros.some(isNaN)) {
-        return "Por favor ingresa al menos dos números válidos para multiplicar.";
+        return obtenerRespuestaAleatoria([
+            "Por favor ingresa al menos dos números válidos para multiplicar.",
+            "Recuerda proporcionar al menos dos números válidos para realizar la multiplicación.",
+            "Necesito al menos dos números válidos para realizar una multiplicación.",
+            "Lo siento, pero necesito al menos dos números para realizar una multiplicación."
+        ]);
     }
     const resultado = numeros.reduce((total, num) => total * num, 1);
-    return `El resultado de la multiplicación es: ${resultado}`;
+    return obtenerRespuestaAleatoria([
+        "El resultado de la multiplicación es: " + resultado + ".",
+        "El producto de los números dados es: " + resultado + ".",
+        "La multiplicación produce: " + resultado + ".",
+        "El resultado de la operación es: " + resultado + ".",
+        "El producto es: " + resultado + "."
+    ]);
 }
 
 function dividir(input) {
     const numeros = extraerNumeros(input, '/');
     if (numeros.length < 2 || numeros.some(isNaN)) {
-        return "Por favor ingresa al menos dos números válidos para dividir.";
+        return obtenerRespuestaAleatoria([
+            "Por favor ingresa al menos dos números válidos para dividir.",
+            "Asegúrate de proporcionar al menos dos números válidos para realizar la división.",
+            "Necesito al menos dos números válidos para realizar una división.",
+            "Lo siento, pero necesito al menos dos números para realizar una división."
+        ]);
     }
     const resultado = numeros.reduce((total, num) => total / num);
-    return `El resultado de la división es: ${resultado}`;
+    return obtenerRespuestaAleatoria([
+        "El resultado de la división es: " + resultado + ".",
+        "El resultado de dividir los números es: " + resultado + ".",
+        "La división produce: " + resultado + ".",
+        "El resultado de la operación es: " + resultado + ".",
+        "La división es: " + resultado + "."
+    ]);
 }
 
 function raizCuadrada(input) {
     const numero = parseFloat(input.replace(/[^0-9.]/g, '').trim());
     if (isNaN(numero)) {
-        return "Por favor ingresa un número válido para calcular la raíz cuadrada.";
+        return obtenerRespuestaAleatoria([
+            "Por favor ingresa un número válido para calcular la raíz cuadrada.",
+            "Asegúrate de proporcionar un número válido para obtener su raíz cuadrada.",
+            "Necesito un número válido para calcular su raíz cuadrada.",
+            "Lo siento, pero necesito un número válido para calcular su raíz cuadrada."
+        ]);
     }
     const resultado = Math.sqrt(numero);
-    return `La raíz cuadrada de ${numero} es: ${resultado}`;
+    return obtenerRespuestaAleatoria([
+        "La raíz cuadrada de " + numero + " es: " + resultado + ".",
+        "El resultado de la operación de raíz cuadrada es: " + resultado + ".",
+        "La raíz cuadrada es: " + resultado + ".",
+        "El resultado es: " + resultado + ".",
+        "La raíz de " + numero + " es: " + resultado + "."
+    ]);
 }
 
 function obtenerHora() {
     const now = new Date();
     const horas = now.getHours();
     const minutos = now.getMinutes();
-    return `La hora actual es: ${horas}:${minutos < 10 ? '0' + minutos : minutos}`;
+    return obtenerRespuestaAleatoria([
+        "La hora actual es: " + horas + ":" + (minutos < 10 ? '0' + minutos : minutos) + ".",
+        "Son las " + horas + " con " + minutos + " minutos.",
+        "La hora exacta es: " + horas + ":" + minutos + ".",
+        "Son las " + horas + ":" + minutos + ".",
+        "La hora es: " + horas + ":" + minutos + "."
+    ]);
 }
 
 function obtenerDia() {
     const dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
     const now = new Date();
     const diaSemana = dias[now.getDay()];
-    return `Hoy es ${diaSemana}.`;
+    return obtenerRespuestaAleatoria([
+        "Hoy es " + diaSemana + ".",
+        "El día de hoy cae en: " + diaSemana + ".",
+        "¡Feliz " + diaSemana + "!",
+        "Es " + diaSemana + ". Disfruta tu día.",
+        "¡Buen " + diaSemana + "! ¿Cómo estás?",
+        "Que tengas un excelente " + diaSemana + ".",
+        "Es un hermoso día de " + diaSemana + ".",
+        "¡" + diaSemana + " maravilloso!",
+        "¡" + diaSemana + " de la semana!",
+        "¡Saludos en este " + diaSemana + "!",
+        "Buen día, hoy es " + diaSemana + "."
+    ]);
 }
