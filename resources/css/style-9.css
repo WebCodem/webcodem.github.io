@@ -20,7 +20,7 @@ a {
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background-color: #111;
+      background-color: #222;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -38,7 +38,7 @@ a {
     }
 
     header {
-      background-color: #111;
+      background-color: #222;
       color: white;
       padding: 10px;
       text-align: center;
@@ -49,7 +49,7 @@ a {
     }
 
     pre {
-      background-color: #222;
+      background-color: #111;
       padding: 5px;
       border-radius: 5px;
       overflow-x: auto;
