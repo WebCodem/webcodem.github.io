@@ -86,7 +86,8 @@
             text-decoration: none;
             display: block;
             padding: 10px;
-            background-color: #444;
+            background-color: #111;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
         }
         #playlist li a:hover {
