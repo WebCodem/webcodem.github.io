@@ -91,7 +91,7 @@
             border-radius: 5px;
         }
         #playlist li a:hover {
-            background-color: #555;
+            background-color: #111;
         }
 
         @keyframes slideDown {
