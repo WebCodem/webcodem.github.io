@@ -39,6 +39,8 @@
         const audio5 = document.getElementById('audio5');
         const audio6 = document.getElementById('audio6');
         const audio7 = document.getElementById('audio7');
+        const audio8 = document.getElementById('audio8');
+        const audio9 = document.getElementById('audio9');
         audio1.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
@@ -64,6 +66,14 @@
             this.play();
         });
         audio7.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        audio8.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        audio9.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
         });
