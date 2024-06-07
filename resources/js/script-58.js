@@ -1,7 +1,13 @@
         function convertToBase64() {
-            const inputText = document.getElementById('inputText').value;
-            const base64Text = btoa(inputText);
-            document.getElementById('result').textContent = base64Text;
+        const inputText = document.getElementById('inputText').value;
+    
+        if (!inputText.trim()) {
+        alert("Por favor, introduce algún texto antes de convertir a código Base64.");
+        return;
+        }
+    
+        const base64Text = btoa(inputText);
+        document.getElementById('result').textContent = base64Text;
         }
 
         function copyToClipboard() {
