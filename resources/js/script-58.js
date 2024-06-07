@@ -38,3 +38,14 @@
             
             selection.removeAllRanges();
         }
+
+        const textarea = document.getElementById('inputText');
+        const container = document.querySelector('.container');
+
+        textarea.addEventListener('focus', () => {
+        textarea.style.height = '150px'; 
+        });
+
+        textarea.addEventListener('blur', () => {
+        textarea.style.height = '80px';  
+        });
