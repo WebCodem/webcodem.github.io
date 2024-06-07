@@ -2,7 +2,7 @@ body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #333;
+      background-color: #222;
       color: white;
     }
 
@@ -20,7 +20,7 @@ a {
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background-color: #333;
+      background-color: #111;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -38,7 +38,7 @@ a {
     }
 
     header {
-      background-color: #292929;
+      background-color: #111;
       color: white;
       padding: 10px;
       text-align: center;
@@ -49,7 +49,7 @@ a {
     }
 
     pre {
-      background-color: #292929;
+      background-color: #111;
       padding: 5px;
       border-radius: 5px;
       overflow-x: auto;
