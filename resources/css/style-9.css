@@ -38,7 +38,7 @@ a {
     }
 
     header {
-      background-color: #111;
+      background-color: #222;
       color: white;
       padding: 10px;
       text-align: center;
@@ -49,7 +49,7 @@ a {
     }
 
     pre {
-      background-color: #111;
+      background-color: #222;
       padding: 5px;
       border-radius: 5px;
       overflow-x: auto;
