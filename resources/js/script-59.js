@@ -1,6 +1,8 @@
 function isBase64(str) {
     try {
-        return btoa(atob(str)) === str;
+        const decoded = atob(str);
+        const encoded = btoa(decoded);
+        return encoded === str;
     } catch (err) {
         return false;
     }
@@ -72,11 +74,3 @@ textarea.addEventListener('focus', () => {
 textarea.addEventListener('blur', () => {
     textarea.style.height = '80px';  
 });
-
-function isBase64(str) {
-    try {
-        return btoa(atob(str)) === str;
-    } catch (err) {
-        return false;
-    }
-}
