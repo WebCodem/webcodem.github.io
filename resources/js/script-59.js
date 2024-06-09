@@ -4,9 +4,9 @@ function isBase64(str) {
 }
 
 function decodeFromBase64() {
-    const inputText = document.getElementById('inputText').value;
+    const inputText = document.getElementById('inputText').value.trim();
 
-    if (!inputText.trim()) {
+    if (!inputText) {
         alert("Por favor, introduce algún texto antes de decodificar de código Base64.");
         return;
     }
@@ -17,8 +17,10 @@ function decodeFromBase64() {
     }
 
     try {
-        const decodedText = atob(inputText);
-        document.getElementById('result').textContent = decodedText;
+        let base64 = inputText.replace(/\s/g, ''); 
+        const decodedText = atob(base64);
+        const cleanText = decodedText.replace(/[^\x20-\x7E]/g, ''); 
+        document.getElementById('result').innerText = cleanText;
     } catch (err) {
         alert('Error al decodificar el código en Base64');
     }
@@ -26,7 +28,7 @@ function decodeFromBase64() {
 
 function copyToClipboard() {
     const resultElement = document.getElementById('result');
-    const resultText = resultElement.textContent.trim();
+    const resultText = resultElement.innerText.trim(); 
     const copyIcon = document.getElementById('copyIcon');
     const checkIcon = document.getElementById('checkIcon');
     const copyText = document.getElementById('copyText');
@@ -57,15 +59,15 @@ function copyToClipboard() {
     }
     
     selection.removeAllRanges();
-}
+    }
 
-const textarea = document.getElementById('inputText');
-const container = document.querySelector('.container');
+    const textarea = document.getElementById('inputText');
+    const container = document.querySelector('.container');
 
-textarea.addEventListener('focus', () => {
+    textarea.addEventListener('focus', () => {
     textarea.style.height = '150px'; 
-});
+    });
 
-textarea.addEventListener('blur', () => {
+    textarea.addEventListener('blur', () => {
     textarea.style.height = '80px';  
-});
+    });
