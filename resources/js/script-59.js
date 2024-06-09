@@ -1,11 +1,6 @@
 function isBase64(str) {
-    try {
-        const decoded = atob(str);
-        const encoded = btoa(decoded);
-        return encoded === str;
-    } catch (err) {
-        return false;
-    }
+    const base64Regex = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2,3}=?)?$/;
+    return base64Regex.test(str);
 }
 
 function decodeFromBase64() {
@@ -22,7 +17,12 @@ function decodeFromBase64() {
     }
 
     try {
-        const decodedText = atob(inputText);
+        // Asegurarse de que la cadena tenga una longitud que sea un múltiplo de 4 añadiendo "=" según sea necesario
+        let base64 = inputText;
+        while (base64.length % 4 !== 0) {
+            base64 += '=';
+        }
+        const decodedText = atob(base64);
         document.getElementById('result').textContent = decodedText;
     } catch (err) {
         alert('Error al decodificar el código en Base64');
