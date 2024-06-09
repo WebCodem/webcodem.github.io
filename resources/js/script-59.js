@@ -17,7 +17,6 @@ function decodeFromBase64() {
     }
 
     try {
-        // Asegurarse de que la cadena tenga una longitud que sea un múltiplo de 4 añadiendo "=" según sea necesario
         let base64 = inputText;
         while (base64.length % 4 !== 0) {
             base64 += '=';
