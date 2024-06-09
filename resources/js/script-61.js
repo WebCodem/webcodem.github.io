@@ -12,7 +12,7 @@
     function decodeAndRedirect(event, url) {
         var contentUrl2 = 'aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2JhYnkgcGxheWVyIC0gd2ViY29kZW0ucG5n';
         
-        var decodedUrl = (url === 'url2') ? atob(contentUrl1) : '';
+        var decodedUrl = (url === 'url2') ? atob(contentUrl2) : '';
         
         if (url === 'url2') {
             document.getElementById('imagen1').src = decodedUrl;
