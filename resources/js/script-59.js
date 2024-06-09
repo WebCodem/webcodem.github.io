@@ -17,11 +17,7 @@ function decodeFromBase64() {
     }
 
     try {
-        let base64 = inputText;
-        while (base64.length % 4 !== 0) {
-            base64 += '=';
-        }
-        const decodedText = atob(base64);
+        const decodedText = atob(inputText);
         document.getElementById('result').textContent = decodedText;
     } catch (err) {
         alert('Error al decodificar el código en Base64');
@@ -61,15 +57,15 @@ function copyToClipboard() {
     }
     
     selection.removeAllRanges();
-}
+    }
 
-const textarea = document.getElementById('inputText');
-const container = document.querySelector('.container');
+    const textarea = document.getElementById('inputText');
+    const container = document.querySelector('.container');
 
-textarea.addEventListener('focus', () => {
+    textarea.addEventListener('focus', () => {
     textarea.style.height = '150px'; 
-});
+    });
 
-textarea.addEventListener('blur', () => {
+    textarea.addEventListener('blur', () => {
     textarea.style.height = '80px';  
-});
+    });
