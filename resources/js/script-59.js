@@ -1,6 +1,6 @@
 function isBase64(str) {
     const base64Regex = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2,3}=?)?$/;
-    return base64Regex.test(str);
+    return base64Regex.test(str.replace(/\s/g, ''));
 }
 
 function decodeFromBase64() {
@@ -57,15 +57,15 @@ function copyToClipboard() {
     }
     
     selection.removeAllRanges();
-    }
+}
 
-    const textarea = document.getElementById('inputText');
-    const container = document.querySelector('.container');
+const textarea = document.getElementById('inputText');
+const container = document.querySelector('.container');
 
-    textarea.addEventListener('focus', () => {
+textarea.addEventListener('focus', () => {
     textarea.style.height = '150px'; 
-    });
+});
 
-    textarea.addEventListener('blur', () => {
+textarea.addEventListener('blur', () => {
     textarea.style.height = '80px';  
-    });
+});
