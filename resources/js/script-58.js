@@ -7,7 +7,9 @@ function convertToBase64() {
     }
     const utf8Encoder = new TextEncoder();
     const utf8Array = utf8Encoder.encode(inputText);
-    const base64Text = btoa(String.fromCharCode(...utf8Array));
+    let base64Text = btoa(String.fromCharCode(...utf8Array));
+    
+    base64Text = base64Text.replace(/=+$/, '');
     document.getElementById('result').textContent = base64Text;
 }
 
@@ -44,15 +46,15 @@ function copyToClipboard() {
     }
     
     selection.removeAllRanges();
-}
+    }
 
-const textarea = document.getElementById('inputText');
-const container = document.querySelector('.container');
-
-textarea.addEventListener('focus', () => {
+    const textarea = document.getElementById('inputText');
+    const container = document.querySelector('.container');
+ 
+    textarea.addEventListener('focus', () => {
     textarea.style.height = '150px'; 
-});
+    });
 
-textarea.addEventListener('blur', () => {
+    textarea.addEventListener('blur', () => {
     textarea.style.height = '80px';  
-});
+    });
