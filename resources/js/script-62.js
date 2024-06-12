@@ -15,7 +15,6 @@
         
         const faviconUrl = "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2xvZ28ucG5n";
         const decodedFaviconUrl = atob(faviconUrl);
-
         const linkElement = document.createElement('link');
         linkElement.rel = 'icon';
         linkElement.href = decodedFaviconUrl;
