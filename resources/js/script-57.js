@@ -260,6 +260,49 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! ¿Listo para resolver tus dudas?"
         ];
         return getRandomResponse(respuestasHola);
+    } else if (lowerCaseInput.includes("me gusta la mamá de mi amigo") || 
+           lowerCaseInput.includes("me gusta la madre de mi amigo") || 
+           lowerCaseInput.includes("estoy enamorado de la mamá de mi amigo") || 
+           lowerCaseInput.includes("estoy enamorado de la madre de mi amigo") || 
+           lowerCaseInput.includes("me siento atraído por la mamá de mi amigo") || 
+           lowerCaseInput.includes("me siento atraído por la madre de mi amigo")) {
+       const respuestasGustaMamaAmigo = [
+           "Entiendo que esta situación pueda ser complicada. ¿Has considerado hablar con alguien de confianza sobre esto?",
+           "Puede ser difícil navegar por sentimientos complejos. ¿Has pensado en hablar sobre esto con alguien de confianza?",
+           "Es normal tener sentimientos confusos hacia alguien cercano. ¿Te gustaría discutir más sobre cómo te sientes?",
+           "Los sentimientos pueden ser complicados, especialmente cuando involucran a personas cercanas. ¿Te gustaría hablar más sobre esto?",
+           "Es importante recordar que los sentimientos pueden ser confusos, especialmente cuando involucran a alguien cercano. ¿Te gustaría hablar más sobre tus sentimientos?",
+           "Entiendo que esta es una situación delicada. ¿Te gustaría hablar más sobre cómo te sientes y cómo manejar esta situación?",
+           "Los sentimientos hacia alguien cercano pueden ser difíciles de entender. ¿Te gustaría explorar más sobre tus sentimientos y cómo abordarlos?",
+           "Es comprensible que te sientas así, pero es importante manejar esta situación con sensibilidad. ¿Cómo te gustaría proceder?",
+           "Puede ser útil buscar orientación de alguien de confianza en una situación como esta. ¿Has pensado en hablar con alguien al respecto?",
+           "Es normal tener sentimientos complejos hacia personas cercanas. ¿Te gustaría hablar más sobre tus sentimientos y cómo manejarlos?"
+        ];
+        return getRandomResponse(respuestasGustaMamaAmigo);
+    } else if (lowerCaseInput.includes("en nada") || 
+           lowerCaseInput.includes("no necesito ayuda") || 
+           lowerCaseInput.includes("no gracias") || 
+           lowerCaseInput.includes("no por ahora") || 
+           lowerCaseInput.includes("no en este momento") || 
+           lowerCaseInput.includes("ya está") || 
+           lowerCaseInput.includes("todo bien") || 
+           lowerCaseInput.includes("estoy bien") || 
+           lowerCaseInput.includes("no por el momento") || 
+           lowerCaseInput.includes("no requiero asistencia") || 
+           lowerCaseInput.includes("no necesito nada más")) {
+       const respuestasEnNada = [
+        "Entendido, aquí estoy si necesitas algo más. ¡Que tengas un buen día!",
+        "Perfecto, si necesitas ayuda en el futuro, no dudes en preguntar. ¡Que tengas un excelente día!",
+        "¡De acuerdo! Si necesitas ayuda más adelante, no dudes en volver. ¡Que tengas un día genial!",
+        "Entiendo, si cambias de opinión o necesitas ayuda más adelante, aquí estaré. ¡Que tengas un buen día!",
+        "Bien, si algo más surge, no dudes en volver. ¡Que tengas un día maravilloso!",
+        "Está bien, si necesitas ayuda en el futuro, no dudes en pedirla. ¡Que tengas un día estupendo!",
+        "De acuerdo, si tienes alguna otra pregunta más adelante, no dudes en hacerla. ¡Que tengas un día fantástico!",
+        "Entiendo, si algo más se presenta, no dudes en contactarme. ¡Que tengas un día increíble!",
+        "Está bien, no dudes en regresar si necesitas algo más. ¡Que tengas un día grandioso!",
+        "Perfecto, aquí estaré si surge alguna otra pregunta. ¡Que tengas un día lleno de alegría!"
+        ];
+        return getRandomResponse(respuestasEnNada);
     } else if (lowerCaseInput.includes("me gusta mi mejor amiga") || 
            lowerCaseInput.includes("me gusta mi amiga") || 
            lowerCaseInput.includes("estoy enamorado de mi mejor amiga") || 
@@ -419,6 +462,7 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
         return getRandomResponse(respuestasEstudios);
     } else if (lowerCaseInput.includes("por qué ninguna chica se me declara") || 
            lowerCaseInput.includes("por qué ninguna chica quiere ser mi novia") || 
+           lowerCaseInput.includes("por qué ninguna chica le gusto") || 
            lowerCaseInput.includes("ninguna chica se me declara") || 
            lowerCaseInput.includes("ninguna chica quiere ser mi novia")) {
        const respuestasNovia = [
@@ -473,7 +517,8 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
          ];
          return getRandomResponse(respuestasEsposaObligatoria);
     } else if (lowerCaseInput.includes("es obligatorio tener novia") || 
-           lowerCaseInput.includes("necesito tener novia") || 
+           lowerCaseInput.includes("necesito tener novia") ||
+           lowerCaseInput.includes("es obligatorio tener una novia") ||
            lowerCaseInput.includes("debo tener una novia") || 
            lowerCaseInput.includes("es necesario tener novia")) {
        const respuestasNoviaObligatoria = [
