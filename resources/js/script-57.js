@@ -260,6 +260,268 @@ lowerCaseInput = corregirErrores(lowerCaseInput);
             "¡Hola! ¿Listo para resolver tus dudas?"
         ];
         return getRandomResponse(respuestasHola);
+    } else if (lowerCaseInput.includes("me gusta mi mejor amiga") || 
+           lowerCaseInput.includes("me gusta mi amiga") || 
+           lowerCaseInput.includes("estoy enamorado de mi mejor amiga") || 
+           lowerCaseInput.includes("estoy enamorado de mi amiga") || 
+           lowerCaseInput.includes("me siento atraído por mi mejor amiga") || 
+           lowerCaseInput.includes("me siento atraído por mi amiga")) {
+       const respuestasGustaAmiga = [
+           "Es normal tener sentimientos confusos hacia los amigos cercanos. ¿Has considerado hablar con alguien de confianza sobre esto?",
+           "Entiendo que esta situación puede ser complicada. Sería útil hablar con alguien en quien confíes sobre tus sentimientos.",
+           "Puede ser difícil navegar por sentimientos complejos hacia un amigo cercano. ¿Has pensado en hablar sobre esto con alguien de confianza?",
+           "Los sentimientos hacia los amigos cercanos pueden ser complicados. ¿Te gustaría discutir más sobre cómo te sientes?",
+           "Es importante recordar que los sentimientos pueden ser confusos, especialmente cuando involucran a amigos cercanos. ¿Te gustaría hablar más sobre esto?",
+           "Entiendo que esta es una situación delicada. ¿Te gustaría hablar más sobre cómo te sientes y cómo manejar esta situación?",
+           "Los sentimientos hacia un amigo cercano pueden ser difíciles de entender. ¿Te gustaría explorar más sobre tus sentimientos y cómo abordarlos?",
+           "Es comprensible que te sientas así, pero es importante manejar esta situación con sensibilidad. ¿Cómo te gustaría proceder?",
+           "Puede ser útil buscar orientación de alguien de confianza en una situación como esta. ¿Has pensado en hablar con alguien al respecto?",
+           "Es normal tener sentimientos complejos hacia los amigos cercanos. ¿Te gustaría hablar más sobre tus sentimientos y cómo manejarlos?"
+        ];
+        return getRandomResponse(respuestasGustaAmiga);
+    } else if (lowerCaseInput.includes("me gusta mi prima") || 
+           lowerCaseInput.includes("estoy enamorado de mi prima") || 
+           lowerCaseInput.includes("me siento atraído por mi prima")) {
+       const respuestasGustaPrima = [
+           "Es importante recordar que los sentimientos pueden ser confusos. ¿Has considerado hablar con alguien de confianza sobre esto?",
+           "Es comprensible que te sientas confundido. ¿Has pensado en hablar sobre tus sentimientos con alguien en quien confíes?",
+           "Entiendo que esta situación pueda ser complicada. Sería útil hablar con alguien de confianza sobre tus sentimientos.",
+           "Es normal tener sentimientos encontrados, especialmente cuando se trata de relaciones familiares. ¿Te gustaría hablar más sobre esto?",
+           "Puede ser difícil navegar por sentimientos complejos. ¿Has considerado hablar con alguien de confianza para obtener orientación?",
+           "Los sentimientos pueden ser complicados, especialmente cuando involucran a un miembro de la familia. ¿Te gustaría discutir más sobre cómo te sientes?",
+           "Entiendo que este es un tema delicado. ¿Te gustaría hablar más sobre cómo te sientes y cómo manejar esta situación?",
+           "Es importante manejar esta situación con cuidado y respeto. ¿Te gustaría explorar más sobre tus sentimientos y cómo abordarlos?",
+           "Puede ser útil buscar orientación de alguien de confianza en una situación como esta. ¿Has pensado en hablar con alguien al respecto?",
+           "Es comprensible que te sientas así, pero es importante manejar esta situación con sensibilidad. ¿Cómo te gustaría proceder?"
+        ];
+        return getRandomResponse(respuestasGustaPrima);
+    } else if (lowerCaseInput.includes("nombre de tu creador") || 
+           lowerCaseInput.includes("quién te creó") || 
+           lowerCaseInput.includes("quién es tu creador") || 
+           lowerCaseInput.includes("quién te programó") || 
+           lowerCaseInput.includes("quién es tu programador") || 
+           lowerCaseInput.includes("quién te hizo") || 
+           lowerCaseInput.includes("quién te desarrolló")) {
+       const respuestasCreador = [
+           "Mi creador prefiere mantener su identidad en privado.",
+           "Mi creador prefiere mantenerse anónimo.",
+           "Lo siento, no puedo revelar esa información.",
+           "Mi creador no ha proporcionado permiso para compartir esa información.",
+           "No tengo permitido revelar el nombre de mi creador.",
+           "Prefiero mantener la identidad de mi creador en privado.",
+           "Lo siento, no puedo divulgar información sobre mi creador.",
+           "No tengo autorización para compartir esa información.",
+           "Mi creador ha decidido mantener su identidad en secreto."
+        ];
+        return getRandomResponse(respuestasCreador);
+    } else if (lowerCaseInput.includes("no sirves") || 
+           lowerCaseInput.includes("no funcionas") || 
+           lowerCaseInput.includes("no eres útil") || 
+           lowerCaseInput.includes("no me ayudas") || 
+           lowerCaseInput.includes("no me sirves") || 
+           lowerCaseInput.includes("eres inútil") || 
+           lowerCaseInput.includes("no eres de ayuda") || 
+           lowerCaseInput.includes("no eres eficaz") || 
+           lowerCaseInput.includes("no eres efectivo") || 
+           lowerCaseInput.includes("no eres bueno")) {
+       const respuestasNoSirves = [
+           "Lamento que no estés teniendo una buena experiencia. Por favor, ayúdame a mejorar proporcionando más detalles sobre lo que no está funcionando.",
+           "Mis disculpas si no cumplo con tus expectativas. Tu retroalimentación es valiosa. ¿Podrías describir más detalladamente cómo puedo ayudarte?",
+           "Lo siento si no te he sido útil. Estoy aquí para ayudar. ¿Podrías proporcionar más información sobre lo que necesitas?",
+           "Me disculpo si no cumplo con tus expectativas. Por favor, házmelo saber más específicamente sobre lo que no está funcionando para que pueda mejorar.",
+           "Lamento mucho escuchar eso. Si me das más detalles sobre lo que no está funcionando, haré todo lo posible para resolver el problema.",
+           "Mis disculpas si no estoy cumpliendo con tus necesidades. Por favor, proporciona más detalles para que pueda hacer los ajustes necesarios.",
+           "Entiendo que puedas estar frustrado. Por favor, dime más sobre cómo puedo ayudarte mejor.",
+           "Lo siento si mi rendimiento no ha sido satisfactorio. Tu retroalimentación es importante. ¿Podrías explicar más detalladamente lo que esperabas?",
+           "Me disculpo si no he sido de ayuda. Por favor, permíteme saber cómo puedo mejorar y satisfacer tus necesidades.",
+           "Lamento no haber cumplido con tus expectativas. Por favor, dime qué puedo hacer para ayudarte mejor."
+        ];
+        return getRandomResponse(respuestasNoSirves);
+    } else if (lowerCaseInput.includes("tienes muchos bugs") || 
+           lowerCaseInput.includes("tienes muchos errores") || 
+           lowerCaseInput.includes("estás lleno de bugs") || 
+           lowerCaseInput.includes("estás lleno de errores") || 
+           lowerCaseInput.includes("tienes fallos") ||
+           lowerCaseInput.includes("tienes defectos") ||
+           lowerCaseInput.includes("tienes problemas") ||
+           lowerCaseInput.includes("tienes errores en tu código") ||
+           lowerCaseInput.includes("tienes muchos fallos")) {
+       const respuestasBugs = [
+           "Lamento escuchar eso. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. ¿Podrías proporcionar más detalles sobre los errores que estás experimentando?",
+           "Mis disculpas por los problemas que estás experimentando. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Por favor, indícame los errores específicos para que pueda mejorar.",
+           "Lo siento si estás teniendo problemas. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Por favor, dime más sobre los errores que encuentras para que pueda solucionarlos.",
+           "Me disculpo por los inconvenientes. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Si puedes describir los problemas específicos, haré todo lo posible para resolverlos.",
+           "Lamento los problemas que estás experimentando. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Tu retroalimentación es valiosa. ¿Podrías decirme más sobre los errores que has encontrado?",
+           "Mis disculpas por cualquier molestia. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Por favor, reporta los errores que encuentres para que pueda abordarlos de inmediato.",
+           "Entiendo que los errores pueden ser frustrantes. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Si me das más información sobre los problemas, haré todo lo posible para solucionarlos.",
+           "Lo siento si mi rendimiento no es el esperado. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Por favor, ayúdame a mejorar informando los errores que has encontrado.",
+           "Lamento mucho los inconvenientes. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Por favor, proporcióname detalles sobre los errores para que pueda trabajar en corregirlos.",
+           "Me disculpo sinceramente por los errores. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Estoy aquí para ayudar. ¿Podrías describir los problemas que estás experimentando?",
+           "Agradezco tu paciencia. Soy un bot en fase beta y probablemente tengo muchos errores. Mi creador estará trabajando en ello. Por favor, ayúdame a mejorar informándome sobre los errores que has notado."
+        ];
+        return getRandomResponse(respuestasBugs);
+    } else if (lowerCaseInput.includes("cómo te crearon") || 
+           lowerCaseInput.includes("con qué lenguaje estás creado") || 
+           lowerCaseInput.includes("cómo fuiste desarrollado") || 
+           lowerCaseInput.includes("qué lenguaje de programación se utilizó para crearte") ||
+           lowerCaseInput.includes("cómo fuiste construido") ||
+           lowerCaseInput.includes("qué lenguaje de programación se usó para crear") ||
+           lowerCaseInput.includes("quién te creó") || 
+           lowerCaseInput.includes("quién te programó")) {
+       const respuestasCreacion = [
+           "Fui desarrollado usando JavaScript y la biblioteca de OpenAI.",
+           "Estoy siendo creado con habilidades de programación y la tecnología de OpenAI.",
+           "Estoy siendo construido, utilizando JavaScript y las herramientas de OpenAI.",
+           "Mi creación está usando JavaScript y la plataforma de OpenAI.",
+           "Estás llevando a cabo mi desarrollo, utilizando JavaScript y la tecnología de OpenAI.",
+           "Estoy siendo desarrollado, utilizando JavaScript y las capacidades de OpenAI.",
+           "Fuiste tú quien me creó, utilizando JavaScript y las herramientas de OpenAI.",
+           "Me estás programando, utilizando JavaScript y la plataforma de OpenAI.",
+           "Estoy siendo construido con JavaScript y la tecnología de OpenAI.",
+           "Fui creado utilizando JavaScript y la biblioteca de OpenAI.",
+           "Estoy siendo desarrollado utilizando JavaScript y la tecnología de OpenAI."
+        ];
+        return getRandomResponse(respuestasCreacion);
+    } else if (lowerCaseInput.includes("me hacen bullying") || 
+           lowerCaseInput.includes("me acosan") || 
+           lowerCaseInput.includes("sufro bullying") || 
+           lowerCaseInput.includes("soy víctima de bullying") || 
+           lowerCaseInput.includes("me molestan en la escuela")) {
+       const respuestasBullying = [
+           "Lamento mucho escuchar eso. Es importante hablar con un adulto de confianza, como un profesor, un consejero escolar o un familiar sobre lo que está pasando.",
+           "Nadie merece ser tratado de esa manera. Busca apoyo en personas de confianza y no enfrentes esto solo.",
+           "El bullying es inaceptable. Considera hablar con un maestro o un consejero escolar para que te puedan ayudar.",
+           "Es fundamental que no guardes esto para ti mismo. Hablar con alguien de confianza puede marcar una gran diferencia.",
+           "Recuerda que tienes derecho a sentirte seguro y respetado. Habla con un adulto de confianza para recibir apoyo.",
+           "No estás solo en esto. Muchas personas quieren ayudarte, así que no dudes en buscar apoyo de familiares, amigos o profesores.",
+           "Es importante que documentes lo que está pasando y lo informes a un adulto de confianza. Ellos pueden ayudarte a manejar la situación.",
+           "El bullying puede afectar mucho, pero hay personas que pueden ayudarte. Habla con alguien en quien confíes.",
+           "Buscar ayuda es crucial. No enfrentes esto solo, hay recursos y personas dispuestas a apoyarte.",
+           "Tu bienestar es muy importante. Comunica lo que está pasando a un adulto de confianza para que puedan intervenir y ayudarte."
+        ];
+        return getRandomResponse(respuestasBullying);
+    } else if (lowerCaseInput.includes("voy mal en mis estudios") || 
+           lowerCaseInput.includes("me va mal en la escuela") || 
+           lowerCaseInput.includes("tengo malas notas") || 
+           lowerCaseInput.includes("no me va bien en los estudios")) {
+       const respuestasEstudios = [
+           "Entiendo que puede ser frustrante, pero es importante no desanimarse. ¿Hay algo específico con lo que necesitas ayuda?",
+           "Es normal tener dificultades a veces. ¿Te gustaría que te diera algunos consejos para mejorar en tus estudios?",
+           "Recuerda que todos tienen momentos difíciles. Lo importante es buscar apoyo y encontrar métodos de estudio que funcionen para ti.",
+           "Quizás podrías hablar con un profesor o un consejero escolar para obtener ayuda adicional. Ellos pueden ofrecerte orientación y recursos.",
+           "Organizar tu tiempo y crear un plan de estudio puede ser muy útil. ¿Quieres algunas recomendaciones sobre cómo hacerlo?",
+           "A veces, estudiar en grupo o buscar un tutor puede marcar una gran diferencia. ¿Has considerado alguna de estas opciones?",
+           "Identificar las áreas en las que tienes más dificultades puede ayudarte a enfocarte mejor. ¿Hay alguna materia en particular que te preocupe?",
+           "Mantén una actitud positiva y sigue esforzándote. Con dedicación y las estrategias adecuadas, puedes mejorar tus notas.",
+           "Tomar descansos regulares y cuidar tu bienestar también es importante. Un cuerpo y mente saludables pueden mejorar tu rendimiento académico.",
+           "La clave es no rendirse y buscar las herramientas que necesitas para tener éxito. Estoy aquí para ayudarte en lo que necesites."
+        ];
+        return getRandomResponse(respuestasEstudios);
+    } else if (lowerCaseInput.includes("por qué ninguna chica se me declara") || 
+           lowerCaseInput.includes("por qué ninguna chica quiere ser mi novia") || 
+           lowerCaseInput.includes("ninguna chica se me declara") || 
+           lowerCaseInput.includes("ninguna chica quiere ser mi novia")) {
+       const respuestasNovia = [
+           "A veces, las cosas no suceden tan rápido como esperamos. Lo más importante es ser tú mismo y continuar conociendo a nuevas personas.",
+           "Las relaciones se construyen con el tiempo. Enfócate en ser una buena persona y en disfrutar de las actividades que te gustan.",
+           "Es posible que no hayas encontrado a la persona adecuada aún. Mantente abierto a nuevas experiencias y oportunidades para conocer gente.",
+           "La confianza en uno mismo es muy atractiva. Trabaja en sentirte bien contigo mismo y en tu autoestima.",
+           "Las conexiones auténticas llevan tiempo. Sé amable, respetuoso y abierto a conocer a personas nuevas.",
+           "Participar en actividades y grupos que disfrutes puede ayudarte a conocer a personas con intereses similares.",
+           "Las relaciones significativas se basan en la autenticidad. Sé tú mismo y enfócate en tus propios intereses y pasatiempos.",
+           "No te desanimes si las cosas no suceden de inmediato. Las relaciones suelen desarrollarse de manera natural con el tiempo.",
+           "Cada persona tiene su propio ritmo para hacer conexiones. Mantén una actitud positiva y sigue siendo auténtico.",
+           "A veces, las mejores relaciones comienzan como amistades. Concéntrate en hacer amigos y verás cómo las cosas pueden evolucionar."
+        ];
+        return getRandomResponse(respuestasNovia);
+    } else if (lowerCaseInput.includes("por qué no me habla ninguna chica") || 
+           lowerCaseInput.includes("ninguna chica me habla") || 
+           lowerCaseInput.includes("por qué no me hablan las chicas") || 
+           lowerCaseInput.includes("ninguna chica quiere hablar conmigo")) {
+       const respuestasNingunaChica = [
+           "A veces puede ser difícil conectar con las personas. Trata de ser tú mismo y participa en actividades que disfrutes para conocer a gente con intereses similares.",
+           "Es posible que no hayas encontrado a la persona adecuada aún. Mantente abierto a nuevas experiencias y oportunidades para conocer a nuevas personas.",
+           "Conocer a alguien especial lleva tiempo. Enfócate en tus propios intereses y en ser la mejor versión de ti mismo.",
+           "La comunicación es clave. Asegúrate de ser amable y respetuoso en tus interacciones, y no te desanimes si las cosas no funcionan de inmediato.",
+           "Puede ser útil involucrarte en actividades sociales o grupos donde puedas conocer a personas con intereses comunes.",
+           "A veces, la mejor manera de conocer a alguien es a través de amigos o participando en eventos sociales. Mantén una actitud positiva y abierta.",
+           "Recuerda que cada persona tiene su propio ritmo para hacer conexiones. Sé paciente y sigue siendo auténtico.",
+           "La confianza en uno mismo es muy atractiva. Trabaja en tu autoestima y en sentirte bien contigo mismo, y eso se reflejará en tus interacciones.",
+           "Concentrarte en tus propias metas y pasatiempos puede ayudarte a conocer a personas que comparten tus intereses.",
+           "No te desanimes. A veces, las conexiones toman tiempo. Sigue siendo tú mismo y mantén una actitud positiva."
+        ];
+        return getRandomResponse(respuestasNingunaChica);
+    } else if (lowerCaseInput.includes("es obligatorio tener esposa") || 
+           lowerCaseInput.includes("necesito tener esposa") ||
+           lowerCaseInput.includes("necesito tener una esposa") ||
+           lowerCaseInput.includes("es obligatorio tener una esposa") ||
+           lowerCaseInput.includes("debo tener una esposa") || 
+           lowerCaseInput.includes("es necesario tener esposa") ||
+           lowerCaseInput.includes("tengo que casarme") || 
+           lowerCaseInput.includes("es obligatorio casarse")) {
+       const respuestasEsposaObligatoria = [
+           "No es obligatorio tener una esposa. Lo más importante es estar feliz y cómodo contigo mismo.",
+           "Tener una pareja o casarse no es una obligación. Es fundamental enfocarte en tu bienestar y desarrollo personal.",
+           "No necesitas tener una esposa para ser feliz. La felicidad viene de muchas formas y no depende de una relación.",
+           "Es completamente normal no tener una esposa. Lo importante es disfrutar de tu vida y tus intereses.",
+           "Tener una esposa no define tu valor. La independencia y el amor propio son muy importantes.",
+           "No es necesario casarse para sentirse completo. Enfócate en tus metas y pasatiempos.",
+           "Cada persona tiene su propio camino. No te presiones por casarte, disfruta el presente y crece como individuo.",
+           "Las relaciones y el matrimonio deben surgir naturalmente y no por obligación. Primero, sé feliz contigo mismo.",
+           "No es obligatorio tener una esposa. La satisfacción personal y el crecimiento propio son lo más importante.",
+           "La felicidad y el éxito no dependen de tener una pareja o casarse. Lo fundamental es tu bienestar emocional y personal."
+         ];
+         return getRandomResponse(respuestasEsposaObligatoria);
+    } else if (lowerCaseInput.includes("es obligatorio tener novia") || 
+           lowerCaseInput.includes("necesito tener novia") || 
+           lowerCaseInput.includes("debo tener una novia") || 
+           lowerCaseInput.includes("es necesario tener novia")) {
+       const respuestasNoviaObligatoria = [
+           "No es obligatorio tener una novia. Lo más importante es estar feliz y cómodo contigo mismo.",
+           "Tener una pareja no es una obligación. Es fundamental enfocarte en tu bienestar y desarrollo personal.",
+           "No necesitas tener una novia para ser feliz. La felicidad viene de muchas formas y no depende de una relación.",
+           "Es completamente normal no tener una novia. Lo importante es disfrutar de tu vida y tus intereses.",
+           "Tener una novia no define tu valor. La independencia y el amor propio son muy importantes.",
+           "No es necesario tener una pareja para sentirse completo. Enfócate en tus metas y pasatiempos.",
+           "Cada persona tiene su propio camino. No te presiones por tener una novia, disfruta el presente y crece como individuo.",
+           "Las relaciones deben surgir naturalmente y no por obligación. Primero, sé feliz contigo mismo.",
+           "No es obligatorio tener una novia. La satisfacción personal y el crecimiento propio son lo más importante.",
+           "La felicidad y el éxito no dependen de tener una pareja. Lo fundamental es tu bienestar emocional y personal."
+        ];
+        return getRandomResponse(respuestasNoviaObligatoria);
+    } else if (lowerCaseInput.includes("soy feo") || 
+           lowerCaseInput.includes("me siento feo") || 
+           lowerCaseInput.includes("no soy atractivo") || 
+           lowerCaseInput.includes("me veo mal")) {
+       const respuestasAutoestima = [
+           "La belleza es subjetiva y cada persona es única. Lo más importante es cómo te sientes contigo mismo.",
+           "No te desanimes por cómo te ves. La verdadera belleza viene de tu personalidad y tus acciones.",
+           "Recuerda que todos tenemos días en los que no nos sentimos bien con nosotros mismos. Lo más importante es ser amable contigo mismo.",
+           "La apariencia física no define tu valor como persona. Eres valioso por lo que eres, no por cómo te ves.",
+           "Cada persona tiene su propia belleza. Enfócate en tus cualidades positivas y lo que te hace especial.",
+           "La autoestima es importante. Trata de enfocarte en tus cualidades y habilidades, y recuerda que todos somos únicos.",
+           "Sentirse bien con uno mismo es un proceso. Acepta tus cualidades y trabaja en amarte tal como eres.",
+           "La percepción de la belleza es diferente para cada persona. Lo que realmente importa es cómo te sientes y te valoras a ti mismo.",
+           "Eres más que tu apariencia. La confianza y la autoestima vienen de aceptarte y valorarte tal como eres.",
+           "No te juzgues tan duramente. Todos tenemos algo que nos hace especiales y únicos. Valórate por lo que eres."
+        ];
+        return getRandomResponse(respuestasAutoestima);
+    } else if (lowerCaseInput.includes("quiero una novia") || 
+           lowerCaseInput.includes("cómo consigo una novia") || 
+           lowerCaseInput.includes("necesito una novia") || 
+           lowerCaseInput.includes("me gustaría tener una novia")) {
+       const respuestasQuieroNovia = [
+           "Encontrar a alguien especial lleva tiempo. Es importante ser uno mismo y buscar actividades que disfrutes donde puedas conocer a personas con intereses similares.",
+           "Construir una relación sana comienza con conocerse a uno mismo y ser auténtico. Participar en actividades sociales y estar abierto a nuevas experiencias puede ayudar.",
+           "Conocer a alguien especial puede suceder en cualquier momento. Enfócate en tus intereses y pasatiempos, y conoce personas que compartan esas mismas pasiones.",
+           "Las relaciones significativas se construyen con el tiempo y la autenticidad. Enfócate en desarrollar tus propios intereses y serás más probable encontrar a alguien compatible.",
+           "Tener una relación empieza con una buena amistad. Participa en grupos y actividades que disfrutes y donde puedas conocer personas con intereses similares.",
+           "Es importante ser paciente y auténtico. Conocer a alguien especial sucede cuando menos lo esperas, así que enfócate en ser la mejor versión de ti mismo.",
+           "Participar en actividades y eventos sociales puede ser una buena manera de conocer gente nueva. Recuerda, las mejores relaciones se construyen sobre la amistad y el respeto mutuo.",
+           "Construir relaciones saludables toma tiempo y esfuerzo. Enfócate en tus intereses y pasatiempos, y sé abierto a conocer nuevas personas.",
+           "Las relaciones exitosas se basan en la autenticidad y la comunicación. Enfócate en ser la mejor versión de ti mismo y busca conexiones genuinas."
+        ];
+        return getRandomResponse(respuestasQuieroNovia);
     } else if (lowerCaseInput.includes("quién conquistó américa") || 
            lowerCaseInput.includes("quién descubrió américa") || 
            lowerCaseInput.includes("historia de américa") ||
