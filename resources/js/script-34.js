@@ -11,7 +11,7 @@ const users = [
   { username: "VGVzdA", password: "VGVzdA" }
 ];
 
-const bannedUsers = ["VGVzdA"]; 
+const bannedUsers = [""]; 
 
 function login() {
   const username = document.getElementById('username').value;
