@@ -48,6 +48,7 @@ function displayUserData(username, profilePic) {
     img.style.width = '40px';
     img.style.height = '40px';
     img.style.marginRight = '10px';
+    img.style.cursor = 'pointer';
 
     const span = document.createElement('span');
     span.textContent = username;
@@ -55,5 +56,5 @@ function displayUserData(username, profilePic) {
     userContainer.appendChild(img);
     userContainer.appendChild(span);
 
-    img.onclick = chooseProfilePicture;
+    img.addEventListener('click', chooseProfilePicture);  
 }
