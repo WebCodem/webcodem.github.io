@@ -12,7 +12,6 @@ body {
     background-color: #111;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 8px auto; 
     position: relative; 
 }
@@ -101,7 +100,7 @@ body {
     padding: 10px; 
     border: none; 
     background-color: #2a2a2a;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     color: #f3f3f3; 
     font-size: 16px; 
     border-radius: 10px;
