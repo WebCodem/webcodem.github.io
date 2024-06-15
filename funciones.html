@@ -10,24 +10,18 @@
     <title>Funciones</title>
 </head>
 <body>
-    <div class="popup-container">
-  <div class="popup">
-    <h2>Iniciar Sesión</h2>
-    <form id="loginForm" onsubmit="event.preventDefault(); login();">
-      <input type="text" id="loginUsername" name="username" placeholder="Nombre de usuario" required class="form-input">
-      <input type="password" id="loginPassword" name="password" placeholder="Contraseña" required class="form-input">
-      <button type="submit" class="form-submit">Iniciar sesión</button>
-    </form>
-    <h3>Registrar Cuenta</h3>
-    <form id="registerForm" onsubmit="event.preventDefault(); register();">
-      <input type="text" id="registerUsername" name="username" placeholder="Ingresa un nombre de usuario" required class="form-input">
-      <input type="password" id="registerPassword" name="password" placeholder="Ingresa una contraseña" required class="form-input">
-      <button type="submit" class="form-submit">Registrarse</button>
-    </form>
-    <div id="registerSuccess" style="display: none; margin-top: 10px;">
-      <p>Registro exitoso. Ahora puedes iniciar sesión.</p>
-    </div>
+    <div class="overlay">
+  <div class="login-popup">
+    <br>
+    <h2>Inició de sesión</h2>
+    <input type="text" id="username" placeholder="Nombre de usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Iniciar sesión</button>
+    <p>¿No tienes cuenta? <a href="./registro.html">Regístrate</a></p>
   </div>
+  <footer>
+        &copy; 2024 WebCodem, Tec.
+  </footer>
     </div>
     <br>
     <br>
