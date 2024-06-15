@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
   if (localStorage.getItem("loggedIn") === "true") {
-    document.querySelector(".overlay").style.display = "none";
+    const currentUser = atob(localStorage.getItem("currentUser"));
+    if (bannedUsers.includes(currentUser)) {
+      alert('Tu cuenta ha sido baneada.');
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("currentUser");
+      document.querySelector(".overlay").style.display = "flex";
+    } else {
+      document.querySelector(".overlay").style.display = "none";
+    }
   } else {
     document.querySelector(".overlay").style.display = "flex";
   }
@@ -11,7 +19,7 @@ const users = [
   { username: "VGVzdA", password: "VGVzdA" }
 ];
 
-const bannedUsers = [""]; 
+let bannedUsers = [""]; 
 
 function login() {
   const username = document.getElementById('username').value;
@@ -24,6 +32,7 @@ function login() {
       alert('Este usuario está baneado.');
     } else {
       localStorage.setItem("loggedIn", "true");
+      localStorage.setItem("currentUser", btoa(user.username));
       closePopup();
     }
   } else {
@@ -33,4 +42,19 @@ function login() {
 
 function closePopup() {
   document.querySelector('.overlay').style.display = 'none';
+}
+
+function banUser(username) {
+  if (!bannedUsers.includes(username)) {
+    bannedUsers.push(username);
+    if (localStorage.getItem("loggedIn") === "true") {
+      const currentUser = atob(localStorage.getItem("currentUser"));
+      if (currentUser === username) {
+        alert('Tu cuenta ha sido baneada.');
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("currentUser");
+        document.querySelector(".overlay").style.display = "flex";
+      }
+    }
+  }
 }
