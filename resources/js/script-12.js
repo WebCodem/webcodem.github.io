@@ -1,16 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
-    const savedUsername = localStorage.getItem('username');
     const savedProfilePic = localStorage.getItem('profilePic');
+    const savedUsername = atob(localStorage.getItem('currentUser')) || 'Usuario';
 
-    if (savedUsername && savedProfilePic) {
+    if (savedProfilePic) {
         displayUserData(savedUsername, savedProfilePic);
     } else {
-        
         const defaultProfilePic = 'https://webcodem-media.github.io/resources/multimedia/imagen/perfil-predeterminado.jpg';
-        const defaultUsername = 'Usuario';
-
-        displayUserData(defaultUsername, defaultProfilePic);
+        displayUserData(savedUsername, defaultProfilePic);
     }
 });
 
@@ -30,18 +26,14 @@ function chooseProfilePicture() {
                 profilePic.src = e.target.result;
                 profilePic.alt = 'Foto de perfil';
                 profilePic.style.borderRadius = '50%';
-                profilePic.style.width = '40px'; 
-                profilePic.style.height = '40px';  
-                profilePic.style.marginRight = '10px'; 
+                profilePic.style.width = '40px';
+                profilePic.style.height = '40px';
+                profilePic.style.marginRight = '10px';
 
-                const username = prompt('Ingresa tu nombre:');
-                if (username) {
-                   
-                    localStorage.setItem('username', username);
-                    localStorage.setItem('profilePic', e.target.result);
+                localStorage.setItem('profilePic', e.target.result);
 
-                    displayUserData(username, e.target.result);
-                }
+                const savedUsername = atob(localStorage.getItem('currentUser')) || 'Usuario';
+                displayUserData(savedUsername, e.target.result);
             };
 
             reader.readAsDataURL(file);
@@ -52,16 +44,15 @@ function chooseProfilePicture() {
 }
 
 function displayUserData(username, profilePic) {
-    
     const userContainer = document.getElementById('userContainer');
     userContainer.innerHTML = '';
-    
+
     const img = document.createElement('img');
     img.src = profilePic;
     img.alt = 'Foto de perfil';
     img.style.borderRadius = '50%';
-    img.style.width = '40px'; 
-    img.style.height = '40px'; 
+    img.style.width = '40px';
+    img.style.height = '40px';
     img.style.marginRight = '10px';
 
     const span = document.createElement('span');
@@ -69,6 +60,6 @@ function displayUserData(username, profilePic) {
 
     userContainer.appendChild(img);
     userContainer.appendChild(span);
-  
-    img.onclick = span.onclick = chooseProfilePicture;
+
+    img.onclick = chooseProfilePicture;
 }
