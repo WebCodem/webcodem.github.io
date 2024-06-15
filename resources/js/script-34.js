@@ -1,48 +1,30 @@
 document.addEventListener("DOMContentLoaded", function() {
-
-  if (localStorage.getItem("loggedIn") === "true") {
-    document.querySelector(".popup-container").style.display = "none";
-  } else {
-    
-    document.querySelector(".popup-container").style.display = "flex";
-  }
-
-  document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault(); 
-    register(); 
+    if (localStorage.getItem("loggedIn") === "true") {
+      document.querySelector(".overlay").style.display = "none";
+    } else {
+      document.querySelector(".overlay").style.display = "flex";
+    }
   });
 
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    login();
-  });
-});
+  const users = [
+    { username: "R2FkZGllbA", password: "MTIxMTk4MjA4" },
+    { username: "VGVzdA", password: "VGVzdA" }
+  ];
 
-function register() {
-  
-  var username = document.getElementById("registerUsername").value;
-  var password = document.getElementById("registerPassword").value;
+  function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-  localStorage.setItem("username", username);
-  localStorage.setItem("password", password);
+    const user = users.find(u => atob(u.username) === username && atob(u.password) === password);
 
-  document.getElementById("registerSuccess").style.display = "block";
-}
-
-function login() {
-  
-  var username = document.getElementById("loginUsername").value;
-  var password = document.getElementById("loginPassword").value;
-
-  var storedUsername = localStorage.getItem("username");
-  var storedPassword = localStorage.getItem("password");
-
-  if (username === storedUsername && password === storedPassword) {
-    
-    localStorage.setItem("loggedIn", true);
-    document.querySelector(".popup-container").style.display = "none";
-  } else {
-    
-    alert("Nombre de usuario o contraseña incorrectos.");
+    if (user) {
+      localStorage.setItem("loggedIn", "true");
+      closePopup();
+    } else {
+      alert('Nombre de usuario o contraseña incorrectos. Inténtalo de nuevo.');
+    }
   }
-}
+
+  function closePopup() {
+    document.querySelector('.overlay').style.display = 'none';
+  }
