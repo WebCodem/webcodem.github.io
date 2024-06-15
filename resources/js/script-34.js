@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
   if (localStorage.getItem("loggedIn") === "true") {
-    const currentUser = atob(localStorage.getItem("currentUser"));
-    if (bannedUsers.includes(currentUser)) {
+    const currentUserBase64 = localStorage.getItem("currentUser");
+    const currentUser = currentUserBase64 ? atob(currentUserBase64) : null;
+    if (currentUser && bannedUsers.includes(currentUser)) {
       alert('Tu cuenta ha sido baneada.');
       localStorage.removeItem("loggedIn");
       localStorage.removeItem("currentUser");
@@ -15,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const users = [
-  { username: "R2FkZGllbA", password: "MTIxMTk4MjA4" },
-  { username: "VGVzdA", password: "VGVzdA" }
+  { username: "R2FkZGllbA", password: "MTIxMTk4MjA4" }, // "Gaddiel" : "121198208"
+  { username: "VGVzdA", password: "VGVzdA" } // "Test" : "Test"
 ];
 
 let bannedUsers = [""]; 
@@ -28,12 +29,15 @@ function login() {
   const user = users.find(u => atob(u.username) === username && atob(u.password) === password);
 
   if (user) {
-    if (bannedUsers.includes(user.username)) {
+    if (bannedUsers.includes(atob(user.username))) {
       alert('Este usuario está baneado.');
     } else {
       localStorage.setItem("loggedIn", "true");
-      localStorage.setItem("currentUser", btoa(user.username));
+      localStorage.setItem("currentUser", user.username);
       closePopup();
+
+      const profilePic = localStorage.getItem('profilePic') || 'https://webcodem-media.github.io/resources/multimedia/imagen/perfil-predeterminado.jpg';
+      displayUserData(username, profilePic); // Update user data after login
     }
   } else {
     alert('Nombre de usuario o contraseña incorrectos. Inténtalo de nuevo.');
@@ -48,7 +52,8 @@ function banUser(username) {
   if (!bannedUsers.includes(username)) {
     bannedUsers.push(username);
     if (localStorage.getItem("loggedIn") === "true") {
-      const currentUser = atob(localStorage.getItem("currentUser"));
+      const currentUserBase64 = localStorage.getItem("currentUser");
+      const currentUser = currentUserBase64 ? atob(currentUserBase64) : null;
       if (currentUser === username) {
         alert('Tu cuenta ha sido baneada.');
         localStorage.removeItem("loggedIn");
