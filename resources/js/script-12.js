@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const savedProfilePic = localStorage.getItem('profilePic');
-    const savedUsername = atob(localStorage.getItem('currentUser')) || 'Usuario';
+    const savedUsernameBase64 = localStorage.getItem('currentUser');
+    const savedUsername = savedUsernameBase64 ? atob(savedUsernameBase64) : 'Usuario';
 
     if (savedProfilePic) {
         displayUserData(savedUsername, savedProfilePic);
@@ -22,17 +23,10 @@ function chooseProfilePicture() {
             const reader = new FileReader();
 
             reader.onload = function (e) {
-                const profilePic = document.createElement('img');
-                profilePic.src = e.target.result;
-                profilePic.alt = 'Foto de perfil';
-                profilePic.style.borderRadius = '50%';
-                profilePic.style.width = '40px';
-                profilePic.style.height = '40px';
-                profilePic.style.marginRight = '10px';
-
                 localStorage.setItem('profilePic', e.target.result);
 
-                const savedUsername = atob(localStorage.getItem('currentUser')) || 'Usuario';
+                const savedUsernameBase64 = localStorage.getItem('currentUser');
+                const savedUsername = savedUsernameBase64 ? atob(savedUsernameBase64) : 'Usuario';
                 displayUserData(savedUsername, e.target.result);
             };
 
