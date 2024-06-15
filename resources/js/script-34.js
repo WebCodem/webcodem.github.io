@@ -19,7 +19,7 @@ const users = [
   { username: "VGVzdA", password: "VGVzdA" }
 ];
 
-let bannedUsers = ["R2FkZGllbA"]; 
+let bannedUsers = ["VGVzdA"]; 
 
 function login() {
   const username = document.getElementById('username').value;
