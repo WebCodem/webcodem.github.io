@@ -1,4 +1,4 @@
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -48,10 +48,22 @@
             background-color: #2a2a2a;
             padding: 10px;    
         }
+        .post .info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .post .date {
             font-size: 12px;
             color: #999;
-            margin-top: 5px;
+        }
+        .like-btn {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
         }
         footer {
             position: relative;
@@ -64,15 +76,6 @@
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 40px; 
         }
-        img {
-            pointer-events: none; 
-            -webkit-touch-callout: none;
-            -webkit-user-select: none; 
-            -moz-user-select: none; 
-            -ms-user-select: none; 
-            user-select: none; 
-        }
-        img[draggable="true"] {
-            -webkit-user-drag: none; 
-            user-drag: none; 
+        .span {
+            margin-left: -20px;
         }
