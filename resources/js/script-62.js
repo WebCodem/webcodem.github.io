@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "imagen2": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2JhYnkgcGxheWVyIC0gd2ViY29kZW0ucG5n",
         "imagen3": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL0NhbGwgT2YgRHV0eSBNb2Rlcm4gV2FyZmFyZSBJSSAtIHdlYmNvZGVtLnBuZw",
         "imagen4": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2ZhbGxvLWRlLXNpc3RlbWEucG5n"
+        "imagen5": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2FjdGlvbnMtc3R1ZmYtMS0wLTIucG5n"
     };
 
     for (const [id, url] of Object.entries(contentUrls)) {
