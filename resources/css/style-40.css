@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Minecraft';
-    src: url('http://webcodem-media.github.io/resources/marketplace/minecraft/fonts/minecraft-font.ttf') format('truetype');
+    src: url('/resources/fonts/minecraft-font.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
