@@ -143,18 +143,8 @@ img[draggable="true"] {
             max-width: 1200px; 
         }
 
-.texture {
-            position: relative;
-            width: 50%;
-            display: inline-block;
-}
-
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 50%; 
-  height: auto;
-  z-index: 0; 
-  transform: translate(0, 311%);
+.texturas-image {
+            width: 30%; 
+            height: auto; 
+            max-width: 1200px;
 }
