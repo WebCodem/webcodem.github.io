@@ -145,6 +145,7 @@ img[draggable="true"] {
 
 .texturas-image {
             width: 30%; 
+            text-align: center;
             height: auto; 
             max-width: 1200px;
 }
