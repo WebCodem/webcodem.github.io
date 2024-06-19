@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "imagen3": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL0NhbGwgT2YgRHV0eSBNb2Rlcm4gV2FyZmFyZSBJSSAtIHdlYmNvZGVtLnBuZw",
         "imagen4": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2ZhbGxvLWRlLXNpc3RlbWEucG5n",
         "imagen5": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2FjdGlvbnMtc3R1ZmYtMS0wLTIucG5n",
-        "imagen6": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2JhcmUtYm9uZXMtcGx1cy5wbmc"
+        "imagen6": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL2JhcmUtYm9uZXMtcGx1cy5wbmc",
+        "imagen7": "aHR0cHM6Ly93ZWJjb2RlbS1tZWRpYS5naXRodWIuaW8vcmVzb3VyY2VzL211bHRpbWVkaWEvaW1hZ2VuL3dlYmNvZGVtLW1hcmtldHBsYWNlLnBuZw"
     };
 
     for (const [id, url] of Object.entries(contentUrls)) {
