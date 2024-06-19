@@ -132,3 +132,13 @@ img[draggable="true"] {
     -webkit-user-drag: none; 
     user-drag: none; 
 }
+
+.banner-container {
+            text-align: center; 
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto; 
+            max-width: 1200px; 
+        }
