@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const users = [
   { username: "R2FkZGllbA", password: "MTIxMTk4MjA4" },
-  { username: "VGVzdA", password: "VGVzdA" }
+  { username: "VGVzdA", password: "VGVzdA" },
+  { username: "QWxwZWRv", password: "d2F6YWFhMDgwOTA3" }
 ];
 
 let bannedUsers = [""]; 
