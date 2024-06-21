@@ -98,3 +98,12 @@
     bottom: 0;
     left: 0;
 }
+a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #87ceeb;
+  text-decoration: underline;
+}
