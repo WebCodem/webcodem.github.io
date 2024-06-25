@@ -20,7 +20,11 @@ const users = [
   { username: "QWxwZWRv", password: "d2F6YWFhMDgwOTA3" },
   { username: "U2FudGlubw", password: "VG90b3JvMTExMTA5" },
   { username: "SmVhbiBQYXRyaWNpbw", password: "TGlmZWxpbmU3MjI" },
-   { username: "Vmlubnk", password: "dmlhbmV5bG9w" }
+  { username: "Vmlubnk", password: "dmlhbmV5bG9w" },
+  { username: "ZGFuaXppbmhhYnNi", password: "SmFwYUAxODEw" },
+  { username: "TWFyY3Vz", password: "MTcyODI3Mw" },
+  { username: "SXNhbWVycGY", password: "TGlhbjk4NzY1NA" },
+  { username: "cG9raWlpcw", password: "am9uYXNnYWVsMjAxNg" }
 ];
 
 let bannedUsers = [""]; 
