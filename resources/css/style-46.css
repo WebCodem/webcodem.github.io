@@ -192,3 +192,41 @@
     width: 100%;
     height: 100%;
 }
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.popup {
+  background-color: #111;
+  padding: 35px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  right: 25%; 
+}
+
+.close {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  font-size: 35px;
+  cursor: pointer;
+  color: #888;
+}
+
+.loading-gif {
+  width: 50px;
+  margin-bottom: 10px;
+}
