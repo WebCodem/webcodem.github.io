@@ -202,3 +202,17 @@
   width: 50px;
   margin-bottom: 10px;
 }
+
+img {
+    pointer-events: none; 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+img[draggable="true"] {
+    -webkit-user-drag: none; 
+    user-drag: none; 
+}
