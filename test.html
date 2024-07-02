@@ -25,7 +25,7 @@
 
         form {
             display: flex;
-            width: 90%;
+            width: 95%;
             background-color: #1E1E1E;
             padding: 15px;
             flex-direction: column;
@@ -39,7 +39,7 @@
         input[type="email"],
         textarea {
             font-family: Arial, sans-serif;
-            width: 100%;
+            width: 90%;
             padding: 15px;
             margin-bottom: 20px;
             font-size: 16px;
@@ -62,7 +62,7 @@
         }
 
         input[type="submit"] {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             background-color: #555; /* Botón gris deshabilitado */
             color: white;
@@ -98,7 +98,7 @@
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
 
-        <div style="text-align: center;" class="g-recaptcha" data-sitekey="6LeaOAYqAAAAACJDSikksmvEu5TZPRU1-nX9N_ON" data-callback="recaptchaCallback"></div><br> <!-- Agregar el reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6LeaOAYqAAAAACJDSikksmvEu5TZPRU1-nX9N_ON" data-callback="recaptchaCallback"></div><br> <!-- Agregar el reCAPTCHA -->
 
         <input type="submit" id="submit-btn" value="Enviar" disabled> <!-- Botón inicialmente deshabilitado -->
 
