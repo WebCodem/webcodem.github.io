@@ -3,110 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-        h1 {
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input[type="text"],
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .g-recaptcha {
-            margin-bottom: 20px;
-        }
-        button[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-    <title>Soporte</title>
-    <!-- Agregar el script de reCAPTCHA v3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcgNwYqAAAAAFoQUfWGzTLY_fadmj0AnKPr7oQv"></script>
+    <title>Formulario de Contacto con reCAPTCHA v2</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
-        function enviarCorreo(formData) {
-            // Configuración para enviar el correo electrónico (ejemplo genérico)
-            // Aquí podrías implementar tu lógica para enviar el correo
-            alert('Enviando mensaje...');
-
-            // Ejemplo de envío de correo ficticio
-            console.log('Nombre:', formData.get('nombre'));
-            console.log('Email:', formData.get('email'));
-            console.log('Mensaje:', formData.get('mensaje'));
-            // Aquí podrías agregar la lógica real para enviar el correo electrónico
-        }
-
         function onSubmit(token) {
-            // Obtener los datos del formulario
-            const formulario = document.getElementById("formulario");
-            const formData = new FormData(formulario);
-
-            // Llamar a la función de enviar correo electrónico
-            enviarCorreo(formData);
+            // Aquí puedes añadir el código para enviar el formulario o realizar otras acciones
+            alert('Formulario enviado correctamente.');
+            // Por ejemplo, enviar los datos a través de Ajax o redirigir a otra página.
         }
 
-        // Configurar la llamada a reCAPTCHA v3 al cargar la página
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6LcgNwYqAAAAAFoQUfWGzTLY_fadmj0AnKPr7oQv', { action: 'submit' }).then(function(token) {
-                // Enviar token a la función onSubmit para manejar el formulario
-                onSubmit(token);
-            });
-        });
+        function validateForm() {
+            var response = grecaptcha.getResponse();
+            if(response.length === 0) {
+                alert('Por favor, verifica que no eres un robot.');
+                return false;
+            } else {
+                onSubmit(response); // Enviar formulario con el token reCAPTCHA
+                return true;
+            }
+        }
     </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenido a nuestro Servicio de Soporte</h1>
-        <form id="formulario" onsubmit="event.preventDefault();">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="text" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-            </div>
-            <div class="g-recaptcha" data-sitekey="6LcgNwYqAAAAAFoQUfWGzTLY_fadmj0AnKPr7oQv" data-callback="onSubmit" data-action="submit"></div>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+
+<h2>Formulario de Contacto con reCAPTCHA v2</h2>
+
+<form onsubmit="return validateForm()">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="email">Correo Electrónico:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="mensaje">Mensaje:</label><br>
+    <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+    <div class="g-recaptcha" data-sitekey="6LelNwYqAAAAAOl9uuJSkJKxURh9ddnH-g0qgjn6"></div><br>
+
+    <input type="submit" value="Enviar">
+</form>
+
 </body>
 </html>
