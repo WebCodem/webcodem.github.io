@@ -6,80 +6,99 @@
     <title>Formulario de Contacto con Envío de Correo Electrónico</title>
     <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS para estilos -->
     <style>
-        body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #222;
+        color: #fff;
+    }
 
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    color: #333;
-}
+    .container {
+        max-width: 90%;
+        margin-top: -110px;
+        padding: 20px;
+        background: #111;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
+    form {
+        display: flex;
+        background-color: #1E1E1E;
+        flex-direction: column;
+    }
 
-label {
-    font-weight: bold;
-}
+    label {
+        font-weight: bold;
+    }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-family: Arial, sans-serif;
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        border: 2px solid #222;
+        background-color: #111;
+        color: #fff;
+        border-radius: 8px;
+        outline: none;
+        box-sizing: border-box;
+    }
 
-textarea {
-    resize: vertical;
-}
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+        border-color: #55acee; 
+    }
 
-input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    textarea {
+        resize: none;
+    }
 
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #555; /* Botón gris deshabilitado */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: not-allowed;
+    }
 
-#g-recaptcha {
-    margin-bottom: 10px;
-}
+    input[type="submit"]:hover {
+        background-color: #0056b3; /* Cambio de color al pasar el cursor */
+    }
+
+    input[type="submit"].enabled {
+        background-color: #007bff; /* Botón azul habilitado */
+        cursor: pointer;
+    }
+
+    #g-recaptcha {
+        margin-bottom: 10px;
+    }
     </style>
 </head>
-<body style="background-color: #222;"> <!-- Fondo de color #222 -->
+<body> <!-- Fondo de color #222 -->
 
 <div class="container">
     <h2>Formulario de Contacto</h2>
 
     <form id="contact-form">
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
 
-        <label for="email">Correo Electrónico:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required><br>
 
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
 
-        <div class="g-recaptcha" data-sitekey="6LeaOAYqAAAAACJDSikksmvEu5TZPRU1-nX9N_ON"></div><br> <!-- Agregar el reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6LeaOAYqAAAAACJDSikksmvEu5TZPRU1-nX9N_ON" data-callback="recaptchaCallback"></div><br> <!-- Agregar el reCAPTCHA -->
 
         <input type="submit" id="submit-btn" value="Enviar" disabled> <!-- Botón inicialmente deshabilitado -->
 
@@ -89,46 +108,52 @@ input[type="submit"]:hover {
 
 <!-- Incluir la biblioteca EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script src="script.js"></script> <!-- Enlace al archivo JS para manejar el envío del formulario -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Cargar el script de reCAPTCHA -->
 <script>
     // Inicializar EmailJS con tu User ID de EmailJS
-emailjs.init('lnBgT2KDM0TICcToZ'); // Reemplazar con tu User ID de EmailJS
+    emailjs.init('YOUR_USER_ID'); // Reemplazar con tu User ID de EmailJS
 
-// Manejar el envío del formulario
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar el envío predeterminado del formulario
-
-    // Recoger los datos del formulario
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
-
-    // Verificar si se completó reCAPTCHA
-    if (grecaptcha && grecaptcha.getResponse().length === 0) {
-        alert('Por favor, completa el captcha.');
-        return;
+    // Callback de reCAPTCHA
+    function recaptchaCallback() {
+        const submitButton = document.getElementById('submit-btn');
+        submitButton.disabled = false; // Habilitar el botón de envío
+        submitButton.classList.add('enabled'); // Cambiar el color del botón
     }
 
-    // Configurar los parámetros del correo electrónico
-    const params = {
-        from_name: nombre,
-        from_email: email,
-        message: mensaje
-    };
+    // Manejar el envío del formulario
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío predeterminado del formulario
 
-    // Enviar el correo electrónico mediante EmailJS
-    emailjs.send('service_2u0izje', 'template_rfzbqdr', params) // Reemplazar con tu Template ID de EmailJS
-        .then(function(response) {
-            console.log('Correo enviado con éxito', response);
-            document.getElementById('submit-message').innerText = 'El mensaje ha sido enviado correctamente.';
-            document.getElementById('submit-btn').style.backgroundColor = '#4CAF50';
-        }, function(error) {
-            console.log('Error al enviar el correo', error);
-            document.getElementById('submit-message').innerText = 'Error al enviar el mensaje.';
-            document.getElementById('submit-btn').style.backgroundColor = '#f44336';
-        });
-});
+        // Recoger los datos del formulario
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+        // Verificar si se completó reCAPTCHA
+        if (grecaptcha && grecaptcha.getResponse().length === 0) {
+            alert('Por favor, completa el captcha.');
+            return;
+        }
+
+        // Configurar los parámetros del correo electrónico
+        const params = {
+            from_name: nombre,
+            from_email: email,
+            message: mensaje
+        };
+
+        // Enviar el correo electrónico mediante EmailJS
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', params) // Reemplazar con tu Service ID y Template ID de EmailJS
+            .then(function(response) {
+                console.log('Correo enviado con éxito', response.status, response.text);
+                document.getElementById('submit-message').innerText = 'El mensaje ha sido enviado correctamente.';
+                document.getElementById('submit-btn').style.backgroundColor = '#4CAF50';
+            }, function(error) {
+                console.log('Error al enviar el correo', error);
+                document.getElementById('submit-message').innerText = 'Error al enviar el mensaje: ' + JSON.stringify(error);
+                document.getElementById('submit-btn').style.backgroundColor = '#f44336';
+            });
+    });
 </script>
 </body>
 </html>
