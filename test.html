@@ -55,22 +55,19 @@
         }
     </style>
     <title>Soporte</title>
-    <!-- Agregar el script de reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lc8NQYqAAAAAGS0kYp1mrmAn-u5DW-X2b_qaX4O"></script>
+    <!-- Agregar el script de reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcgNwYqAAAAAFoQUfWGzTLY_fadmj0AnKPr7oQv"></script>
     <script>
         function enviarCorreo(formData) {
-            // Simulación de envío de correo electrónico (usando EmailJS u otro servicio similar)
-            // Aquí debes configurar el servicio de envío de correo electrónico según tu elección
-            // Este es un ejemplo genérico, necesitarás ajustarlo según tu caso específico
-            Email.send({
-                SecureToken: "tu_secure_token",
-                To: 'webcodemgt@gmail.com',
-                From: formData.get('email'),
-                Subject: 'Nuevo mensaje de soporte',
-                Body: `Nombre: ${formData.get('nombre')}<br>Email: ${formData.get('email')}<br>Mensaje:<br>${formData.get('mensaje')}`
-            }).then(
-                message => alert('Mensaje enviado correctamente')
-            );
+            // Configuración para enviar el correo electrónico (ejemplo genérico)
+            // Aquí podrías implementar tu lógica para enviar el correo
+            alert('Enviando mensaje...');
+
+            // Ejemplo de envío de correo ficticio
+            console.log('Nombre:', formData.get('nombre'));
+            console.log('Email:', formData.get('email'));
+            console.log('Mensaje:', formData.get('mensaje'));
+            // Aquí podrías agregar la lógica real para enviar el correo electrónico
         }
 
         function onSubmit(token) {
@@ -81,6 +78,14 @@
             // Llamar a la función de enviar correo electrónico
             enviarCorreo(formData);
         }
+
+        // Configurar la llamada a reCAPTCHA v3 al cargar la página
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LcgNwYqAAAAAFoQUfWGzTLY_fadmj0AnKPr7oQv', { action: 'submit' }).then(function(token) {
+                // Enviar token a la función onSubmit para manejar el formulario
+                onSubmit(token);
+            });
+        });
     </script>
 </head>
 <body>
@@ -99,12 +104,9 @@
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
             </div>
-            <div class="g-recaptcha" data-sitekey="6Lc8NQYqAAAAAGS0kYp1mrmAn-u5DW-X2b_qaX4O" data-callback="onSubmit"></div>
+            <div class="g-recaptcha" data-sitekey="6LcgNwYqAAAAAFoQUfWGzTLY_fadmj0AnKPr7oQv" data-callback="onSubmit" data-action="submit"></div>
             <button type="submit">Enviar</button>
         </form>
     </div>
-    <!-- Incluir el script de EmailJS o el servicio que elijas -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>
