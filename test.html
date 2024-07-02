@@ -3,44 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contacto con reCAPTCHA v2 Invisible</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-        function onSubmit(token) {
-            // Aquí puedes añadir el código para enviar el formulario o realizar otras acciones
-            alert('Formulario enviado correctamente.');
-            // Por ejemplo, enviar los datos a través de Ajax o redirigir a otra página.
-        }
+    <title>Formulario de Contacto con Envío de Correo Electrónico</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS para estilos -->
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-        function handleFormSubmit(event) {
-            event.preventDefault(); // Evitar el envío predeterminado del formulario
-            grecaptcha.execute(); // Ejecutar reCAPTCHA v2 Invisible
-        }
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
 
-        function onloadCallback() {
-            var submitButton = document.getElementById('submit-button');
-            submitButton.onclick = handleFormSubmit;
-        }
-    </script>
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#g-recaptcha {
+    margin-bottom: 10px;
+}
+    </style>
 </head>
-<body onload="onloadCallback()">
+<body style="background-color: #222;"> <!-- Fondo de color #222 -->
 
-<h2>Formulario de Contacto con reCAPTCHA v2 Invisible</h2>
+<div class="container">
+    <h2>Formulario de Contacto</h2>
 
-<form action="submit_form.php" method="POST">
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
+    <form id="contact-form">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
 
-    <label for="email">Correo Electrónico:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-    <label for="mensaje">Mensaje:</label><br>
-    <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
 
-    <div class="g-recaptcha" data-sitekey="6LeaOAYqAAAAACJDSikksmvEu5TZPRU1-nX9N_ON" data-callback="onSubmit" data-size="invisible"></div><br>
+        <div class="g-recaptcha" data-sitekey="6LeaOAYqAAAAACJDSikksmvEu5TZPRU1-nX9N_ON"></div><br> <!-- Agregar el reCAPTCHA -->
 
-    <input type="submit" id="submit-button" value="Enviar">
-</form>
+        <input type="submit" id="submit-btn" value="Enviar" disabled> <!-- Botón inicialmente deshabilitado -->
 
+        <p id="submit-message"></p> <!-- Para mostrar mensajes de éxito o error -->
+    </form>
+</div>
+
+<!-- Incluir la biblioteca EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="script.js"></script> <!-- Enlace al archivo JS para manejar el envío del formulario -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Cargar el script de reCAPTCHA -->
+<script>
+    // Inicializar EmailJS con tu User ID de EmailJS
+emailjs.init('lnBgT2KDM0TICcToZ'); // Reemplazar con tu User ID de EmailJS
+
+// Manejar el envío del formulario
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío predeterminado del formulario
+
+    // Recoger los datos del formulario
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    // Verificar si se completó reCAPTCHA
+    if (grecaptcha && grecaptcha.getResponse().length === 0) {
+        alert('Por favor, completa el captcha.');
+        return;
+    }
+
+    // Configurar los parámetros del correo electrónico
+    const params = {
+        from_name: nombre,
+        from_email: email,
+        message: mensaje
+    };
+
+    // Enviar el correo electrónico mediante EmailJS
+    emailjs.send('service_2u0izje', 'template_rfzbqdr', params) // Reemplazar con tu Template ID de EmailJS
+        .then(function(response) {
+            console.log('Correo enviado con éxito', response);
+            document.getElementById('submit-message').innerText = 'El mensaje ha sido enviado correctamente.';
+            document.getElementById('submit-btn').style.backgroundColor = '#4CAF50';
+        }, function(error) {
+            console.log('Error al enviar el correo', error);
+            document.getElementById('submit-message').innerText = 'Error al enviar el mensaje.';
+            document.getElementById('submit-btn').style.backgroundColor = '#f44336';
+        });
+});
+</script>
 </body>
 </html>
