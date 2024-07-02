@@ -3,132 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte - WebCode</title>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lf1LwYqAAAAAJ5xcwjgvcJoQC7l355i20Jl0xst"></script>
-    <style>
-        body {
-            background-color: #222;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 500px;
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        form {
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #ddd;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea,
-        input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            box-sizing: border-box;
-            outline: none; /* Remove default input outline */
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
-            background-color: #444; /* Color when focused */
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Bienvenido a nuestro Servicio de Soporte</h1>
-        <p>Estamos aquí para ayudarte con cualquier pregunta o problema que puedas tener. Por favor, no dudes en contactarnos utilizando nuestro formulario de contacto.</p>
-        
-        <form id="contact-form" action="enviar.php" method="post" onsubmit="return onSubmit(event)">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre..." required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Ingrese su email..." required>
-
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escriba su mensaje..." required></textarea>
-
-            <input type="hidden" id="recaptchaToken" name="recaptchaToken">
-
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
-
+    <link rel="stylesheet" href="/resources/css/style-6.css">
+    <title>Soporte</title>
+    <!-- Agregar el script de reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lc8NQYqAAAAAGS0kYp1mrmAn-u5DW-X2b_qaX4O"></script>
     <script>
-        function onSubmit(event) {
-            event.preventDefault(); // Prevent the form from submitting automatically
-
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6Lf1LwYqAAAAAJ5xcwjgvcJoQC7l355i20Jl0xst', { action: 'submit' })
-                .then(function(token) {
-                    // Add the reCAPTCHA token to the form data
-                    document.getElementById('recaptchaToken').value = token;
-
-                    // Submit the form
-                    document.getElementById('contact-form').submit();
-                });
-            });
+        function onSubmit(token) {
+            // Aquí puedes enviar tu formulario o realizar acciones adicionales
+            // token es el token que reCAPTCHA genera al verificar la acción del usuario
+            // Ejemplo: document.getElementById("formulario").submit();
         }
     </script>
+</head>
+<body>
+    <h1>Bienvenido a nuestro Servicio de Soporte</h1>
+    <p>Estamos aquí para ayudarte con cualquier pregunta o problema que puedas tener. Por favor, no dudes en contactarnos utilizando nuestro chat en vivo o enviándonos un correo electrónico.</p>
+    <p>Nuestro equipo de soporte está disponible las 24 horas del día, los 7 días de la semana para brindarte asistencia oportuna y de calidad.</p>
+    
+    <!-- Agregar el formulario con reCAPTCHA -->
+    <form id="formulario" action="procesar_formulario.php" method="POST">
+        <!-- Aquí van los campos de tu formulario -->
+        
+        <!-- Agregar el widget de reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6Lc8NQYqAAAAAGS0kYp1mrmAn-u5DW-X2b_qaX4O" data-callback="onSubmit"></div>
+        
+        <!-- Agregar el botón de enviar -->
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="/resources/js/script-6.js"></script>
 </body>
 </html>
