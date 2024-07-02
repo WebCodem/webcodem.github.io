@@ -3,34 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/style-6.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .g-recaptcha {
+            margin-bottom: 20px;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
     <title>Soporte</title>
     <!-- Agregar el script de reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js?render=6Lc8NQYqAAAAAGS0kYp1mrmAn-u5DW-X2b_qaX4O"></script>
     <script>
+        function enviarCorreo(formData) {
+            // Simulación de envío de correo electrónico (usando EmailJS u otro servicio similar)
+            // Aquí debes configurar el servicio de envío de correo electrónico según tu elección
+            // Este es un ejemplo genérico, necesitarás ajustarlo según tu caso específico
+            Email.send({
+                SecureToken: "tu_secure_token",
+                To: 'webcodemgt@gmail.com',
+                From: formData.get('email'),
+                Subject: 'Nuevo mensaje de soporte',
+                Body: `Nombre: ${formData.get('nombre')}<br>Email: ${formData.get('email')}<br>Mensaje:<br>${formData.get('mensaje')}`
+            }).then(
+                message => alert('Mensaje enviado correctamente')
+            );
+        }
+
         function onSubmit(token) {
-            // Aquí puedes enviar tu formulario o realizar acciones adicionales
-            // token es el token que reCAPTCHA genera al verificar la acción del usuario
-            // Ejemplo: document.getElementById("formulario").submit();
+            // Obtener los datos del formulario
+            const formulario = document.getElementById("formulario");
+            const formData = new FormData(formulario);
+
+            // Llamar a la función de enviar correo electrónico
+            enviarCorreo(formData);
         }
     </script>
 </head>
 <body>
-    <h1>Bienvenido a nuestro Servicio de Soporte</h1>
-    <p>Estamos aquí para ayudarte con cualquier pregunta o problema que puedas tener. Por favor, no dudes en contactarnos utilizando nuestro chat en vivo o enviándonos un correo electrónico.</p>
-    <p>Nuestro equipo de soporte está disponible las 24 horas del día, los 7 días de la semana para brindarte asistencia oportuna y de calidad.</p>
-    
-    <!-- Agregar el formulario con reCAPTCHA -->
-    <form id="formulario" action="procesar_formulario.php" method="POST">
-        <!-- Aquí van los campos de tu formulario -->
-        
-        <!-- Agregar el widget de reCAPTCHA -->
-        <div class="g-recaptcha" data-sitekey="6Lc8NQYqAAAAAGS0kYp1mrmAn-u5DW-X2b_qaX4O" data-callback="onSubmit"></div>
-        
-        <!-- Agregar el botón de enviar -->
-        <button type="submit">Enviar</button>
-    </form>
-
-    <script src="/resources/js/script-6.js"></script>
+    <div class="container">
+        <h1>Bienvenido a nuestro Servicio de Soporte</h1>
+        <form id="formulario" onsubmit="event.preventDefault();">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            </div>
+            <div class="g-recaptcha" data-sitekey="6Lc8NQYqAAAAAGS0kYp1mrmAn-u5DW-X2b_qaX4O" data-callback="onSubmit"></div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <!-- Incluir el script de EmailJS o el servicio que elijas -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>
