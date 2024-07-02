@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contacto con reCAPTCHA v2</title>
+    <title>Formulario de Contacto con reCAPTCHA v2 Invisible</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         function onSubmit(token) {
@@ -12,23 +12,22 @@
             // Por ejemplo, enviar los datos a través de Ajax o redirigir a otra página.
         }
 
-        function validateForm() {
-            var response = grecaptcha.getResponse();
-            if(response.length === 0) {
-                alert('Por favor, verifica que no eres un robot.');
-                return false;
-            } else {
-                onSubmit(response); // Enviar formulario con el token reCAPTCHA
-                return true;
-            }
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Evitar el envío predeterminado del formulario
+            grecaptcha.execute(); // Ejecutar reCAPTCHA v2 Invisible
+        }
+
+        function onloadCallback() {
+            var submitButton = document.getElementById('submit-button');
+            submitButton.onclick = handleFormSubmit;
         }
     </script>
 </head>
-<body>
+<body onload="onloadCallback()">
 
-<h2>Formulario de Contacto con reCAPTCHA v2</h2>
+<h2>Formulario de Contacto con reCAPTCHA v2 Invisible</h2>
 
-<form onsubmit="return validateForm()">
+<form action="submit_form.php" method="POST">
     <label for="nombre">Nombre:</label><br>
     <input type="text" id="nombre" name="nombre" required><br><br>
 
@@ -38,9 +37,9 @@
     <label for="mensaje">Mensaje:</label><br>
     <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
 
-    <div class="g-recaptcha" data-sitekey="6LelNwYqAAAAAOl9uuJSkJKxURh9ddnH-g0qgjn6"></div><br>
+    <div class="g-recaptcha" data-sitekey="6LeaOAYqAAAAACJDSikksmvEu5TZPRU1-nX9N_ON" data-callback="onSubmit" data-size="invisible"></div><br>
 
-    <input type="submit" value="Enviar">
+    <input type="submit" id="submit-button" value="Enviar">
 </form>
 
 </body>
